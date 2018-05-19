@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,8 +65,8 @@ public class CameraRollActivity extends AppCompatActivity {
         });*/
         grid=findViewById(R.id.grid);
 
-        RecyclerView.LayoutManager layoutManager=new GridLayoutManager(CameraRollActivity.this,3,LinearLayoutManager.VERTICAL,true);
-        grid.addItemDecoration(new EqualSpacingItemDecoration(2,EqualSpacingItemDecoration.GRID)); // 16px. In practice, you'll want to use getDimensionPixelSize
+        RecyclerView.LayoutManager layoutManager=new GridLayoutManager(CameraRollActivity.this,3,LinearLayoutManager.VERTICAL,false);
+        //grid.addItemDecoration(new EqualSpacingItemDecoration(2,EqualSpacingItemDecoration.GRID)); // 16px. In practice, you'll want to use getDimensionPixelSize
         grid.setLayoutManager(layoutManager);
         grid.setAdapter(new RecyclerAdapter(images,CameraRollActivity.this));
 
@@ -206,10 +207,10 @@ public class CameraRollActivity extends AppCompatActivity {
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
 
+            Log.d("imagedata",""+images.get(position));
             Glide.with(context)
                     .load(images.get(position))
                     .into(holder.imageView);
-
 
         }
 

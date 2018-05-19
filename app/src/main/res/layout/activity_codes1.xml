@@ -60,6 +60,7 @@
             android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="phone"
             android:hint="Enter your code"
             android:drawableRight="@drawable/group_109_2x"
             android:textColorHint="#878787"
