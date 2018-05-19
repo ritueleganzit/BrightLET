@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp"
+        android:bottom="1dp">
+        <shape android:shape="oval">
+            <solid android:color="#5a2e87"/>
+            <stroke android:color="#5a2e87"
+                android:width="1dp"></stroke>
+            <corners android:radius="50dp" />
+        </shape>
+
+    </item>
+    <item
+        >
+        <bitmap android:src="@drawable/group_709_2x"
+
+            android:gravity="center_vertical|center_horizontal"></bitmap></item>
+
+</layer-list>

@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_below="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:focusableInTouchMode="true"
+        android:background="#fff"
+        android:layout_height="match_parent"
+        tools:context="com.eleganzit.brightlet.SignInActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:contentInsetRight="0dp"
+            android:contentInsetStart="0dp"
+            android:contentInsetLeft="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            android:background="#5a2e87"
+            android:layout_height="?attr/actionBarSize">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/path_633"
+                    android:layout_centerVertical="true"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:id="@+id/txt"
+                    android:textColor="#fff"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    android:text="Information"
+                    />
+                <TextView
+                    android:id="@+id/next"
+                    android:layout_marginRight="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="14sp"
+                    android:textColor="#66ffffff"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:text="Next"/>
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+
+        <LinearLayout
+
+            android:id="@+id/signin_layout"
+            android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:padding="12dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#f39200"
+                android:text="BEDROOMS"/>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+
+                <Button
+
+                    android:id="@+id/decrease"
+
+                    android:layout_width="40dp"
+
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_grey_circle"
+
+                    android:onClick="decreaseInteger"
+
+                    android:textSize="28dp"
+                    android:textColor="#cbcbcb"/>
+
+
+
+                <TextView
+
+                    android:id="@+id/integer_number"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginBottom="16dp"
+
+                    android:layout_marginLeft="40dp"
+
+                    android:layout_marginRight="40dp"
+
+                    android:layout_marginTop="16dp"
+
+                    android:text="0"
+                    android:textColor="#5a2e87"
+                    android:textSize="60sp" />
+
+
+
+                <Button
+
+                    android:id="@+id/increase"
+
+                    android:layout_width="40dp"
+
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_grey_circle_plus"
+
+                    android:onClick="increaseInteger"
+
+                     />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#f39200"
+                android:text="BATHROOMS"/>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+
+                <Button
+
+                    android:id="@+id/decrease_b"
+
+                    android:layout_width="40dp"
+
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_grey_circle"
+
+                    android:onClick="decreaseInteger_b"
+
+                    android:textSize="28dp"
+                    android:textColor="#cbcbcb"/>
+
+
+
+                <TextView
+
+                    android:id="@+id/integer_number_b"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginBottom="16dp"
+
+                    android:layout_marginLeft="40dp"
+
+                    android:layout_marginRight="40dp"
+
+                    android:layout_marginTop="16dp"
+
+                    android:text="0"
+                    android:textColor="#5a2e87"
+                    android:textSize="60sp" />
+
+
+
+                <Button
+
+                    android:id="@+id/increase_b"
+
+                    android:layout_width="40dp"
+
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_grey_circle_plus"
+
+                    android:onClick="increaseInteger_b"
+
+                    />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#f39200"
+                android:layout_marginBottom="10dp"
+                android:text="FURNISHED STATUS"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+                    android:id="@+id/fully"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/button_bg_grey"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/fully_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:textColor="#cbcbcb"
+                        android:text="Fully"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/partially"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/button_bg_grey"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/partially_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:textColor="#cbcbcb"
+                        android:text="Partially"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/none"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/button_bg_grey"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/none_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:textColor="#cbcbcb"
+                        android:text="None"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#f39200"
+                android:layout_marginBottom="10dp"
+                android:text="GAS SAFETY CERTIFICATE"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg_grey"
+                    android:text="Yes"
+                    android:layout_margin="5dp"
+                    android:textColor="#cbcbcb"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"/>
+                <Button
+                    android:id="@+id/no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#cbcbcb"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_bg_grey"
+                    android:text="No"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#878787">
+                <EditText
+                    android:id="@+id/renew_date_1"
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:drawableRight="@drawable/group_657"
+                    android:layout_height="wrap_content"
+                    android:hint="Renewal date"
+                    android:textSize="16sp"
+                    android:textColorHint="#aaaaaa"
+                    android:background="@drawable/edittext_bg"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp"
+                android:textColor="#f39200"
+                android:layout_marginBottom="10dp"
+                android:text="ENERGY PERFORMANCE CERTIFICATE"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/certi_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg_grey"
+                    android:text="Yes"
+                    android:layout_margin="5dp"
+                    android:textColor="#cbcbcb"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"/>
+                <Button
+                    android:id="@+id/certi_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#cbcbcb"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_bg_grey"
+                    android:text="No"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#878787">
+                <EditText
+                    android:id="@+id/renew_date_2"
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:drawableRight="@drawable/group_657"
+                    android:layout_height="wrap_content"
+                    android:hint="Renewal date"
+                    android:textSize="16sp"
+                    android:textColorHint="#aaaaaa"
+                    android:background="@drawable/edittext_bg"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:textSize="14sp"
+                        android:gravity="top"
+                        android:textColor="#aaaaaa"
+                        android:text="PROPERTY"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="#f39200"
+                        android:text="INFORMATION"/>
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:background="#f39200"></View>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="#aaaaaa"
+                        android:text="IMAGE"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

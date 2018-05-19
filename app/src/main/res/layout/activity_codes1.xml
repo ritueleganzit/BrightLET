@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.eleganzit.brightlet.SignInActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="164dp"
+                android:layout_marginTop="30dp"
+                android:layout_height="51dp"
+                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/brightlet_logo_3x"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_above="@+id/submit"
+        android:layout_width="match_parent"
+        android:focusableInTouchMode="true"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#aaaaaa"
+            android:textSize="15sp"
+            />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+        <EditText
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your code"
+            android:drawableRight="@drawable/group_109_2x"
+            android:textColorHint="#878787"
+            android:background="@drawable/edittext_bg"/>
+</android.support.design.widget.TextInputLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="I didn’t receive the code."
+            android:layout_gravity="center"
+            android:textColor="#95989a"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_alignParentBottom="true"
+        android:background="#5a2e87"
+        android:textColor="#fff"
+        android:textSize="17sp"
+        android:text="SUBMIT"/>
+
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">BrightLET</string>
+    <string name="slide1"><![CDATA[You can manage your properties & tenancies with  your tenants. Stay on top of rent, expenses, ﬁnancials and schedule maintenance work with your tradesmen.]]></string>
+    <string name="slide2">Manage your properties and tenancies directly with your tenants and tradesmen</string>
+
+    <string-array name="userlist">
+        <item>Who are you?</item>
+        <item>xyz</item>
+        <item>abc</item>
+
+    </string-array>
+
+    <string name="enterphone1">We have sent you an SMS verification code to</string>
+    <string name="enterphone2">. Please enter that code below to join the brightFamily.</string>
+    <string name="agreement"><![CDATA[By clicking SIGN UP, you agree to brightLET’s Terms & Conditions and Privcy Policy]]></string>
+</resources>
