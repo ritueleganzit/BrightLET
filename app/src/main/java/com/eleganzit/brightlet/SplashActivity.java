@@ -1,27 +1,23 @@
 package com.eleganzit.brightlet;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.RequiresApi;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import me.relex.circleindicator.CircleIndicator;
 
@@ -32,19 +28,35 @@ public class SplashActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     private ViewPager viewPager;
+    int currentPage = 0;
+    int page = 0;
+    private Handler handler;
     private MyViewPagerAdapter myViewPagerAdapter;
     //private LinearLayout dotsLayout;
     private TextView[] dots;
     private int[] layouts;
     private Button btnSkip, btnNext;
+    Runnable runnable = new Runnable() {
+        public void run() {
+            if (myViewPagerAdapter.getCount() == page) {
+                page = 0;
+            } else {
+                page++;
+            }
+            viewPager.setCurrentItem(page, true);
+            handler.postDelayed(this, 2000);
+        }
+    };
+
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityCompat.requestPermissions(SplashActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},1);
 
         setContentView(R.layout.activity_splash);
-
+        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
+        handler = new Handler();
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         //dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
 
@@ -54,6 +66,7 @@ public class SplashActivity extends AppCompatActivity {
         layouts = new int[]{
                 R.layout.side1,
                 R.layout.slide2,
+                R.layout.slide3
                 };
 
         // adding bottom dots
@@ -72,6 +85,7 @@ public class SplashActivity extends AppCompatActivity {
                 editor.putString("sign","signin");
                 editor.commit();
                 startActivity(new Intent(SplashActivity.this,SignInActivity.class));
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
             }
         });
         signup.setOnClickListener(new View.OnClickListener() {
@@ -80,15 +94,34 @@ public class SplashActivity extends AppCompatActivity {
                 editor.putString("sign","signup");
                 editor.commit();
                 startActivity(new Intent(SplashActivity.this,SignInActivity.class));
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
 
             }
         });
         myViewPagerAdapter = new MyViewPagerAdapter();
         viewPager.setAdapter(myViewPagerAdapter);
         //viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
-        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
         indicator.setViewPager(viewPager);
         myViewPagerAdapter.registerDataSetObserver(indicator.getDataSetObserver());
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                page = position;
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
     }
    /* private void addBottomDots(int currentPage) {
         dots = new TextView[layouts.length];
@@ -141,8 +174,20 @@ public class SplashActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(Color.TRANSPARENT);
+            window.setStatusBarColor(Color.WHITE);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        handler.postDelayed(runnable, 2000);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        handler.removeCallbacks(runnable);
     }
 
     /**

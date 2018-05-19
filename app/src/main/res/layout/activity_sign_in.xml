@@ -8,32 +8,34 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="?attr/actionBarSize">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             >
             <ImageView
+                android:id="@+id/back"
                 android:layout_width="20dp"
-                android:layout_marginTop="30dp"
-                android:layout_centerVertical="true"
                 android:layout_height="20dp"
                 android:src="@drawable/back_arrow"
-                />
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
         <ImageView
             android:id="@+id/logo"
             android:layout_width="164dp"
-            android:layout_marginTop="30dp"
-            android:layout_height="51dp"
-            android:layout_centerVertical="true"
-            android:layout_centerInParent="true"
+            android:layout_height="41dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:src="@mipmap/brightlet_logo_3x"
             />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:id="@+id/header"
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
@@ -42,7 +44,7 @@
         android:layout_centerHorizontal="true"
         android:orientation="horizontal">
 
-        <com.eleganzit.brightlet.fonts.TextViewMuseo700
+        <TextView
             android:id="@+id/h_signin"
             android:gravity="center"
             android:layout_width="wrap_content"
@@ -57,7 +59,7 @@
             android:layout_height="40px"
             android:layout_gravity="center"
             android:background="#f39200"></View>
-        <com.eleganzit.brightlet.fonts.TextViewMuseo700
+        <TextView
             android:id="@+id/h_signup"
             android:gravity="center"
             android:layout_width="wrap_content"
@@ -82,7 +84,6 @@
             android:layout_height="wrap_content">
             <include layout="@layout/signup"></include>
             <LinearLayout
-                android:visibility="gone"
                 android:id="@+id/signin_layout"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
@@ -92,14 +93,18 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
+
                     android:layout_height="wrap_content"
-                    android:textColorHint="#878787">
-                    <com.eleganzit.brightlet.utils.CEditText
+                    app:errorTextAppearance="@style/error_appearance"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+                    >
+                    <EditText
                         android:id="@+id/in_who"
                         android:maxLines="1"
+                        android:focusable="false"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:entries="@array/userlist"
+
                         android:padding="5dp"
                         android:background="@drawable/edittext_bg"
                         android:layout_margin="20dp"
@@ -110,9 +115,12 @@
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
+                    app:errorTextAppearance="@style/error_appearance"
                     android:layout_height="wrap_content"
-                    android:textColorHint="#878787">
-                    <com.eleganzit.brightlet.utils.CEditText
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+
+                    >
+                    <EditText
                         android:id="@+id/in_email"
                         android:maxLines="1"
                         android:padding="5dp"
@@ -127,9 +135,11 @@
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
                     android:layout_height="wrap_content"
-                    android:textColorHint="#878787">
-                    <com.eleganzit.brightlet.utils.CEditText
+                    app:errorTextAppearance="@style/error_appearance"
+                    >
+                    <EditText
                         android:id="@+id/in_password"
                         android:maxLines="1"
                         android:layout_width="match_parent"
@@ -142,7 +152,7 @@
                         android:textColorHint="#878787"
                         android:background="@drawable/edittext_bg"/>
                 </android.support.design.widget.TextInputLayout>
-                <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -159,7 +169,6 @@
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="53dp"
-        android:textSize="17sp"
         android:layout_alignParentBottom="true"
         android:background="#5a2e87"
         android:textColor="#fff"
@@ -168,7 +177,6 @@
         android:id="@+id/signup"
         android:layout_width="match_parent"
         android:layout_height="53dp"
-        android:textSize="17sp"
         android:layout_alignParentBottom="true"
         android:background="#5a2e87"
         android:textColor="#fff"

@@ -10,12 +10,11 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="?attr/actionBarSize">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             >
-
             <ImageView
                 android:layout_width="20dp"
                 android:layout_marginTop="30dp"
@@ -26,10 +25,9 @@
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="164dp"
-                android:layout_marginTop="30dp"
-                android:layout_height="51dp"
-                android:layout_centerVertical="true"
-                android:layout_centerInParent="true"
+                android:layout_height="41dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
                 android:src="@mipmap/brightlet_logo_3x"
                 />
         </RelativeLayout>
@@ -46,7 +44,7 @@
         android:layout_margin="10dp"
         android:layout_height="match_parent">
 
-        <com.eleganzit.brightlet.fonts.TextViewMuseo300
+        <TextView
             android:id="@+id/phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,7 +62,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp">
-            <com.eleganzit.brightlet.utils.CEditText
+            <EditText
                 android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
