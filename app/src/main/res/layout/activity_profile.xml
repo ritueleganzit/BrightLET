@@ -32,7 +32,7 @@
             android:gravity="center"
             android:orientation="horizontal"
             >
-            <TextView
+            <com.eleganzit.brightlet.fonts.TextViewMuseo500
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
@@ -76,7 +76,7 @@
             android:src="@drawable/group_142"
             android:background="@drawable/circle"/>
 
-        <TextView
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -84,7 +84,7 @@
             android:text="Mike Tomson"
             android:textColor="#5a5a5a"
             android:textSize="18sp"/>
-        <TextView
+        <com.eleganzit.brightlet.fonts.TextViewMuseo300
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -102,7 +102,7 @@
                 android:padding="15dp"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -115,7 +115,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColorHint="#878787">
-                    <EditText
+                    <com.eleganzit.brightlet.utils.CEditText
                         android:id="@+id/house_number"
                         android:maxLines="1"
                         android:layout_width="match_parent"
@@ -132,7 +132,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColorHint="#878787">
-                    <EditText
+                    <com.eleganzit.brightlet.utils.CEditText
                         android:id="@+id/street_name"
                         android:maxLines="1"
                         android:padding="5dp"
@@ -148,7 +148,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColorHint="#878787">
-                    <EditText
+                    <com.eleganzit.brightlet.utils.CEditText
                         android:id="@+id/town"
                         android:maxLines="1"
                         android:layout_width="match_parent"
@@ -164,7 +164,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColorHint="#878787">
-                    <EditText
+                    <com.eleganzit.brightlet.utils.CEditText
                         android:id="@+id/country"
                         android:maxLines="1"
                         android:layout_width="match_parent"
@@ -183,7 +183,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColorHint="#878787">
-                    <EditText
+                    <com.eleganzit.brightlet.utils.CEditText
                         android:id="@+id/postcode"
                         android:layout_width="match_parent"
                         android:maxLines="1"
@@ -196,7 +196,7 @@
                         android:background="@drawable/edittext_bg"/>
                 </android.support.design.widget.TextInputLayout>
 
-                <TextView
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -205,7 +205,7 @@
                     android:textColor="#f39200"
                     android:text="MEMBER OF AN ASSOCIATION"/>
 
-                <TextView
+                <com.eleganzit.brightlet.fonts.TextViewMuseo300
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -215,7 +215,7 @@
                     android:textSize="12sp"
                     android:textColor="#aaaaaa"/>
 
-                <TextView
+                <com.eleganzit.brightlet.fonts.TextViewMuseo300
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -258,7 +258,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColorHint="#878787">
-                    <EditText
+                    <com.eleganzit.brightlet.utils.CEditText
                         android:id="@+id/scheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

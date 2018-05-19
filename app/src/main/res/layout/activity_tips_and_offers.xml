@@ -42,14 +42,14 @@
         android:padding="20dp"
         android:layout_height="wrap_content">
 
-        <TextView
+        <com.eleganzit.brightlet.fonts.TextViewMuseo700
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TIPS AND OFFERS"
             android:textColor="#f39200"
             android:textSize="15sp"/>
 
-        <TextView
+        <com.eleganzit.brightlet.fonts.TextViewMuseo300
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"

@@ -38,7 +38,7 @@
                     android:layout_marginLeft="25dp"
                     android:src="@drawable/path_633"
                     android:layout_centerVertical="true"/>
-                <TextView
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
@@ -73,7 +73,7 @@
             android:padding="12dp"
             android:layout_height="wrap_content">
 
-            <TextView
+            <com.eleganzit.brightlet.fonts.TextViewMuseo300
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
@@ -85,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#878787">
-                <EditText
+                <com.eleganzit.brightlet.utils.CEditText
                     android:id="@+id/house_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#878787">
-                <EditText
+                <com.eleganzit.brightlet.utils.CEditText
                     android:id="@+id/street_name"
                     android:padding="5dp"
                     android:maxLines="1"
@@ -117,7 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#878787">
-                <EditText
+                <com.eleganzit.brightlet.utils.CEditText
                     android:id="@+id/town"
                     android:layout_width="match_parent"
                     android:padding="5dp"
@@ -133,7 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#878787">
-                <EditText
+                <com.eleganzit.brightlet.utils.CEditText
                     android:id="@+id/country"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -152,7 +152,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#878787">
-                <EditText
+                <com.eleganzit.brightlet.utils.CEditText
                     android:id="@+id/postcode"
                     android:layout_width="match_parent"
                     android:padding="5dp"
@@ -165,7 +165,7 @@
                     android:background="@drawable/edittext_bg"/>
             </android.support.design.widget.TextInputLayout>
 
-            <TextView
+            <com.eleganzit.brightlet.fonts.TextViewMuseo500
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -182,7 +182,7 @@
 
             </android.support.v7.widget.RecyclerView>
 
-            <TextView
+            <com.eleganzit.brightlet.fonts.TextViewMuseo500
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -212,7 +212,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <TextView
+                    <com.eleganzit.brightlet.fonts.TextViewMuseo700
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -236,7 +236,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <TextView
+                    <com.eleganzit.brightlet.fonts.TextViewMuseo700
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
@@ -253,7 +253,7 @@
                     android:padding="15dp"
                     android:orientation="vertical">
 
-                    <TextView
+                    <com.eleganzit.brightlet.fonts.TextViewMuseo700
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"

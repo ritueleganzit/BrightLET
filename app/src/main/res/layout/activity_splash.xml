@@ -65,7 +65,7 @@
         android:layout_marginBottom="30dp"
         android:orientation="horizontal">
 
-        <TextView
+        <com.eleganzit.brightlet.fonts.TextViewMuseo300
             android:id="@+id/signin"
             android:gravity="center"
             android:layout_width="wrap_content"
@@ -79,7 +79,7 @@
            android:layout_gravity="center"
            android:layout_height="40px"
            android:background="#f39200"></View>
-        <TextView
+        <com.eleganzit.brightlet.fonts.TextViewMuseo300
             android:id="@+id/signup"
             android:gravity="center"
             android:layout_width="wrap_content"

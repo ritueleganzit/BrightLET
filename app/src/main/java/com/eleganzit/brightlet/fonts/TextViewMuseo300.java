@@ -8,19 +8,19 @@ import android.util.AttributeSet;
  * Created by Uv on 5/17/2018.
  */
 
-public class TextViewMSANS extends android.support.v7.widget.AppCompatTextView
+public class TextViewMuseo300 extends android.support.v7.widget.AppCompatTextView
 {
-    public TextViewMSANS(Context context, AttributeSet attrs, int defStyle) {
+    public TextViewMuseo300(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
 
-    public TextViewMSANS(Context context, AttributeSet attrs) {
+    public TextViewMuseo300(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public TextViewMSANS(Context context) {
+    public TextViewMuseo300(Context context) {
         super(context);
         init();
     }

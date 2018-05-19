@@ -44,28 +44,123 @@ public class CameraRollActivity extends AppCompatActivity {
         window.setStatusBarColor(Color.parseColor("#5a2e87"));
         setContentView(R.layout.activity_camera_roll);
 
-        done=findViewById(R.id.done);
-        grid=findViewById(R.id.grid);
+        //GridView gallery = (GridView) findViewById(R.id.galleryGridView);
+        ActivityCompat.requestPermissions(CameraRollActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},1);
+        /*gallery.setAdapter(new ImageAdapter(this));
 
-        RecyclerView.LayoutManager layoutManager=new GridLayoutManager(CameraRollActivity.this,3, LinearLayoutManager.VERTICAL,true);
-        grid.addItemDecoration(new EqualSpacingItemDecoration(2, EqualSpacingItemDecoration.GRID)); // 16px. In practice, you'll want to use getDimensionPixelSize
-        grid.setLayoutManager(layoutManager);
-        grid.setAdapter(new GalleryAdapter(images,CameraRollActivity.this));
+        gallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-        done.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(CameraRollActivity.this,PreviewActivity.class));
+            public void onItemClick(AdapterView<?> arg0, View arg1,
+                                    int position, long arg3) {
+                if (null != images && !images.isEmpty())
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "position " + position + " " + images.get(position),
+                            Toast.LENGTH_LONG).show();
+                ;
 
             }
-        });
+        });*/
+        grid=findViewById(R.id.grid);
+
+        RecyclerView.LayoutManager layoutManager=new GridLayoutManager(CameraRollActivity.this,3,LinearLayoutManager.VERTICAL,true);
+        grid.addItemDecoration(new EqualSpacingItemDecoration(2,EqualSpacingItemDecoration.GRID)); // 16px. In practice, you'll want to use getDimensionPixelSize
+        grid.setLayoutManager(layoutManager);
+        grid.setAdapter(new RecyclerAdapter(images,CameraRollActivity.this));
+
     }
-    public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHolder>
+
+    /**
+     * The Class ImageAdapter.
+     */
+   /* private class ImageAdapter extends BaseAdapter {
+
+        *//** The context. *//*
+        private Activity context;
+
+        *//**
+     * Instantiates a new image adapter.
+     *
+     * @param localContext
+     *            the local context
+     *//*
+        public ImageAdapter(Activity localContext) {
+            context = localContext;
+            images = getAllShownImagesPath(context);
+        }
+
+        public int getCount() {
+            return images.size();
+        }
+
+        public Object getItem(int position) {
+            return position;
+        }
+
+        public long getItemId(int position) {
+            return position;
+        }
+
+        public View getView(final int position, View convertView,
+                            ViewGroup parent) {
+            ImageView picturesView;
+            if (convertView == null) {
+                picturesView = new ImageView(context);
+                picturesView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                picturesView.setLayoutParams(new GridView.LayoutParams(240, 240));
+
+            } else {
+                picturesView = (ImageView) convertView;
+            }
+
+            Glide.with(context)
+                    .load(images.get(position))
+                    .into(picturesView);
+
+
+            return picturesView;
+        }
+
+        *//**
+     * Getting All Images Path.
+     *
+     * @param //activity
+     *            the activity
+     * @return ArrayList with images Path
+     *//*
+        ArrayList<String> getAllShownImagesPath(Activity activity) {
+            Uri uri;
+            Cursor cursor;
+            int column_index_data, column_index_folder_name;
+            ArrayList<String> listOfAllImages = new ArrayList<String>();
+            String absolutePathOfImage = null;
+            uri = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+
+            String[] projection = { MediaStore.MediaColumns.DATA,
+                    MediaStore.Images.Media.BUCKET_DISPLAY_NAME };
+
+            cursor = activity.getContentResolver().query(uri, projection, null,
+                    null, null);
+
+            column_index_data = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
+            column_index_folder_name = cursor
+                    .getColumnIndexOrThrow(MediaStore.Images.Media.BUCKET_DISPLAY_NAME);
+            while (cursor.moveToNext()) {
+                absolutePathOfImage = cursor.getString(column_index_data);
+
+                listOfAllImages.add(absolutePathOfImage);
+            }
+            return listOfAllImages;
+        }
+    }*/
+
+    public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>
     {
         ArrayList<String> arrayList;
         Context context;
 
-        public GalleryAdapter(ArrayList<String> arrayList, Context context) {
+        public RecyclerAdapter(ArrayList<String> arrayList, Context context) {
             this.context = context;
             images = getAllShownImagesPath(context);
         }

@@ -39,7 +39,7 @@
                     android:layout_marginLeft="25dp"
                     android:src="@drawable/path_633"
                     android:layout_centerVertical="true"/>
-                <TextView
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
