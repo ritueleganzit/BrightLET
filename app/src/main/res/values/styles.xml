@@ -9,25 +9,29 @@
     </style>
 
 
-<style name="AlertDialogCustom" parent="@android:style/Animation.Dialog">
-<item name="android:typeface">sans</item>
+    <style name="AlertDialogCustom" parent="@android:style/Animation.Dialog">
+        <item name="android:typeface">sans</item>
 
 
-</style>
+    </style>
 
-<style name="error_appearance" parent="@android:style/TextAppearance">
-<item name="android:textColor">@color/error</item>
+    <style name="error_appearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/error</item>
 
-</style>
+    </style>
 
-<style name="TextLabel" parent="TextAppearance.AppCompat">
-<!-- Hint color and label color in FALSE state -->
-<item name="android:textColorHint">@color/maincolor</item>
-<item name="android:textColorLink">@color/maincolor</item>
-<!-- Label color in TRUE state and bar color FALSE and TRUE State -->
-<item name="colorAccent">@color/maincolor</item>
-<item name="colorControlNormal">@color/maincolor</item>
-<item name="colorControlActivated">@color/maincolor</item>
-</style>
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/maincolor</item>
+        <item name="android:textColorLink">@color/maincolor</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/maincolor</item>
+        <item name="colorControlNormal">@color/maincolor</item>
+        <item name="colorControlActivated">@color/maincolor</item>
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

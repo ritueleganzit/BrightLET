@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashboard"
+            android:icon="@drawable/group_866"
+            android:title="Dashboard"
+            />
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/group_242"
+            android:title="Properties" />
+        <item
+            android:id="@+id/manage_tenants"
+            android:icon="@drawable/group_828"
+            android:title="Manage Tenants" />
+        <item
+            android:id="@+id/messages"
+            android:icon="@drawable/group_240"
+            android:title="Messages" />
+        <item
+            android:id="@+id/reminders"
+            android:icon="@drawable/group_505"
+            android:title="Reminders" />
+        <item
+            android:id="@+id/my_tradesmen"
+            android:icon="@drawable/group_506"
+            android:title="My Tradesmen" />
+        <item
+            android:id="@+id/financial_statement"
+            android:icon="@drawable/group_507"
+            android:title="Financial Statement" />
+        <item
+            android:id="@+id/user_management"
+            android:icon="@drawable/group_877"
+            android:title="User Management" />
+        <item
+            android:id="@+id/my_orders"
+            android:icon="@drawable/group_875"
+            android:title="My Orders" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/group_512"
+                android:title="Settings" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/group_513"
+                android:title="Sign Out" />
+        </menu>
+    </item>
+
+</menu>

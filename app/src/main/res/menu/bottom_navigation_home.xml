@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/dashboard_b"
+        android:enabled="true"
+        android:icon="@drawable/group_866"
+        android:title="Dashboard"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/home_b"
+        android:enabled="true"
+        android:icon="@drawable/group_242"
+        android:title="Properties"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/manage_tenants_b"
+        android:enabled="true"
+        android:icon="@drawable/group_828"
+        android:title="Tenants"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/messages_b"
+        android:enabled="true"
+        android:icon="@drawable/group_240"
+        android:title="Messages"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/profile_b"
+        android:enabled="true"
+        android:icon="@drawable/group_241"
+        android:title="Profile"
+        app:showAsAction="ifRoom" />
+</menu>
