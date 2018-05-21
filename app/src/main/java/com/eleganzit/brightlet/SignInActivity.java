@@ -216,6 +216,7 @@ ImageView back;
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(SignInActivity.this,HomeActivity.class));
                 }
             }
 

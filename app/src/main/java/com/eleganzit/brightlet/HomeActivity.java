@@ -21,9 +21,11 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.eleganzit.brightlet.fragments.Fragment_dashboard;
+import com.eleganzit.brightlet.fragments.Fragment_profile;
 import com.eleganzit.brightlet.utils.BottomNavigationViewHelper;
 
 public class HomeActivity extends AppCompatActivity
@@ -73,8 +75,10 @@ public class HomeActivity extends AppCompatActivity
                         }
                         else if (id == R.id.profile_b) {
 
-                            Toast.makeText(HomeActivity.this, "profile", Toast.LENGTH_SHORT).show();
-                        }
+                            Fragment_profile fragment_profile=new Fragment_profile();
+                            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                            fragmentTransaction.replace(R.id.main_container,fragment_profile);
+                            fragmentTransaction.commit();                        }
 
                         return false;
                     }
@@ -157,10 +161,22 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View headerView = navigationView.inflateHeaderView(R.layout.nav_header_home);
+        LinearLayout navbarheader=headerView.findViewById(R.id.navbar_header);
         ImageView close = headerView.findViewById(R.id.close);
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+        navbarheader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment_profile fragment_profile=new Fragment_profile();
+                FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_container,fragment_profile);
+                fragmentTransaction.commit();
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
             }

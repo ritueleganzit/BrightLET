@@ -1,0 +1,188 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<LinearLayout android:id="@+id/signin_layout"
+    android:layout_below="@+id/header"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true"
+
+    android:padding="15dp"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textSize="15sp"
+        android:textColor="#f39200"
+        android:layout_marginBottom="20dp"
+        android:text="ADDRESS DETAILS"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:textColorHint="#878787">
+        <com.eleganzit.brightlet.utils.CEditText
+            android:id="@+id/title"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/userlist"
+            android:padding="5dp"
+            android:inputType="text"
+            android:background="@drawable/edittext_bg"
+            android:layout_margin="20dp"
+            android:drawableRight="@drawable/dropdown1x"
+            android:hint="Title"
+            android:textColorHint="#878787"
+            />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#878787">
+        <com.eleganzit.brightlet.utils.CEditText
+            android:id="@+id/name"
+            android:maxLines="1"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:layout_margin="20dp"
+            android:hint="Name"
+            android:textColorHint="#878787"
+            android:background="@drawable/edittext_bg"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#878787">
+        <com.eleganzit.brightlet.utils.CEditText
+            android:id="@+id/mobile"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:layout_margin="20dp"
+            android:hint="Mobile Number"
+            android:textColorHint="#878787"
+            android:background="@drawable/edittext_bg"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#878787">
+        <com.eleganzit.brightlet.utils.CEditText
+            android:id="@+id/phone"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:inputType="phone"
+            android:layout_height="wrap_content"
+            android:entries="@array/userlist"
+            android:padding="5dp"
+            android:background="@drawable/edittext_bg"
+            android:layout_margin="20dp"
+            android:hint="Phone Number"
+            android:textColorHint="#878787"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#878787">
+        <com.eleganzit.brightlet.utils.CEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:maxLines="1"
+            android:inputType="textEmailAddress"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Email Address"
+            android:textColorHint="#878787"
+            android:background="@drawable/edittext_bg"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:textColor="#f39200"
+        android:text="MEMBER OF AN ASSOCIATION"/>
+
+    <com.eleganzit.brightlet.fonts.TextViewMuseo300
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:text="Are you a member of a Landlord Licensing Scheme or an Association that follows a landlord code of practice?"
+        android:textSize="12sp"
+        android:textColor="#aaaaaa"/>
+
+    <com.eleganzit.brightlet.fonts.TextViewMuseo300
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Are you a Member?"
+        android:textSize="16sp"
+        android:textColor="#aaaaaa"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg_grey"
+            android:text="Yes"
+            android:layout_margin="5dp"
+            android:textColor="#cbcbcb"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#cbcbcb"
+            android:layout_margin="5dp"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg_grey"
+            android:text="No"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#878787">
+        <com.eleganzit.brightlet.utils.CEditText
+            android:id="@+id/scheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/userlist"
+            android:padding="5dp"
+            android:textSize="16sp"
+            android:background="@drawable/edittext_bg"
+            android:layout_margin="20dp"
+            android:drawableRight="@drawable/dropdown1x"
+            android:hint="Select a Scheme or an Association"
+            android:textColorHint="#878787"
+            />
+    </android.support.design.widget.TextInputLayout>
+</LinearLayout>
+</ScrollView>
