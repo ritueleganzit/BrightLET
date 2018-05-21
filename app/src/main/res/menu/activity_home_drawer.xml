@@ -4,40 +4,40 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/dashboard"
-            android:icon="@drawable/group_866"
+            android:icon="@drawable/group_874_2x"
             android:title="Dashboard"
             />
         <item
             android:id="@+id/home"
-            android:icon="@drawable/group_242"
+            android:icon="@drawable/group_502_2x"
             android:title="Properties" />
         <item
             android:id="@+id/manage_tenants"
-            android:icon="@drawable/group_828"
+            android:icon="@drawable/group_503_2x"
             android:title="Manage Tenants" />
         <item
             android:id="@+id/messages"
-            android:icon="@drawable/group_240"
+            android:icon="@drawable/group_504_2x"
             android:title="Messages" />
         <item
             android:id="@+id/reminders"
-            android:icon="@drawable/group_505"
+            android:icon="@drawable/group_505_2x"
             android:title="Reminders" />
         <item
             android:id="@+id/my_tradesmen"
-            android:icon="@drawable/group_506"
+            android:icon="@drawable/group_506_2x"
             android:title="My Tradesmen" />
         <item
             android:id="@+id/financial_statement"
-            android:icon="@drawable/group_507"
+            android:icon="@drawable/group_507_2x"
             android:title="Financial Statement" />
         <item
             android:id="@+id/user_management"
-            android:icon="@drawable/group_877"
+            android:icon="@drawable/group_877_2x"
             android:title="User Management" />
         <item
             android:id="@+id/my_orders"
-            android:icon="@drawable/group_875"
+            android:icon="@drawable/group_875_2x"
             android:title="My Orders" />
     </group>
 
@@ -45,11 +45,11 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/group_512"
+                android:icon="@drawable/group_512_2x"
                 android:title="Settings" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/group_513"
+                android:icon="@drawable/group_513_2x"
                 android:title="Sign Out" />
         </menu>
     </item>

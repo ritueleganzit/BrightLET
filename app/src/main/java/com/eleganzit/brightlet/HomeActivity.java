@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.eleganzit.brightlet.fragments.Fragment_dashboard;
+import com.eleganzit.brightlet.utils.BottomNavigationViewHelper;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,6 +48,7 @@ public class HomeActivity extends AppCompatActivity
         final BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottomsheet);
 
+        BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override

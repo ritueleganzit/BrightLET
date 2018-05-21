@@ -4,31 +4,31 @@
     <item
         android:id="@+id/dashboard_b"
         android:enabled="true"
-        android:icon="@drawable/group_866"
+        android:icon="@drawable/group_874_2x"
         android:title="Dashboard"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always|withText" />
     <item
         android:id="@+id/home_b"
         android:enabled="true"
-        android:icon="@drawable/group_242"
+        android:icon="@drawable/group_502_2x"
         android:title="Properties"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always|withText"/>
     <item
         android:id="@+id/manage_tenants_b"
         android:enabled="true"
-        android:icon="@drawable/group_828"
+        android:icon="@drawable/group_503_2x"
         android:title="Tenants"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always|withText"/>
     <item
         android:id="@+id/messages_b"
         android:enabled="true"
-        android:icon="@drawable/group_240"
+        android:icon="@drawable/group_504_2x"
         android:title="Messages"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always|withText"/>
     <item
         android:id="@+id/profile_b"
         android:enabled="true"
-        android:icon="@drawable/group_241"
+        android:icon="@drawable/group_665_2x"
         android:title="Profile"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always|withText"/>
 </menu>

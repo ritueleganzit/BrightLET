@@ -32,15 +32,31 @@ public class Fragment_dashboard extends Fragment {
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        tabLayout=container.findViewById(R.id.dashboard_tabs);
-        viewPager=container.findViewById(R.id.dashboard_view_pager);
+        tabLayout=v.findViewById(R.id.dashboard_tabs);
+        viewPager=v.findViewById(R.id.dashboard_view_pager);
 
-        MyTabAdapter myTabAdapter=new MyTabAdapter(getFragmentManager());
+        MyTabAdapter myTabAdapter=new MyTabAdapter(getChildFragmentManager());
         myTabAdapter.addFragment(new Fragment_reminders(),"REMINDERS");
         myTabAdapter.addFragment(new Fragment_appointment(),"APPOINTMENTS");
         myTabAdapter.addFragment(new Fragment_maintanence(),"MAINTANENCE");
-        /*viewPager.setAdapter(myTabAdapter);
-        tabLayout.setupWithViewPager(viewPager);*/
+        viewPager.setAdapter(myTabAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         return v;
     }

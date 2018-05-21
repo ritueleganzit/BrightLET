@@ -48,11 +48,7 @@
                 android:gravity="center"
                 android:text="Mike "
                 />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/group_870"/>
+
             </LinearLayout>
 
         </android.support.v7.widget.Toolbar>
@@ -87,12 +83,12 @@
             android:id="@+id/bottomsheet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="4dp"
-            app:elevation="4dp"
+            android:background="#fff"
+            app:elevation="6dp"
             android:layout_alignParentBottom="true"
             app:itemBackground="@color/colorPrimaryDark"
-            app:itemIconTint="#979797"
-            app:itemTextColor="#979797"
+            app:itemIconTint="@drawable/navbar_color"
+            app:itemTextColor="@drawable/navbar_color"
             app:menu="@menu/bottom_navigation_home"
             android:layout_gravity="bottom">
 

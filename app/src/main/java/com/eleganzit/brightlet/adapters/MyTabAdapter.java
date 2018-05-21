@@ -34,6 +34,10 @@ public class MyTabAdapter extends FragmentPagerAdapter {
         fragmentArrayList.add(fragment);
         titleArrayList.add(title);
     }
+    @Override
+    public int getItemPosition(Object object) {
+        return POSITION_NONE;
+    }
 
     public CharSequence getPageTitle(int position)
     {

@@ -22,7 +22,7 @@
             app:cardCornerRadius="5dp"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:layout_height="100dp">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -31,11 +31,11 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="40dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:scaleType="centerInside"
-                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/group_731_2x"/>
+                    android:src="@drawable/group_731"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -76,9 +76,8 @@
             android:layout_width="match_parent"
             app:cardCornerRadius="5dp"
             android:layout_weight="1"
-
             android:layout_margin="5dp"
-            android:layout_height="100dp">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -87,11 +86,11 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:scaleType="centerInside"
                     android:layout_gravity="center"
-                    android:src="@drawable/group_730_2x"/>
+                    android:src="@drawable/group_730"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -134,7 +133,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
 
-            android:layout_height="100dp">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -143,11 +142,11 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:scaleType="centerInside"
                     android:layout_gravity="center"
-                    android:src="@drawable/group_729_2x"/>
+                    android:src="@drawable/group_729"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -190,6 +189,10 @@
         android:id="@+id/dashboard_tabs"
         android:layout_below="@+id/header"
         android:background="#f7f7f7"
+        app:tabIndicatorColor="#979797"
+        app:tabTextColor="#aaaaaa"
+        app:tabTextAppearance="@style/MineCustomTabText"
+        app:tabSelectedTextColor="#979797"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -198,6 +201,7 @@
         android:id="@+id/dashboard_view_pager"
         android:layout_below="@+id/dashboard_tabs"
         android:layout_width="match_parent"
+        android:background="#fff"
         android:layout_height="wrap_content">
 
     </android.support.v4.view.ViewPager>

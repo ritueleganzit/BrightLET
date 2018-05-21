@@ -36,8 +36,8 @@ public class UploadPropertyActivity extends AppCompatActivity {
         town=findViewById(R.id.town);
         country=findViewById(R.id.country);
         postcode=findViewById(R.id.postcode);
-        property_type=findViewById(R.id.property_type);
-        house_type=findViewById(R.id.house_type);
+        //property_type=findViewById(R.id.property_type);
+        //house_type=findViewById(R.id.house_type);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
