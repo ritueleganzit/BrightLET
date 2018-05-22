@@ -53,7 +53,7 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            ></activity>
     </application>
 
 </manifest>

@@ -25,12 +25,13 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.eleganzit.brightlet.fragments.Fragment_dashboard;
+import com.eleganzit.brightlet.fragments.Fragment_messages;
 import com.eleganzit.brightlet.fragments.Fragment_profile;
 import com.eleganzit.brightlet.utils.BottomNavigationViewHelper;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    ImageView fab;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +42,24 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        fab = findViewById(R.id.fab);
 
         Fragment_dashboard fragment_dashboard=new Fragment_dashboard();
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
         fragmentTransaction.commit();
+        fab.setVisibility(View.VISIBLE);
 
         final BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottomsheet);
 
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -62,6 +72,7 @@ public class HomeActivity extends AppCompatActivity
                             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
                             fragmentTransaction.commit();
+                            fab.setVisibility(View.VISIBLE);
                         } else if (id == R.id.home_b) {
                             Toast.makeText(HomeActivity.this, "home", Toast.LENGTH_SHORT).show();
 
@@ -71,27 +82,26 @@ public class HomeActivity extends AppCompatActivity
                         }
                         else if (id == R.id.messages_b) {
 
-                            Toast.makeText(HomeActivity.this, "message", Toast.LENGTH_SHORT).show();
-                        }
+                            Fragment_messages fragment_messages=new Fragment_messages();
+                            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                            fragmentTransaction.replace(R.id.main_container,fragment_messages);
+                            fragmentTransaction.commit();
+                            fab.setVisibility(View.GONE);                        }
                         else if (id == R.id.profile_b) {
 
                             Fragment_profile fragment_profile=new Fragment_profile();
                             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.main_container,fragment_profile);
-                            fragmentTransaction.commit();                        }
+                            fragmentTransaction.commit();
+                            fab.setVisibility(View.GONE);
+
+                        }
 
                         return false;
                     }
                 });
 
-        ImageView fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addDrawerListener(new DrawerLayout.DrawerListener() {
@@ -177,6 +187,7 @@ public class HomeActivity extends AppCompatActivity
                 FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.main_container,fragment_profile);
                 fragmentTransaction.commit();
+                fab.setVisibility(View.GONE);
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
             }
@@ -227,12 +238,18 @@ public class HomeActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
             fragmentTransaction.commit();
+            fab.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.home) {
 
         } else if (id == R.id.manage_tenants) {
 
         } else if (id == R.id.messages) {
+            Fragment_messages fragment_messages=new Fragment_messages();
+            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container,fragment_messages);
+            fragmentTransaction.commit();
+            fab.setVisibility(View.GONE);
 
         } else if (id == R.id.reminders) {
 
@@ -250,4 +267,5 @@ public class HomeActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
