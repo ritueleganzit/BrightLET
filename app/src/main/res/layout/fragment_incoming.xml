@@ -33,6 +33,11 @@
 
 
    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EAEDED"
+        android:layout_marginBottom="2dp"></View>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/incoming"
         android:layout_width="match_parent"
