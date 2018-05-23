@@ -8,7 +8,7 @@
             android:title="Dashboard"
             />
         <item
-            android:id="@+id/home"
+            android:id="@+id/properties"
             android:icon="@drawable/group_502_2x"
             android:title="Properties" />
         <item

@@ -8,7 +8,7 @@
         android:title="Dashboard"
         app:showAsAction="always|withText" />
     <item
-        android:id="@+id/home_b"
+        android:id="@+id/properties_b"
         android:enabled="true"
         android:icon="@drawable/group_502_2x"
         android:title="Properties"

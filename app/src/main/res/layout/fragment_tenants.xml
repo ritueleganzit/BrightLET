@@ -1,23 +1,15 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.eleganzit.brightlet.fragments.Fragment_tenants"
-    android:orientation="vertical">
+    tools:context="com.eleganzit.brightlet.fragments.Fragment_tenants">
 
     <!-- TODO: Update blank fragment layout -->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/tenants_messages"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+   <android.support.v7.widget.RecyclerView
+       android:id="@+id/tenants"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:text="tenants"
-        android:layout_gravity="center"/>
+   </android.support.v7.widget.RecyclerView>
 
-</LinearLayout>
+</FrameLayout>

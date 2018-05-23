@@ -6,13 +6,19 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.eleganzit.brightlet.adapters.PropertyTypeAdapter;
+
+import java.util.ArrayList;
 
 
 public class UploadPropertyActivity extends AppCompatActivity {
@@ -20,6 +26,8 @@ public class UploadPropertyActivity extends AppCompatActivity {
     TextView next;
     EditText house_number,street_name,town,country,postcode;
     RecyclerView property_type,house_type;
+    ArrayList<String> types=new ArrayList<>();
+    ArrayList<String> htypes=new ArrayList<>();
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -36,8 +44,26 @@ public class UploadPropertyActivity extends AppCompatActivity {
         town=findViewById(R.id.town);
         country=findViewById(R.id.country);
         postcode=findViewById(R.id.postcode);
-        //property_type=findViewById(R.id.property_type);
-        //house_type=findViewById(R.id.house_type);
+        property_type=findViewById(R.id.property_type);
+        house_type=findViewById(R.id.house_type);
+
+        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
+        RecyclerView.LayoutManager layoutManager1=new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
+        property_type.setLayoutManager(layoutManager);
+        house_type.setLayoutManager(layoutManager1);
+
+        types.add("House");
+        types.add("Flat");
+        types.add("House share");
+        types.add("Flat share");
+
+        htypes.add("Detached");
+        htypes.add("Semi Detached");
+        htypes.add("Terraced");
+        htypes.add("Flat share");
+
+        property_type.setAdapter(new PropertyTypeAdapter(types,UploadPropertyActivity.this));
+        house_type.setAdapter(new PropertyTypeAdapter(types,UploadPropertyActivity.this));
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override

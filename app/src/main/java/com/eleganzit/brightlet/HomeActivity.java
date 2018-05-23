@@ -1,5 +1,6 @@
 package com.eleganzit.brightlet;
 
+import android.app.ActionBar;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,13 +25,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.eleganzit.brightlet.fragments.AllPropertyFragment;
+import com.eleganzit.brightlet.fragments.Fragment_FinancialStatement;
 import com.eleganzit.brightlet.fragments.Fragment_dashboard;
 import com.eleganzit.brightlet.fragments.Fragment_messages;
 import com.eleganzit.brightlet.fragments.Fragment_profile;
+import com.eleganzit.brightlet.fragments.Fragment_tenants;
 import com.eleganzit.brightlet.utils.BottomNavigationViewHelper;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    public static ActionBar.Tab name;
     ImageView fab;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -38,7 +43,7 @@ public class HomeActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(Color.TRANSPARENT);
+        window.setStatusBarColor(Color.parseColor("#5a2e87"));
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -73,13 +78,19 @@ public class HomeActivity extends AppCompatActivity
                             fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
                             fragmentTransaction.commit();
                             fab.setVisibility(View.VISIBLE);
-                        } else if (id == R.id.home_b) {
-                            Toast.makeText(HomeActivity.this, "home", Toast.LENGTH_SHORT).show();
-
+                        } else if (id == R.id.properties_b) {
+                            AllPropertyFragment allPropertyFragment=new AllPropertyFragment();
+                            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                            fragmentTransaction.replace(R.id.main_container,allPropertyFragment);
+                            fragmentTransaction.commit();
+                            fab.setVisibility(View.GONE);
                         } else if (id == R.id.manage_tenants_b) {
 
-                            Toast.makeText(HomeActivity.this, "tenants", Toast.LENGTH_SHORT).show();
-                        }
+                            Fragment_tenants fragment_tenants=new Fragment_tenants();
+                            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                            fragmentTransaction.replace(R.id.main_container,fragment_tenants);
+                            fragmentTransaction.commit();
+                            fab.setVisibility(View.GONE);                        }
                         else if (id == R.id.messages_b) {
 
                             Fragment_messages fragment_messages=new Fragment_messages();
@@ -240,9 +251,19 @@ public class HomeActivity extends AppCompatActivity
             fragmentTransaction.commit();
             fab.setVisibility(View.VISIBLE);
 
-        } else if (id == R.id.home) {
+        } else if (id == R.id.properties) {
+            AllPropertyFragment allPropertyFragment=new AllPropertyFragment();
+            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container,allPropertyFragment);
+            fragmentTransaction.commit();
+            fab.setVisibility(View.GONE);
 
         } else if (id == R.id.manage_tenants) {
+            Fragment_tenants fragment_tenants=new Fragment_tenants();
+            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container,fragment_tenants);
+            fragmentTransaction.commit();
+            fab.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.messages) {
             Fragment_messages fragment_messages=new Fragment_messages();
@@ -256,6 +277,11 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.my_tradesmen) {
 
         } else if (id == R.id.financial_statement) {
+            Fragment_FinancialStatement fragment_financialStatement=new Fragment_FinancialStatement();
+            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container,fragment_financialStatement);
+            fragmentTransaction.commit();
+            fab.setVisibility(View.GONE);
 
         } else if (id == R.id.user_management) {
 

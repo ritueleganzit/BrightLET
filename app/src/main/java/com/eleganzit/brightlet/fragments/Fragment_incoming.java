@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.eleganzit.brightlet.R;
-import com.eleganzit.brightlet.adapters.TenantsAdapter;
-import com.eleganzit.brightlet.model.GetTenants;
+import com.eleganzit.brightlet.adapters.FinancialIncomingAdapter;
+import com.eleganzit.brightlet.model.GetFinancialIncoming;
 
 import java.util.ArrayList;
 
@@ -19,27 +19,27 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_tenants extends Fragment {
+public class Fragment_incoming extends Fragment {
 
 
-    public Fragment_tenants() {
+    public Fragment_incoming() {
         // Required empty public constructor
     }
-    RecyclerView tenants;
-    ArrayList<GetTenants> getTenantses=new ArrayList<>();
+    RecyclerView incoming;
+    ArrayList<GetFinancialIncoming> arrayList=new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View v=inflater.inflate(R.layout.fragment_tenants, container, false);
-        tenants=v.findViewById(R.id.tenants);
-
+        View v=inflater.inflate(R.layout.fragment_incoming, container, false);
+        incoming=v.findViewById(R.id.incoming);
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
-        tenants.setLayoutManager(layoutManager);
+        incoming.setLayoutManager(layoutManager);
 
-        tenants.setAdapter(new TenantsAdapter(getTenantses,getContext()));
+        incoming.setAdapter(new FinancialIncomingAdapter(arrayList,getContext()));
+
         return v;
     }
 

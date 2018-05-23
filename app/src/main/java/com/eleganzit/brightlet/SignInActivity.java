@@ -12,7 +12,9 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
@@ -21,12 +23,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eleganzit.brightlet.apiparser.CallAPiActivity;
 import com.eleganzit.brightlet.apiparser.GetResponse;
 import com.eleganzit.brightlet.utils.AppDialogs;
+import com.github.gfranks.minimal.notification.GFMinimalNotification;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,6 +53,7 @@ public class SignInActivity extends AppCompatActivity {
     public AppDialogs appDialogs;
     public CallAPiActivity callAPiActivity;
 ImageView back;
+    RelativeLayout relativeLayout;
 
 
 
@@ -90,6 +95,7 @@ ImageView back;
                 showRadioButtonDialog();
             }
         });
+        relativeLayout=findViewById(R.id.custom_toast_layout);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -316,8 +322,11 @@ ImageView back;
         }
 
         else if (!matcher.matches()) {
-            in_email.setError("Please type valid email");
-          in_email.requestFocus();
+            //in_email.setError("Please type valid email");
+            GFMinimalNotification gfMinimalNotification= GFMinimalNotification.make(relativeLayout, "Some text", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_DEFAULT);
+            gfMinimalNotification.setDirection(GFMinimalNotification.DIRECTION_TOP);
+            gfMinimalNotification.show();
+          //in_email.requestFocus();
             return false;
         } else if (in_email.getText().toString().equals("")) {
             in_email.setError("Please enter valid id");

@@ -16,10 +16,10 @@ import com.eleganzit.brightlet.adapters.MyTabAdapter;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_messages extends Fragment {
+public class Fragment_FinancialStatement extends Fragment {
 
 
-    public Fragment_messages() {
+    public Fragment_FinancialStatement() {
         // Required empty public constructor
     }
     TabLayout tabLayout;
@@ -29,13 +29,14 @@ public class Fragment_messages extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v=inflater.inflate(R.layout.fragment_messages, container, false);
+        View v=inflater.inflate(R.layout.fragment__financial_statement, container, false);
 
-        tabLayout=v.findViewById(R.id.messages_tabs);
-        viewPager=v.findViewById(R.id.messages_view_pager);
+        tabLayout=v.findViewById(R.id.financial_statement_tabs);
+        viewPager=v.findViewById(R.id.financial_statement_view_pager);
         MyTabAdapter myTabAdapter=new MyTabAdapter(getChildFragmentManager());
-        myTabAdapter.addFragment(new Fragment_tenants_messages(),"TENANTS");
-        myTabAdapter.addFragment(new Fragment_tradesmen_messages(),"TRADESMEN");
+        myTabAdapter.addFragment(new Fragment_incoming(),"INCOMING");
+        myTabAdapter.addFragment(new Fragment_outgoing(),"OUTGOING");
+        myTabAdapter.addFragment(new Fragment_total(),"TOTAL");
         viewPager.setAdapter(myTabAdapter);
         tabLayout.setupWithViewPager(viewPager);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -62,3 +63,4 @@ public class Fragment_messages extends Fragment {
     }
 
 }
+
