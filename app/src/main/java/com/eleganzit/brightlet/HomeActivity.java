@@ -10,6 +10,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -21,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -36,7 +38,7 @@ import com.eleganzit.brightlet.utils.BottomNavigationViewHelper;
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static ActionBar.Tab name;
-    ImageView fab;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,24 +49,15 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        fab = findViewById(R.id.fab);
 
         Fragment_dashboard fragment_dashboard=new Fragment_dashboard();
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
         fragmentTransaction.commit();
-        fab.setVisibility(View.VISIBLE);
 
         final BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottomsheet);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -77,34 +70,31 @@ public class HomeActivity extends AppCompatActivity
                             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
                             fragmentTransaction.commit();
-                            fab.setVisibility(View.VISIBLE);
                         } else if (id == R.id.properties_b) {
                             AllPropertyFragment allPropertyFragment=new AllPropertyFragment();
                             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.main_container,allPropertyFragment);
                             fragmentTransaction.commit();
-                            fab.setVisibility(View.GONE);
                         } else if (id == R.id.manage_tenants_b) {
 
                             Fragment_tenants fragment_tenants=new Fragment_tenants();
                             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.main_container,fragment_tenants);
                             fragmentTransaction.commit();
-                            fab.setVisibility(View.GONE);                        }
+                        }
                         else if (id == R.id.messages_b) {
 
                             Fragment_messages fragment_messages=new Fragment_messages();
                             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.main_container,fragment_messages);
                             fragmentTransaction.commit();
-                            fab.setVisibility(View.GONE);                        }
+                        }
                         else if (id == R.id.profile_b) {
 
                             Fragment_profile fragment_profile=new Fragment_profile();
                             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.main_container,fragment_profile);
                             fragmentTransaction.commit();
-                            fab.setVisibility(View.GONE);
 
                         }
 
@@ -198,7 +188,6 @@ public class HomeActivity extends AppCompatActivity
                 FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.main_container,fragment_profile);
                 fragmentTransaction.commit();
-                fab.setVisibility(View.GONE);
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
             }
@@ -249,28 +238,24 @@ public class HomeActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
             fragmentTransaction.commit();
-            fab.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.properties) {
             AllPropertyFragment allPropertyFragment=new AllPropertyFragment();
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,allPropertyFragment);
             fragmentTransaction.commit();
-            fab.setVisibility(View.GONE);
 
         } else if (id == R.id.manage_tenants) {
             Fragment_tenants fragment_tenants=new Fragment_tenants();
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,fragment_tenants);
             fragmentTransaction.commit();
-            fab.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.messages) {
             Fragment_messages fragment_messages=new Fragment_messages();
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,fragment_messages);
             fragmentTransaction.commit();
-            fab.setVisibility(View.GONE);
 
         } else if (id == R.id.reminders) {
 
@@ -281,7 +266,6 @@ public class HomeActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,fragment_financialStatement);
             fragmentTransaction.commit();
-            fab.setVisibility(View.GONE);
 
         } else if (id == R.id.user_management) {
 

@@ -197,13 +197,32 @@
         android:layout_height="wrap_content">
 
     </android.support.design.widget.TabLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dashboard_tabs"
+        >
+
     <android.support.v4.view.ViewPager
         android:id="@+id/dashboard_view_pager"
-        android:layout_below="@+id/dashboard_tabs"
         android:layout_width="match_parent"
         android:background="#fff"
         android:layout_height="wrap_content">
 
     </android.support.v4.view.ViewPager>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_margin="20dp"
+            app:fabSize="normal"
+            app:elevation="3dp"
+            app:backgroundTint="#f39200"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/group_126_2x"
+            />
+    </FrameLayout>
+
 
 </RelativeLayout>

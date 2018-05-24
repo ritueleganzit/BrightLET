@@ -60,7 +60,8 @@
                 android:paddingLeft="6dp"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp"
-                android:paddingRight="6dp"                android:text=" £1,500.00"
+                android:paddingRight="6dp"
+                android:text=" £1,500.00"
                 android:textColor="#fff"
                 android:background="#5ebc00"
                 android:textSize="12sp"/>

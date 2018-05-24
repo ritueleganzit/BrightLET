@@ -305,6 +305,7 @@ ImageView back;
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public boolean isValid() {
         final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
         Pattern pattern;
@@ -321,23 +322,63 @@ ImageView back;
             return false;
         }
 
-        else if (!matcher.matches()) {
-            //in_email.setError("Please type valid email");
-            GFMinimalNotification gfMinimalNotification= GFMinimalNotification.make(relativeLayout, "Some text", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_DEFAULT);
-            gfMinimalNotification.setDirection(GFMinimalNotification.DIRECTION_TOP);
-            gfMinimalNotification.show();
-          //in_email.requestFocus();
-            return false;
-        } else if (in_email.getText().toString().equals("")) {
-            in_email.setError("Please enter valid id");
+        if (in_email.getText().toString().equals("")) {
+            //in_email.setError("Please enter valid id");
+            GFMinimalNotification mCurrentNotification = GFMinimalNotification.make(relativeLayout, "Please enter valid id", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_ERROR);
+            mCurrentNotification.setDirection(GFMinimalNotification.DIRECTION_TOP);
+            mCurrentNotification.setHelperImage(R.drawable.group_40);
+            mCurrentNotification.show();
+
+            new Thread() {
+                public void run() {
+                        try {
+                            runOnUiThread(new Runnable() {
+
+                                @Override
+                                public void run() {
+                                    Window window = getWindow();
+                                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                                    window.setStatusBarColor(Color.parseColor("#FFE84D3B"));
+                                }
+                            });
+                            Thread.sleep(3510);
+                            Window window = getWindow();
+                            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                            window.setStatusBarColor(Color.TRANSPARENT);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+
+                    }
+                }
+            }.start();
+
+
             in_email.requestFocus();
             return false;
-        } else if (in_password.getText().toString().equals("")) {
-            in_password.setError("Please enter password");
+        } else if (!matcher.matches()) {
+            //in_email.setError("Please type valid email");
+            GFMinimalNotification mCurrentNotification = GFMinimalNotification.make(relativeLayout, "Please type valid email", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_ERROR);
+            mCurrentNotification.setDirection(GFMinimalNotification.DIRECTION_TOP);
+            mCurrentNotification.setHelperImage(R.drawable.group_40);
+            mCurrentNotification.show();
+
+          in_email.requestFocus();
+            return false;
+        }  else if (in_password.getText().toString().equals("")) {
+           // in_password.setError("Please enter password");
+            GFMinimalNotification mCurrentNotification = GFMinimalNotification.make(relativeLayout, "Please enter password", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_ERROR);
+            mCurrentNotification.setDirection(GFMinimalNotification.DIRECTION_TOP);
+            mCurrentNotification.setHelperImage(R.drawable.group_40);
+            mCurrentNotification.show();
             in_password.requestFocus();
             return false;
         } else if (in_password.getText().toString().length() < 8) {
-            in_password.setError("Password must be minimum 8 characters");
+            //in_password.setError("Password must be minimum 8 characters");
+            GFMinimalNotification mCurrentNotification = GFMinimalNotification.make(relativeLayout, "Password must be minimum 8 characters", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_ERROR);
+            mCurrentNotification.setDirection(GFMinimalNotification.DIRECTION_TOP);
+            mCurrentNotification.setHelperImage(R.drawable.group_40);
+            mCurrentNotification.show();
+            in_password.requestFocus();
             return false;
         }
 

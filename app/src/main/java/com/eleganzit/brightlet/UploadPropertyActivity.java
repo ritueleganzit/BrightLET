@@ -63,7 +63,7 @@ public class UploadPropertyActivity extends AppCompatActivity {
         htypes.add("Flat share");
 
         property_type.setAdapter(new PropertyTypeAdapter(types,UploadPropertyActivity.this));
-        house_type.setAdapter(new PropertyTypeAdapter(types,UploadPropertyActivity.this));
+        house_type.setAdapter(new PropertyTypeAdapter(htypes,UploadPropertyActivity.this));
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override

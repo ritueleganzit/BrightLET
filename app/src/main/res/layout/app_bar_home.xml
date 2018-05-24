@@ -67,20 +67,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/fab"
-            android:layout_above="@+id/bottomsheet"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/circle_fab"
-            android:elevation="3dp"
-            android:backgroundTint="#f39200"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="bottom|end"
-            android:src="@drawable/group_1041"
-            android:scaleType="centerInside"
-            />
+
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottomsheet"
             android:layout_width="match_parent"

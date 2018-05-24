@@ -26,7 +26,7 @@ public class TextViewMuseo500 extends android.support.v7.widget.AppCompatTextVie
     }
 
     private void init() {
-        Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/museo500_regular.otf");
+        Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/museosans_500.otf");
         setTypeface(tf ,1);
 
     }

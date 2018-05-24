@@ -3,9 +3,7 @@
 <android.support.v7.widget.CardView android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="3dp"
-    android:layout_margin="10dp"
-    android:elevation="3dp"
+    android:layout_marginBottom="8dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
         <LinearLayout
@@ -40,9 +38,10 @@
                             android:textColor="#5a2e87"
                             android:textSize="16sp"/>
                         <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_marginRight="2dp"
+                            android:id="@+id/option"
+                            android:layout_width="27dp"
+                            android:layout_height="27dp"
+                            android:padding="5dp"
                             android:src="@drawable/group_687_2x"/>
                     </LinearLayout>
                     <LinearLayout
@@ -59,7 +58,8 @@
 
                         <View
                             android:layout_width="1dp"
-                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
                             android:layout_gravity="center"
                             android:background="#aaaaaa"
                             android:layout_height="13dp"></View>
@@ -74,8 +74,9 @@
 
                         <View
                             android:layout_width="1dp"
-                            android:padding="5dp"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
                             android:background="#aaaaaa"
                             android:layout_height="13dp"></View>
                         <com.eleganzit.brightlet.fonts.TextViewMuseo300
@@ -94,22 +95,20 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/group_288_2x"/>
+                            android:src="@drawable/group_288_3x"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:padding="5dp"
-
-                            android:textSize="12sp"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginRight="7dp"                            android:textSize="12sp"
                             android:text="x"/>
 
-                        <TextView
+                        <com.eleganzit.brightlet.fonts.TextViewMuseo300
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -118,23 +117,22 @@
                             android:padding="5dp"/>
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
                             android:layout_marginLeft="30dp"
-                            android:padding="5dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/image_14_2x"/>
+                            android:src="@drawable/image_14_3x"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:padding="5dp"
-
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginRight="7dp"
                             android:textSize="12sp"
                             android:text="x"/>
 
-                        <TextView
+                        <com.eleganzit.brightlet.fonts.TextViewMuseo300
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
