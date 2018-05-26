@@ -5,25 +5,25 @@
     <item
         android:id="@+id/add_property"
         android:orderInCategory="100"
-        android:icon="@drawable/path_407_3x"
+        android:icon="@mipmap/path_407_3x"
         android:title="ADD A PROPERTY"
         app:showAsAction="never" />
     <item
         android:id="@+id/add_tenant"
         android:orderInCategory="100"
-        android:icon="@drawable/path_290_3x"
+        android:icon="@mipmap/path_290_3x"
         android:title="ADD A TENANT"
         app:showAsAction="never" />
     <item
         android:id="@+id/create_reminder"
         android:orderInCategory="100"
-        android:icon="@drawable/path_366_3x"
+        android:icon="@mipmap/path_366_3x"
         android:title="CREATE A REMINDER"
         app:showAsAction="never" />
     <item
         android:id="@+id/add_tradesman"
         android:orderInCategory="100"
-        android:icon="@drawable/path_376_3x"
+        android:icon="@mipmap/path_376_3x"
         android:title="ADD A TRADESMAN"
         app:showAsAction="never" />
 </menu>

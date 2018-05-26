@@ -23,6 +23,7 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ import com.eleganzit.brightlet.utils.BottomNavigationViewHelper;
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static ActionBar.Tab name;
+    public static FrameLayout layout_MainMenu;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -49,6 +51,7 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        layout_MainMenu = findViewById( R.id.mainmenu);
 
         Fragment_dashboard fragment_dashboard=new Fragment_dashboard();
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();

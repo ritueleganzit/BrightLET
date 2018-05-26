@@ -11,7 +11,9 @@
         <item name="android:textSize">12sp</item>
     </style>
 
-    <style name="MyPopupMenu" parent="@style/Widget.AppCompat.PopupMenu">
+    <style name="MyPopupMenu" parent="@android:style/Widget.PopupMenu">
+        <item name="android:textSize">10dp</item>
+        <item name="android:popupBackground">@drawable/popup_with_shadow</item>
         <item name="android:dropDownHorizontalOffset">-4dp</item>
         <item name="android:dropDownVerticalOffset">15dp</item>
     </style>
