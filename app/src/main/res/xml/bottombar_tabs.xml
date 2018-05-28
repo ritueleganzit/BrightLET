@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/dashboard_b"
+        icon="@drawable/group_866"
+        title="Dashboard" />
+    <tab
+        id="@+id/properties_b"
+        icon="@drawable/group_242"
+        title="Properties" />
+    <tab
+        id="@+id/manage_tenants_b"
+        icon="@drawable/group_828"
+        title="Tenants" />
+    <tab
+        id="@+id/messages_b"
+        icon="@drawable/group_240"
+        title="Messages" />
+    <tab
+        id="@+id/profile_b"
+        icon="@drawable/group_241"
+        title="Profile" />
+</tabs>

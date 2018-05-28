@@ -1,28 +1,30 @@
 package com.eleganzit.brightlet.adapters;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.fonts.TextViewMuseo500;
+import com.eleganzit.brightlet.model.GetMyOrders;
+import com.eleganzit.brightlet.model.GetMyTradesmen;
 
 import java.util.ArrayList;
 
 /**
- * Created by Uv on 5/19/2018.
+ * Created by Uv on 5/28/2018.
  */
 
-public class MaintanenceAdapter extends RecyclerView.Adapter<MaintanenceAdapter.MyViewHolder>
+public class MyTradesmenAdapter extends RecyclerView.Adapter<MyTradesmenAdapter.MyViewHolder>
 {
 
-    ArrayList<String> arrayList;
+    ArrayList<GetMyTradesmen> arrayList;
     Context context;
 
-    public MaintanenceAdapter(ArrayList<String> arrayList, Context context) {
+    public MyTradesmenAdapter(ArrayList<GetMyTradesmen> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -30,7 +32,7 @@ public class MaintanenceAdapter extends RecyclerView.Adapter<MaintanenceAdapter.
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.reminders_layout,parent,false);
+        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.my_tradesmen_layout,parent,false);
 
         MyViewHolder myViewHolder=new MyViewHolder(v);
 
@@ -49,17 +51,11 @@ public class MaintanenceAdapter extends RecyclerView.Adapter<MaintanenceAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder
     {
-        LinearLayout status_bg;
-        TextViewMuseo500 day,time,title,description,status;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            day=itemView.findViewById(R.id.day);
-            time=itemView.findViewById(R.id.time);
-            title=itemView.findViewById(R.id.title);
-            description=itemView.findViewById(R.id.description);
-            status_bg=itemView.findViewById(R.id.status_bg);
-            status=itemView.findViewById(R.id.status);
+
+
 
         }
     }

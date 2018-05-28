@@ -55,26 +55,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
-            android:text="Landlords"
-            android:textColor="#5a2e87"
-            android:textSize="18dp"
-            android:layout_gravity="center"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:paddingLeft="27dp"
-            android:paddingRight="27dp"
-            android:text="@string/slide1"
-            android:textColor="#979797"
-            android:textSize="13dp"
-            android:layout_gravity="center"/>
         <me.relex.circleindicator.CircleIndicator
             android:id="@+id/indicator"
             android:layout_width="match_parent"

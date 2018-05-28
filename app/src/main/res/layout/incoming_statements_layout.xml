@@ -32,6 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="15dp"
+                android:background="#5a2e87"
                 android:layout_height="wrap_content">
                 <com.eleganzit.brightlet.fonts.TextViewMuseo500
                     android:id="@+id/cost"
@@ -43,7 +44,6 @@
                     android:paddingRight="6dp"
                     android:text=" £1,500.00"
                     android:textColor="#fff"
-                    android:background="#5a2e87"
                     android:textSize="12sp"/>
             </LinearLayout>
 

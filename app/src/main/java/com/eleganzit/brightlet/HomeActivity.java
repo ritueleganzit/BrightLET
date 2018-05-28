@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
@@ -28,19 +29,25 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.eleganzit.brightlet.fonts.TextViewMuseo500;
 import com.eleganzit.brightlet.fragments.AllPropertyFragment;
 import com.eleganzit.brightlet.fragments.Fragment_FinancialStatement;
 import com.eleganzit.brightlet.fragments.Fragment_dashboard;
 import com.eleganzit.brightlet.fragments.Fragment_messages;
+import com.eleganzit.brightlet.fragments.Fragment_my_orders;
+import com.eleganzit.brightlet.fragments.Fragment_my_tradesmen;
 import com.eleganzit.brightlet.fragments.Fragment_profile;
 import com.eleganzit.brightlet.fragments.Fragment_tenants;
 import com.eleganzit.brightlet.utils.BottomNavigationViewHelper;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static ActionBar.Tab name;
     public static FrameLayout layout_MainMenu;
-
+    TextViewMuseo500 welcome,title;
+    BottomBar bottomBar;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,17 +59,20 @@ public class HomeActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         layout_MainMenu = findViewById( R.id.mainmenu);
-
+        welcome=findViewById(R.id.welcome);
+        title=findViewById(R.id.name);
         Fragment_dashboard fragment_dashboard=new Fragment_dashboard();
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
         fragmentTransaction.commit();
 
-        final BottomNavigationView bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.bottomsheet);
+        /*final BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.bottomsheet);*/
 
-        BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(
+        bottomBar=findViewById(R.id.bottomsheet);
+
+        //BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
+        /*bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -73,17 +83,23 @@ public class HomeActivity extends AppCompatActivity
                             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
                             fragmentTransaction.commit();
+                            welcome.setVisibility(View.VISIBLE);
+                            title.setText("Mike");
                         } else if (id == R.id.properties_b) {
                             AllPropertyFragment allPropertyFragment=new AllPropertyFragment();
                             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.main_container,allPropertyFragment);
                             fragmentTransaction.commit();
+                            welcome.setVisibility(View.GONE);
+                            title.setText("Properties");
                         } else if (id == R.id.manage_tenants_b) {
 
                             Fragment_tenants fragment_tenants=new Fragment_tenants();
                             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.main_container,fragment_tenants);
                             fragmentTransaction.commit();
+                            welcome.setVisibility(View.GONE);
+                            title.setText("Manage Tenants");
                         }
                         else if (id == R.id.messages_b) {
 
@@ -91,6 +107,8 @@ public class HomeActivity extends AppCompatActivity
                             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.main_container,fragment_messages);
                             fragmentTransaction.commit();
+                            welcome.setVisibility(View.GONE);
+                            title.setText("Messages");
                         }
                         else if (id == R.id.profile_b) {
 
@@ -98,12 +116,59 @@ public class HomeActivity extends AppCompatActivity
                             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.main_container,fragment_profile);
                             fragmentTransaction.commit();
-
+                                welcome.setVisibility(View.GONE);
+                            title.setText("Profile");
                         }
 
                         return false;
                     }
-                });
+                });*/
+        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelected(@IdRes int tabId) {
+                if (tabId == R.id.dashboard_b) {
+                    Fragment_dashboard fragment_dashboard=new Fragment_dashboard();
+                    FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
+                    fragmentTransaction.commit();
+                    welcome.setVisibility(View.VISIBLE);
+                    title.setText("Mike");
+                } else if (tabId == R.id.properties_b) {
+                    AllPropertyFragment allPropertyFragment=new AllPropertyFragment();
+                    FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.main_container,allPropertyFragment);
+                    fragmentTransaction.commit();
+                    welcome.setVisibility(View.GONE);
+                    title.setText("Properties");
+                } else if (tabId == R.id.manage_tenants_b) {
+
+                    Fragment_tenants fragment_tenants=new Fragment_tenants();
+                    FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.main_container,fragment_tenants);
+                    fragmentTransaction.commit();
+                    welcome.setVisibility(View.GONE);
+                    title.setText("Manage Tenants");
+                }
+                else if (tabId == R.id.messages_b) {
+
+                    Fragment_messages fragment_messages=new Fragment_messages();
+                    FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.main_container,fragment_messages);
+                    fragmentTransaction.commit();
+                    welcome.setVisibility(View.GONE);
+                    title.setText("Messages");
+                }
+                else if (tabId == R.id.profile_b) {
+
+                    Fragment_profile fragment_profile=new Fragment_profile();
+                    FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.main_container,fragment_profile);
+                    fragmentTransaction.commit();
+                    welcome.setVisibility(View.GONE);
+                    title.setText("Profile");
+                }
+            }
+        });
 
 
 
@@ -191,6 +256,8 @@ public class HomeActivity extends AppCompatActivity
                 FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.main_container,fragment_profile);
                 fragmentTransaction.commit();
+                welcome.setVisibility(View.VISIBLE);
+                title.setText("Mike");
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
             }
@@ -241,38 +308,66 @@ public class HomeActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
             fragmentTransaction.commit();
+            welcome.setVisibility(View.VISIBLE);
+            title.setText("Mike");
 
         } else if (id == R.id.properties) {
             AllPropertyFragment allPropertyFragment=new AllPropertyFragment();
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,allPropertyFragment);
             fragmentTransaction.commit();
+            welcome.setVisibility(View.GONE);
+            title.setText("Properties");
 
         } else if (id == R.id.manage_tenants) {
             Fragment_tenants fragment_tenants=new Fragment_tenants();
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,fragment_tenants);
             fragmentTransaction.commit();
-
+            welcome.setVisibility(View.GONE);
+            title.setText("Manage Tenants");
         } else if (id == R.id.messages) {
             Fragment_messages fragment_messages=new Fragment_messages();
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,fragment_messages);
             fragmentTransaction.commit();
+            welcome.setVisibility(View.GONE);
+            title.setText("Messages");
 
         } else if (id == R.id.reminders) {
+            Fragment_dashboard fragment_dashboard=new Fragment_dashboard();
+            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
+            fragmentTransaction.commit();
+            welcome.setVisibility(View.VISIBLE);
+            title.setText("Mike");
+
 
         } else if (id == R.id.my_tradesmen) {
+            Fragment_my_tradesmen fragment_my_tradesmen=new Fragment_my_tradesmen();
+            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container,fragment_my_tradesmen);
+            fragmentTransaction.commit();
+            welcome.setVisibility(View.GONE);
+            title.setText("My Tradesmen");
 
         } else if (id == R.id.financial_statement) {
             Fragment_FinancialStatement fragment_financialStatement=new Fragment_FinancialStatement();
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,fragment_financialStatement);
             fragmentTransaction.commit();
+            welcome.setVisibility(View.GONE);
+            title.setText("Financial Statement");
 
         } else if (id == R.id.user_management) {
 
         } else if (id == R.id.my_orders) {
+            Fragment_my_orders fragment_my_orders=new Fragment_my_orders();
+            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container,fragment_my_orders);
+            fragmentTransaction.commit();
+            welcome.setVisibility(View.GONE);
+            title.setText("My Orders");
 
         }
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/group_874_2x" android:state_selected="true" />
+    <item android:drawable="@drawable/group_866_s" android:state_selected="false" />
+    <item android:drawable="@drawable/group_502_2x" android:state_selected="true" />
+    <item android:drawable="@drawable/group_242_s" android:state_selected="false" />
+    <item android:drawable="@drawable/group_503_2x" android:state_selected="true" />
+    <item android:drawable="@drawable/group_828_s" android:state_selected="false" />
+    <item android:drawable="@drawable/group_504_2x" android:state_selected="true" />
+    <item android:drawable="@drawable/group_240_s" android:state_selected="false" />
+    <item android:drawable="@drawable/group_665_2x" android:state_selected="true" />
+    <item android:drawable="@drawable/group_241_s" android:state_selected="false" />
+</selector>

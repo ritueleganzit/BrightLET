@@ -120,7 +120,6 @@
                     app:errorTextAppearance="@style/error_appearance"
                     android:layout_height="wrap_content"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
-
                     >
                     <EditText
                         android:id="@+id/in_email"
