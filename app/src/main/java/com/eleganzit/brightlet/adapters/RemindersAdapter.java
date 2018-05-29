@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.eleganzit.brightlet.CameraRollActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.fonts.TextViewMuseo500;
+import com.eleganzit.brightlet.model.GetReminders;
 
 import java.util.ArrayList;
 
@@ -19,10 +20,10 @@ import java.util.ArrayList;
 public class RemindersAdapter extends RecyclerView.Adapter<RemindersAdapter.MyViewHolder>
 {
 
-    ArrayList<String> arrayList;
+    ArrayList<GetReminders> arrayList;
     Context context;
 
-    public RemindersAdapter(ArrayList<String> arrayList, Context context) {
+    public RemindersAdapter(ArrayList<GetReminders> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -44,7 +45,7 @@ public class RemindersAdapter extends RecyclerView.Adapter<RemindersAdapter.MyVi
 
     @Override
     public int getItemCount() {
-        return arrayList.size();
+        return 15;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder

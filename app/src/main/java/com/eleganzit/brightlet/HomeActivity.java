@@ -37,6 +37,7 @@ import com.eleganzit.brightlet.fragments.Fragment_messages;
 import com.eleganzit.brightlet.fragments.Fragment_my_orders;
 import com.eleganzit.brightlet.fragments.Fragment_my_tradesmen;
 import com.eleganzit.brightlet.fragments.Fragment_profile;
+import com.eleganzit.brightlet.fragments.Fragment_reminders;
 import com.eleganzit.brightlet.fragments.Fragment_tenants;
 import com.eleganzit.brightlet.utils.BottomNavigationViewHelper;
 import com.roughike.bottombar.BottomBar;
@@ -56,8 +57,10 @@ public class HomeActivity extends AppCompatActivity
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(Color.parseColor("#5a2e87"));
         setContentView(R.layout.activity_home);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         layout_MainMenu = findViewById( R.id.mainmenu);
         welcome=findViewById(R.id.welcome);
         title=findViewById(R.id.name);
@@ -274,13 +277,13 @@ public class HomeActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -335,12 +338,12 @@ public class HomeActivity extends AppCompatActivity
             title.setText("Messages");
 
         } else if (id == R.id.reminders) {
-            Fragment_dashboard fragment_dashboard=new Fragment_dashboard();
+            Fragment_reminders fragment_reminders=new Fragment_reminders();
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
+            fragmentTransaction.replace(R.id.main_container,fragment_reminders);
             fragmentTransaction.commit();
-            welcome.setVisibility(View.VISIBLE);
-            title.setText("Mike");
+            welcome.setVisibility(View.GONE);
+            title.setText("Reminders");
 
 
         } else if (id == R.id.my_tradesmen) {

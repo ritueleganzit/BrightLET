@@ -6,6 +6,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -21,6 +23,8 @@ public class Fragment_FinancialStatement extends Fragment {
 
     public Fragment_FinancialStatement() {
         // Required empty public constructor
+        setHasOptionsMenu(true);
+
     }
     TabLayout tabLayout;
     ViewPager viewPager;
@@ -30,6 +34,7 @@ public class Fragment_FinancialStatement extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment__financial_statement, container, false);
+        setHasOptionsMenu(true);
 
         tabLayout=v.findViewById(R.id.financial_statement_tabs);
         viewPager=v.findViewById(R.id.financial_statement_view_pager);
@@ -60,6 +65,11 @@ public class Fragment_FinancialStatement extends Fragment {
 
 
         return v;
+    }
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.statements, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
 }

@@ -13,6 +13,7 @@ import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
@@ -43,6 +44,8 @@ import com.eleganzit.brightlet.HomeActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.adapters.MyTabAdapter;
 
+import java.lang.reflect.Method;
+
 import static android.content.Context.WINDOW_SERVICE;
 
 
@@ -54,6 +57,7 @@ public class Fragment_dashboard extends Fragment {
 
     public Fragment_dashboard() {
         // Required empty public constructor
+        setHasOptionsMenu(true);
     }
     private Boolean isFabOpen = false;
     private Animation fab_open,fab_close,rotate_forward,rotate_backward;
@@ -77,17 +81,34 @@ public class Fragment_dashboard extends Fragment {
         rotate_forward = AnimationUtils.loadAnimation(getContext(),R.anim.rotate_forward);
         rotate_backward = AnimationUtils.loadAnimation(getContext(),R.anim.rotate_backward);
 
+        setHasOptionsMenu(true);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP_MR1)
             @Override
             public void onClick(View v) {
                 animateFAB();
-                PopupMenu popupMenu=new PopupMenu(getContext(),fab,Gravity.END,0,R.style.MyPopupMenu);
-                popupMenu.getMenuInflater().inflate(R.menu.custom_popup_menu, popupMenu.getMenu());
+                /*PopupMenu popupMenu=new PopupMenu(getContext(),fab,Gravity.END,0,R.style.MyPopupMenu);
+                //popupMenu.getMenuInflater().inflate(R.menu.custom_popup_menu, popupMenu.getMenu());
+
+                MenuBuilder menuBuilder =new MenuBuilder(getActivity());
+                //MenuInflater inflater = new MenuInflater(getActivity());
+                popupMenu.getMenuInflater().inflate(R.menu.custom_popup_menu, menuBuilder);
+                MenuPopupHelper optionsMenu = new MenuPopupHelper(getContext(), menuBuilder, fab);
+                optionsMenu.setForceShowIcon(true);
+                optionsMenu.show();*/
+                PopupMenu popupMenu=new PopupMenu(getActivity(),v, Gravity.END,0,R.style.MyPopupMenu);
+                MenuBuilder menuBuilder =new MenuBuilder(getActivity());
+                popupMenu.getMenuInflater().inflate(R.menu.custom_popup_menu, menuBuilder);
+                MenuPopupHelper optionsMenu = new MenuPopupHelper(getActivity(), menuBuilder, fab);
+                optionsMenu.setForceShowIcon(true);
+                optionsMenu.show();
+
                 HomeActivity.layout_MainMenu.getForeground().setAlpha( 90);
                 Window window = getActivity().getWindow();
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 window.setStatusBarColor(Color.parseColor("#FF3A1F58"));
+
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
 
@@ -140,6 +161,16 @@ public class Fragment_dashboard extends Fragment {
 
         return v;
     }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.home, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+
+
     public void animateFAB(){
 
         if(isFabOpen){
