@@ -3,13 +3,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="342dp">
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="342dp"
+        android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         android:src="@drawable/three"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@drawable/white_gradient"
+        android:layout_alignParentBottom="true"></LinearLayout>
+</RelativeLayout>
     <ScrollView android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:fillViewport="true"

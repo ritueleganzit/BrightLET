@@ -119,10 +119,10 @@ public class Fragment_dashboard extends Fragment {
                 /*MenuPopupHelper menuHelper = new MenuPopupHelper(getContext(), (MenuBuilder) popupMenu.getMenu(), fab);
                 menuHelper.setForceShowIcon(true);
                 menuHelper.show();*/
-                popupMenu.show();
-                popupMenu.setOnDismissListener(new PopupMenu.OnDismissListener() {
+                //popupMenu.show();
+                optionsMenu.setOnDismissListener(new PopupWindow.OnDismissListener() {
                     @Override
-                    public void onDismiss(PopupMenu menu) {
+                    public void onDismiss() {
                         Window window = getActivity().getWindow();
                         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                         window.setStatusBarColor(Color.parseColor("#5a2e87"));
@@ -130,7 +130,6 @@ public class Fragment_dashboard extends Fragment {
                         fab.setBackgroundTintList(new ColorStateList(new int[][]{new int[]{0}}, new int[]{Color.parseColor("#f39200")}));
                         fab.startAnimation(rotate_backward);
                         isFabOpen = false;
-
                     }
                 });
             }

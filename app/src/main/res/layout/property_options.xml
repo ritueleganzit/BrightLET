@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <LinearLayout
+        android:id="@+id/manage_tenants_b"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center|left"
+            android:scaleType="centerInside"
+            android:src="@drawable/group_810_3x"/>
+    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@android:color/transparent"
+        android:layout_gravity="center"
+        android:drawablePadding="35dp"
+        android:text="Manage Tenants"
+        android:textSize="14sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/maintenance_b"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerInside"
+            android:layout_gravity="center|left"
+            android:src="@drawable/group_824_3x"/>
+    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@android:color/transparent"
+        android:layout_gravity="left"
+        android:gravity="center"
+        android:drawablePadding="35dp"
+        android:text="Maintenance"
+        android:textSize="13dip" />
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/image_file_b"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerInside"
+            android:layout_gravity="center|left"
+            android:src="@drawable/group_825_3x"/>
+    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@android:color/transparent"
+        android:layout_gravity="left"
+        android:drawablePadding="35dp"
+        android:gravity="center"
+        android:text="Image &amp; File Manager"
+        android:textSize="13dip" />
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/expenses_b"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:scaleType="fitCenter"
+            android:layout_height="30dp"
+            android:layout_gravity="center|left"
+            android:src="@drawable/e_3x"/>
+    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@android:color/transparent"
+        android:layout_gravity="left"
+        android:gravity="center"
+        android:text="Expenses"
+        android:textSize="13dip" />
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/documents_center_b"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerInside"
+            android:layout_gravity="center"
+            android:src="@drawable/group_826_3x"/>
+    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:drawablePadding="35dp"
+        android:background="@android:color/transparent"
+        android:layout_gravity="left"
+        android:gravity="center"
+        android:text="Documents Center"
+        android:textSize="13dip" />
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/landlord_services_b"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerInside"
+            android:layout_gravity="center"
+            android:src="@drawable/group_827_3x"/>
+    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:drawablePadding="35dp"
+        android:background="@android:color/transparent"
+        android:layout_gravity="left"
+        android:gravity="center"
+        android:text="Landlord Services"
+        android:textSize="13dip" />
+        </LinearLayout>
+
+</LinearLayout>
