@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        >
+
+        <TableRow
+            android:id="@+id/manage_tenants_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            ><ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:layout_gravity="center|left"
+            android:src="@drawable/group_903_3x"/>
+            <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@android:color/transparent"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:text="Download"
+                android:textSize="13dip" /></TableRow>
+        <TableRow
+            android:id="@+id/maintenance_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="centerInside"
+                android:layout_gravity="center|left"
+                android:src="@drawable/group_902_3x"/>
+            <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginLeft="20dp"
+                android:background="@android:color/transparent"
+                android:layout_gravity="left"
+                android:gravity="center"
+                android:drawablePadding="35dp"
+                android:text="Edit"
+                android:textSize="13dip" /></TableRow>
+
+        <TableRow
+            android:id="@+id/image_file_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            ><ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerInside"
+            android:layout_gravity="center|left"
+            android:src="@drawable/group_904_3x"/>
+            <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textColor="#d03131"
+                android:layout_marginLeft="20dp"
+                android:background="@android:color/transparent"
+                android:layout_gravity="left"
+                android:drawablePadding="35dp"
+                android:gravity="center"
+                android:text="Delete"
+                android:textSize="13dip" /></TableRow>
+
+    </TableLayout>
+
+
+</LinearLayout>
