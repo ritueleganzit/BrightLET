@@ -2,22 +2,22 @@
 <tabs>
     <tab
         id="@+id/dashboard_b"
-        icon="@drawable/group_866"
+        icon="@drawable/group_866_2x"
         title="Dashboard" />
     <tab
         id="@+id/properties_b"
-        icon="@drawable/group_242"
+        icon="@drawable/group_242_2x"
         title="Properties" />
     <tab
         id="@+id/manage_tenants_b"
-        icon="@drawable/group_828"
+        icon="@drawable/group_828_2x"
         title="Tenants" />
     <tab
         id="@+id/messages_b"
-        icon="@drawable/group_240"
+        icon="@drawable/group_240_2x"
         title="Messages" />
     <tab
         id="@+id/profile_b"
-        icon="@drawable/group_241"
+        icon="@drawable/group_241_2x"
         title="Profile" />
 </tabs>

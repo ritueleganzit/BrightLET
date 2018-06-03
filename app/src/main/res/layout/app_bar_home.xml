@@ -96,6 +96,7 @@
         <com.roughike.bottombar.BottomBar
             android:id="@+id/bottomsheet"
             android:elevation="4dp"
+            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_alignParentBottom="true"

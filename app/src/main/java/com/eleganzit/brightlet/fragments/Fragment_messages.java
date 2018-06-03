@@ -1,6 +1,7 @@
 package com.eleganzit.brightlet.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -9,10 +10,13 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.eleganzit.brightlet.R;
+import com.eleganzit.brightlet.SelectTenantActivity;
 import com.eleganzit.brightlet.adapters.MyTabAdapter;
 
 
@@ -70,6 +74,24 @@ public class Fragment_messages extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.add_menu,menu);
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        int id = item.getItemId();
+
+        if (id == R.id.menu_search) {
+            Toast.makeText(getContext(), "Search", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
+        if (id == R.id.menu_add) {
+            getActivity().startActivity(new Intent(getActivity(),SelectTenantActivity.class));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
