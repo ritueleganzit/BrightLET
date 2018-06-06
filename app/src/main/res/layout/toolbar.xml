@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:titleTextColor="#fff"
+    android:layout_alignParentTop="true"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="#5a2e87" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/path_633_2x"
+            android:layout_centerVertical="true"/>
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:id="@+id/txt"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="Select a Tenant"
+            />
+
+
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

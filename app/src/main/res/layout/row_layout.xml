@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="240px"
+        android:layout_height="240px"
+        android:scaleType="centerCrop"/>
+    <LinearLayout
+        android:id="@+id/overlay"
+        android:visibility="gone"
+        android:layout_width="240px"
+        android:layout_height="240px"
+        android:background="#7fffffff"
+        android:layout_gravity="bottom|right"
+        android:orientation="horizontal"></LinearLayout>
+
+    <RadioButton
+        android:id="@+id/select_radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:checked="true"
+        android:layout_margin="10dp"
+        android:layout_gravity="bottom|right"
+        android:button="@null"
+        android:drawableLeft="@drawable/radio_selector_gallery" />
+
+</FrameLayout>

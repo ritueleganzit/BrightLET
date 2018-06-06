@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:id="@+id/linear_row"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="#fff"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/tenant_profile"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:padding="3dp"
+            android:layout_marginTop="2dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/add_user"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:text="Kush Salman"
+                    android:id="@+id/text_name"
+                    android:textColor="#5a5a5a"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:padding="1dp"
+                    android:ellipsize="end"
+                    android:layout_weight="0.4"
+                    android:textSize="15sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:text="878 Stoners Street, D4 8EH"
+                    android:id="@+id/text_address"
+                    android:maxLines="1"
+                    android:textColor="#aaaaaa"
+                    android:padding="1dp"
+                    android:textSize="12sp"
+                    android:ellipsize="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/select_radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/unchecked_bg"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/radio_selector" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:background="#EAEDED"
+        android:layout_marginBottom="2dp"></View>
+
+</LinearLayout>
+<!--<RadioButton
+                    android:id="@+id/select_radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:button="@drawable/radio_selector"
+                    android:layout_gravity="center"/>-->
+<!--<RadioButton
+                    android:id="@+id/select_radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/unchecked_bg"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/radio_selector" />-->

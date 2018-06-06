@@ -19,6 +19,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="au.com.example.AppA.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@layout/activity_camera_roll" />
+        </provider>
+
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait">
@@ -47,15 +57,26 @@
         <activity
             android:name=".PreviewActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".VerifyPhoneAvtivity" />
-        <activity android:name=".CameraRollActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".VerifyPhoneAvtivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home" />
-        <activity android:name=".ViewPropertyActivity" />
-        <activity android:name=".UploadImageActivity" />
-        <activity android:name=".SelectTenantActivity"></activity>
+            android:label="@string/title_activity_home"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ViewPropertyActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".UploadImageActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".SelectTenantActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".CameraRollActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -1,93 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView android:layout_below="@+id/header"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:focusableInTouchMode="true"
-        android:background="#fff"
-        android:layout_height="match_parent"
-        tools:context="com.eleganzit.brightlet.SignInActivity">
+    tools:context="com.eleganzit.brightlet.CameraRollActivity">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_alignParentTop="true"
-            android:contentInsetRight="0dp"
-            android:contentInsetStart="0dp"
-            android:contentInsetLeft="0dp"
-            app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp"
-            app:contentInsetRight="0dp"
-            app:contentInsetEnd="0dp"
-            android:background="#5a2e87"
-            android:layout_height="?attr/actionBarSize">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:src="@drawable/path_633"
-                    android:layout_centerVertical="true"/>
-                <com.eleganzit.brightlet.fonts.TextViewMuseo500
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:id="@+id/txt"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:layout_centerInParent="true"
-                    android:text="Camera Roll "
-                    />
-                <TextView
-                    android:id="@+id/done"
-                    android:layout_marginRight="25dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:textSize="14sp"
-                    android:textColor="#66ffffff"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:text="Done"/>
-            </RelativeLayout>
-        </android.support.v7.widget.Toolbar>
-
-
-        <LinearLayout
-            android:id="@+id/content"
-            android:layout_below="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="2dp"
-            android:layout_gravity="center"
-            android:gravity="center">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/grid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </android.support.v7.widget.RecyclerView>
-
-        </LinearLayout>
-
-
-
-
-
-    </RelativeLayout>
-</ScrollView>
-
-
+</android.support.constraint.ConstraintLayout>

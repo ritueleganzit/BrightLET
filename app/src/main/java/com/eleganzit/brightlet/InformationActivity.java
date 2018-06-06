@@ -108,7 +108,7 @@ public class InformationActivity extends AppCompatActivity implements
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(InformationActivity.this,CameraRollActivity.class));
+                startActivity(new Intent(InformationActivity.this,MainActivity.class));
 
             }
         });

@@ -316,6 +316,7 @@ public class HomeActivity extends AppCompatActivity
             welcome.setVisibility(View.VISIBLE);
             title.setText("Mike");
 
+
         } else if (id == R.id.properties) {
             AllPropertyFragment allPropertyFragment=new AllPropertyFragment();
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();

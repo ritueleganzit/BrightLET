@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.eleganzit.brightlet.CameraRollActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.fonts.TextViewMuseo500;
 import com.eleganzit.brightlet.model.GetReminders;
