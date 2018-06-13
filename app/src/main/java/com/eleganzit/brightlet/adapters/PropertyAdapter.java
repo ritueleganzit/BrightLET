@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TableRow;
 import android.widget.Toast;
 
-import com.eleganzit.brightlet.HomeActivity;
+import com.eleganzit.brightlet.LandlordHomeActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.ViewPropertyActivity;
 import com.eleganzit.brightlet.fragments.Fragment_image_file_manager;
@@ -113,7 +113,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.MyView
             public void onClick(View v) {
                 Toast.makeText(context, "image_file", Toast.LENGTH_SHORT).show();
                 Fragment_image_file_manager fragment_image_file_manager=new Fragment_image_file_manager();
-                FragmentTransaction fragmentTransaction=((HomeActivity)context).getSupportFragmentManager().beginTransaction();
+                FragmentTransaction fragmentTransaction=((LandlordHomeActivity)context).getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.main_container,fragment_image_file_manager);
                 fragmentTransaction.commit();
                 dialog.dismiss();

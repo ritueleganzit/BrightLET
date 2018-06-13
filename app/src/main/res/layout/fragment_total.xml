@@ -1,13 +1,111 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.eleganzit.brightlet.fragments.Fragment_total">
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context="com.eleganzit.brightlet.fragments.Fragment_incoming">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="?attr/actionBarSize"
+        android:gravity="center"
+        android:layout_alignParentTop="true">
 
-</FrameLayout>
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_gravity="center"
+            android:text="06/04/2015 "/>
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_gravity="center"
+            android:text="-"/>
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_gravity="center"
+            android:text=" 05/04/2016"/>
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EAEDED"
+        android:layout_marginBottom="2dp"></View>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/total"
+        android:layout_below="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        android:layout_below="@+id/total">
+
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5a5a5a"
+            android:text="Disclaimer"/>
+
+        <com.eleganzit.brightlet.fonts.TextViewMuseo300
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#5a5a5a"
+            android:text="The tax figures shown above are based on the information you have provided to us, this may not be an accurate representation if you have other sources of income, however you can still use this as a guideline of your expected tax. We strongly advise you to consult an accountant and provide the financial statement, rent sheet and expense sheet for accurate tax figures."/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:elevation="4dp"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:background="#f7f7f7">
+
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:text="Take Home"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:id="@+id/cost_bg"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            android:layout_height="wrap_content">
+            <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingRight="6dp"
+                android:text=" £1,500.00"
+                android:textColor="#fff"
+                android:background="#5ebc00"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

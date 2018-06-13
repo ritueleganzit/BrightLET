@@ -1,6 +1,8 @@
 package com.eleganzit.brightlet.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,6 +71,12 @@ public class RadioButtonAdapter extends RecyclerView.Adapter<RadioButtonAdapter.
                 @Override
                 public void onClick(View v) {
                     lastCheckedPosition = getAdapterPosition();
+
+                    Intent intent = new Intent("message");
+                    //            intent.putExtra("quantity",Integer.parseInt(quantity.getText().toString()));
+                    //intent.putExtra("quantity",qty);
+                    intent.putExtra("radiodata","checked");
+                    LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
                     //because of this blinking problem occurs so
                     //i have a suggestion to add notifyDataSetChanged();
                     //   notifyItemRangeChanged(0, list.length);//blink list problem

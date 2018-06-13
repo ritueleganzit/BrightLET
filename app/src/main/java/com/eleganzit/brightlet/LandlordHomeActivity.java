@@ -40,15 +40,18 @@ import com.eleganzit.brightlet.fragments.Fragment_my_orders;
 import com.eleganzit.brightlet.fragments.Fragment_my_tradesmen;
 import com.eleganzit.brightlet.fragments.Fragment_profile;
 import com.eleganzit.brightlet.fragments.Fragment_reminders;
+import com.eleganzit.brightlet.fragments.Fragment_reminders2;
 import com.eleganzit.brightlet.fragments.Fragment_tenants;
 import com.eleganzit.brightlet.utils.BottomNavigationViewHelper;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
-public class HomeActivity extends AppCompatActivity
+public class LandlordHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static ActionBar.Tab name;
     public static FrameLayout layout_MainMenu;
+    public static FrameLayout topframe;
+    public static Toolbar toolbar,searchtollbar;
     TextViewMuseo500 welcome,title;
     BottomBar bottomBar;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -60,10 +63,11 @@ public class HomeActivity extends AppCompatActivity
         window.setStatusBarColor(Color.parseColor("#5a2e87"));
         setContentView(R.layout.activity_home);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         layout_MainMenu = findViewById( R.id.mainmenu);
+        topframe = findViewById( R.id.topframe);
         welcome=findViewById(R.id.welcome);
         title=findViewById(R.id.name);
         Fragment_dashboard fragment_dashboard=new Fragment_dashboard();
@@ -341,9 +345,9 @@ public class HomeActivity extends AppCompatActivity
             title.setText("Messages");
 
         } else if (id == R.id.reminders) {
-            Fragment_reminders fragment_reminders=new Fragment_reminders();
+            Fragment_reminders2 fragment_reminders2=new Fragment_reminders2();
             FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.main_container,fragment_reminders);
+            fragmentTransaction.replace(R.id.main_container,fragment_reminders2);
             fragmentTransaction.commit();
             welcome.setVisibility(View.GONE);
             title.setText("Reminders");

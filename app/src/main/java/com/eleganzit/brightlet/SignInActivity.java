@@ -12,9 +12,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
@@ -222,7 +220,7 @@ ImageView back;
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(SignInActivity.this,HomeActivity.class));
+                    startActivity(new Intent(SignInActivity.this,LandlordHomeActivity.class));
                 }
             }
 

@@ -33,7 +33,7 @@ public class Fragment_FinancialStatement extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v=inflater.inflate(R.layout.fragment__financial_statement, container, false);
+        View v=inflater.inflate(R.layout.fragment_financial_statement, container, false);
         setHasOptionsMenu(true);
 
         tabLayout=v.findViewById(R.id.financial_statement_tabs);

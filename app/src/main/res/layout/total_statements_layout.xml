@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:text="14 Groggles Street, DB5 4JF"
+            android:id="@+id/title"
+            android:maxLines="1"
+            android:layout_gravity="center"
+            android:textColor="#181818"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:layout_margin="15dp"
+            android:ellipsize="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:id="@+id/cost_bg"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            android:layout_height="wrap_content">
+            <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                android:id="@+id/cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#5a2e87"
+                android:paddingLeft="6dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingRight="6dp"
+                android:text=" £1,500.00"
+                android:textColor="#fff"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:background="#EAEDED"
+        android:layout_marginBottom="2dp"></View>
+
+</LinearLayout>

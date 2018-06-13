@@ -117,7 +117,62 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             >
+
             <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+
+                android:scaleType="centerInside"
+                android:layout_gravity="center|left"
+                android:src="@drawable/group_826_3x"/>
+            <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginLeft="20dp"
+                android:background="@android:color/transparent"
+                android:layout_gravity="left"
+                android:drawablePadding="35dp"
+                android:gravity="center"
+                android:text="Documents Center"
+                android:textSize="13dip" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/landlord_services_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+
+                android:scaleType="centerInside"
+                android:layout_gravity="center|left"
+                android:src="@drawable/group_827_3x"/>
+            <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginLeft="20dp"
+                android:background="@android:color/transparent"
+                android:layout_gravity="left"
+                android:drawablePadding="35dp"
+                android:gravity="center"
+                android:text="Landlord Services"
+                android:textSize="13dip" />
+
+        </TableRow>
+    </TableLayout>
+
+
+</LinearLayout>
+<!--<ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:scaleType="centerInside"
@@ -135,18 +190,8 @@
                 android:layout_gravity="left"
                 android:gravity="center"
                 android:text="Documents Center"
-                android:textSize="13dip" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/landlord_services_b"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            >
-
-            <ImageView
+                android:textSize="13dip" />-->
+<!--<ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:scaleType="centerInside"
@@ -164,9 +209,4 @@
                 android:layout_gravity="left"
                 android:gravity="center"
                 android:text="Landlord Services"
-                android:textSize="13dip" />
-        </TableRow>
-    </TableLayout>
-
-
-</LinearLayout>
+                android:textSize="13dip" />-->

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.eleganzit.brightlet.HomeActivity">
+    tools:context="com.eleganzit.brightlet.LandlordHomeActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -33,7 +33,6 @@
             <LinearLayout
                 android:id="@+id/toolbar_layout"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="?attr/actionBarSize"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_centerHorizontal="true"
@@ -50,6 +49,8 @@
                 android:gravity="center"
                 android:text="Welcome, "
                 />
+                <include layout="@layout/search_toolbar"
+                    android:visibility="gone"/>
 
             <com.eleganzit.brightlet.fonts.TextViewMuseo500
                 android:layout_width="wrap_content"

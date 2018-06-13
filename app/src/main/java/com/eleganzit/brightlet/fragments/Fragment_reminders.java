@@ -26,7 +26,6 @@ public class Fragment_reminders extends Fragment {
 
     public Fragment_reminders() {
         // Required empty public constructor
-        setHasOptionsMenu(true);
 
     }
     RecyclerView reminders;
@@ -37,7 +36,6 @@ public class Fragment_reminders extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment_reminders, container, false);
-        setHasOptionsMenu(true);
 
         reminders=v.findViewById(R.id.rc_reminders);
 
@@ -46,11 +44,6 @@ public class Fragment_reminders extends Fragment {
         reminders.setAdapter(new RemindersAdapter(arrayList,getContext()));
 
         return v;
-    }
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.add, menu);
-        super.onCreateOptionsMenu(menu, inflater);
     }
 
 }

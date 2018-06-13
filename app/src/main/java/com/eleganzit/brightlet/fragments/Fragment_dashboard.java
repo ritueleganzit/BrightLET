@@ -1,27 +1,20 @@
 package com.eleganzit.brightlet.fragments;
 
 
-import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.graphics.PixelFormat;
-import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
 
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -32,21 +25,14 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.PopupWindow;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.eleganzit.brightlet.HomeActivity;
+import com.eleganzit.brightlet.LandlordHomeActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.adapters.MyTabAdapter;
-
-import java.lang.reflect.Method;
-
-import static android.content.Context.WINDOW_SERVICE;
 
 
 /**
@@ -65,16 +51,14 @@ public class Fragment_dashboard extends Fragment {
     TabLayout tabLayout;
     ViewPager viewPager;
     PopupWindow popupwindow_obj ;
-    FrameLayout layout_MainMenu;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment_dashboard, container, false);
-        layout_MainMenu = container.findViewById( R.id.mainmenu);
-        HomeActivity.layout_MainMenu.getForeground().setAlpha( 0);
-        //layout_MainMenu.getForeground().setAlpha( 0);
+        LandlordHomeActivity.layout_MainMenu.getForeground().setAlpha( 0);
+        LandlordHomeActivity.topframe.getForeground().setAlpha( 0);
         tabLayout=v.findViewById(R.id.dashboard_tabs);
         viewPager=v.findViewById(R.id.dashboard_view_pager);
         fab=v.findViewById(R.id.fab);
@@ -104,7 +88,8 @@ public class Fragment_dashboard extends Fragment {
                 optionsMenu.setForceShowIcon(true);
                 optionsMenu.show();
 
-                HomeActivity.layout_MainMenu.getForeground().setAlpha( 90);
+                LandlordHomeActivity.layout_MainMenu.getForeground().setAlpha( 90);
+                LandlordHomeActivity.topframe.getForeground().setAlpha( 90);
                 Window window = getActivity().getWindow();
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 window.setStatusBarColor(Color.parseColor("#FF3A1F58"));
@@ -126,7 +111,8 @@ public class Fragment_dashboard extends Fragment {
                         Window window = getActivity().getWindow();
                         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                         window.setStatusBarColor(Color.parseColor("#5a2e87"));
-                        HomeActivity.layout_MainMenu.getForeground().setAlpha( 0);
+                        LandlordHomeActivity.layout_MainMenu.getForeground().setAlpha( 0);
+                        LandlordHomeActivity.topframe.getForeground().setAlpha( 0);
                         fab.setBackgroundTintList(new ColorStateList(new int[][]{new int[]{0}}, new int[]{Color.parseColor("#f39200")}));
                         fab.startAnimation(rotate_backward);
                         isFabOpen = false;
@@ -136,7 +122,7 @@ public class Fragment_dashboard extends Fragment {
         });
 
         MyTabAdapter myTabAdapter=new MyTabAdapter(getChildFragmentManager());
-        myTabAdapter.addFragment(new Fragment_reminders(),"REMINDERS");
+        myTabAdapter.addFragment(new Fragment_reminders2(),"REMINDERS");
         myTabAdapter.addFragment(new Fragment_appointment(),"APPOINTMENTS");
         myTabAdapter.addFragment(new Fragment_maintanence(),"MAINTANENCE");
         viewPager.setAdapter(myTabAdapter);

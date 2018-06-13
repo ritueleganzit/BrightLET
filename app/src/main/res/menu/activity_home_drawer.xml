@@ -44,11 +44,14 @@
     <item android:title="">
         <menu>
             <item
+                android:orderInCategory="200"
                 android:id="@+id/nav_share"
                 android:icon="@drawable/group_512_2x"
                 android:title="Settings" />
             <item
                 android:id="@+id/nav_send"
+                android:orderInCategory="200"
+
                 android:icon="@drawable/group_513_2x"
                 android:title="Sign Out" />
         </menu>

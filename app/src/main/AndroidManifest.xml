@@ -57,26 +57,35 @@
         <activity
             android:name=".PreviewActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".VerifyPhoneAvtivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ForgotPasswordActivity"
+        <activity
+            android:name=".VerifyPhoneAvtivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LandlordHomeActivity"
             android:label="@string/title_activity_home"
             android:screenOrientation="portrait" />
-        <activity android:name=".ViewPropertyActivity"
+        <activity
+            android:name=".ViewPropertyActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".UploadImageActivity"
+        <activity
+            android:name=".UploadImageActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".SelectTenantActivity"
+        <activity
+            android:name=".SelectTenantActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ChatActivity"
+        <activity
+            android:name=".ChatActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".CameraRollActivity"
+        <activity
+            android:name=".CameraRollActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait" />
+        <activity android:name=".ArrangeAppointmentActivity" />
+        <activity android:name=".TenantChatActivity" />
+        <activity android:name=".SecondProfileActivity" />
+        <activity android:name=".SelectTradespersonActivity"></activity>
     </application>
 
 </manifest>

@@ -11,9 +11,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.eleganzit.brightlet.HomeActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.adapters.PropertyAdapter;
 
@@ -68,8 +66,8 @@ public class AllPropertyFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        HomeActivity.name.setText("Mobile Case");
-        Toast.makeText(getActivity(), ""+HomeActivity.name.getText().toString(), Toast.LENGTH_SHORT).show();
+        LandlordHomeActivity.name.setText("Mobile Case");
+        Toast.makeText(getActivity(), ""+LandlordHomeActivity.name.getText().toString(), Toast.LENGTH_SHORT).show();
 
     }*/
 }

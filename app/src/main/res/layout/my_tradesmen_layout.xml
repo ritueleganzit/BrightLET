@@ -60,6 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <ImageView
+                android:id="@+id/options"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:padding="5dp"
@@ -74,6 +75,9 @@
                 <com.eleganzit.brightlet.fonts.TextViewMuseo500
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:ellipsize="marquee"
                     android:textColor="#5a2e87"
                     android:textSize="10sp"
                     android:text="Bathroom Specialist, Handyman, Plumber"/>

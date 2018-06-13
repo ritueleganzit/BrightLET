@@ -2,12 +2,15 @@ package com.eleganzit.brightlet;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Build;
 import android.speech.RecognizerIntent;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -56,6 +59,7 @@ public class SelectTenantActivity extends AppCompatActivity {
 
     //private SearchBox search;
     TextView next;
+    String radio;
     RecyclerView tenants;
     ArrayList<GetTenantsList> arrayList=new ArrayList<>();
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -69,11 +73,19 @@ public class SelectTenantActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setSearchtollbar();
+
         layout_MainMenu = findViewById( R.id.mainmenu);
         layout_MainMenu.getForeground().setAlpha( 0);
         invalidateOptionsMenu();
         //search = findViewById(R.id.searchbox);
         tenants=findViewById(R.id.select_tenant);
+        next=findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SelectTenantActivity.this,ChatActivity.class));
+            }
+        });
         //next=findViewById(R.id.next);
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(SelectTenantActivity.this,LinearLayoutManager.VERTICAL,false);
         tenants.setLayoutManager(layoutManager);
@@ -111,7 +123,6 @@ public class SelectTenantActivity extends AppCompatActivity {
         tenants.setAdapter(new RadioButtonAdapter(arrayList,SelectTenantActivity.this));
         //search.enableVoiceRecognition(this);
         //search.setHint("Search...");
-        toolbar = findViewById(R.id.toolbar);
         //this.setSupportActionBar(toolbar);
        /* toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -129,13 +140,29 @@ public class SelectTenantActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,
+                new IntentFilter("message"));
+    }
+
+    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Get extra data included in the Intent
+            radio = intent.getStringExtra("radiodata");
+            Toast.makeText(SelectTenantActivity.this," hhhhhhhhhhh" ,Toast.LENGTH_SHORT).show();
+        }
+    };
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
         getMenuInflater().inflate(R.menu.menu_home, menu);
-        if (mState.equalsIgnoreCase("HIDE_MENU"))
+       /* if (mState.equalsIgnoreCase("HIDE_MENU"))
         {
                 menu.getItem(R.id.action_search).setVisible(false);
-        }
+        }*/
         return true;
     }
 
@@ -156,6 +183,8 @@ public class SelectTenantActivity extends AppCompatActivity {
 
                 else
                     searchtollbar.setVisibility(View.VISIBLE);
+                layout_MainMenu.getForeground().setAlpha( 90);
+
 
                 item_search.expandActionView();
                 return true;
@@ -166,18 +195,22 @@ public class SelectTenantActivity extends AppCompatActivity {
     }
     public void setSearchtollbar()
     {
-        searchtollbar = (Toolbar) findViewById(R.id.searchtoolbar);
+        searchtollbar = findViewById(R.id.searchtoolbar);
         if (searchtollbar != null) {
             searchtollbar.inflateMenu(R.menu.menu_search);
             search_menu=searchtollbar.getMenu();
 
             searchtollbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                 @Override
                 public void onClick(View v) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-                        circleReveal(R.id.searchtoolbar,1,true,false);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        circleReveal(R.id.searchtoolbar, 1, true, false);
+
+                    }
                     else
                         searchtollbar.setVisibility(View.GONE);
+
                 }
             });
 
@@ -189,9 +222,15 @@ public class SelectTenantActivity extends AppCompatActivity {
                     // Do something when collapsed
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         circleReveal(R.id.searchtoolbar,1,true,false);
+                        Window window = getWindow();
+                        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                        window.setStatusBarColor(Color.parseColor("#5a2e87"));
+                        layout_MainMenu.getForeground().setAlpha(0);
                     }
                     else
                         searchtollbar.setVisibility(View.GONE);
+                    layout_MainMenu.getForeground().setAlpha(0);
+
                     return true;
                 }
 
@@ -220,11 +259,22 @@ public class SelectTenantActivity extends AppCompatActivity {
         // Change search close button image
 
         ImageView closeButton = (ImageView) searchView.findViewById(R.id.search_close_btn);
+        closeButton.setVisibility(View.VISIBLE);
         closeButton.setImageResource(R.drawable.search_dark);
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(SelectTenantActivity.this, "Search tenant!", Toast.LENGTH_SHORT).show();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    circleReveal(R.id.searchtoolbar,1,true,false);
+                    Window window = getWindow();
+                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                    window.setStatusBarColor(Color.parseColor("#5a2e87"));
+                    layout_MainMenu.getForeground().setAlpha(0);
+                }
+                else
+                    searchtollbar.setVisibility(View.GONE);
+                layout_MainMenu.getForeground().setAlpha(0);
             }
         });
 

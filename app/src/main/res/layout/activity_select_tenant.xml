@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mainmenu"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:foreground="@drawable/dim_bg" >
+     >
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,48 +17,6 @@
     <include layout="@layout/toolbar"/>
     <include layout="@layout/search_toolbar"
         android:visibility="gone"/>
-    <!--<android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_alignParentTop="true"
-        android:contentInsetRight="0dp"
-        android:contentInsetStart="0dp"
-        android:contentInsetLeft="0dp"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
-        app:contentInsetRight="0dp"
-        app:contentInsetEnd="0dp"
-        android:background="#5a2e87"
-        android:layout_height="?attr/actionBarSize">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:src="@drawable/path_633_2x"
-                android:layout_centerVertical="true"/>
-            <com.eleganzit.brightlet.fonts.TextViewMuseo500
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:id="@+id/txt"
-                android:textColor="#fff"
-                android:gravity="center"
-                android:layout_centerInParent="true"
-                android:text="Select a Tenant"
-                />
-
-
-
-
-        </RelativeLayout>
-    </android.support.v7.widget.Toolbar>-->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/select_tenant"
@@ -70,26 +27,10 @@
     </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>
-    </FrameLayout>
-<!--
-<ImageView
-android:id="@+id/search_btn"
-android:layout_marginRight="15dp"
-android:src="@drawable/search_3x"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_centerInParent="true"
-android:layout_alignParentEnd="true"
-android:layout_alignParentRight="true"
-android:text="Next"/>-->
-<!--<TextView
-                android:id="@+id/next"
-                android:layout_marginRight="25dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:textSize="14sp"
-                android:textColor="#66ffffff"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:text="Next"/>-->
+    <FrameLayout
+        android:id="@+id/mainmenu"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:foreground="@drawable/dim_bg" ></FrameLayout>
+    </RelativeLayout>

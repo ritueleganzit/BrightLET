@@ -49,9 +49,17 @@
     </android.support.v7.widget.Toolbar>
 
 
+    <RelativeLayout
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginBottom="18dp"
+        android:layout_above="@+id/bottom"
+        android:orientation="vertical">
     <com.eleganzit.brightlet.utils.CEditText
         android:id="@+id/subject_chat"
-        android:layout_below="@+id/toolbar"
         android:hint="Subject"
         android:padding="15dp"
         android:maxLines="1"
@@ -63,66 +71,87 @@
         android:layout_height="wrap_content"
         android:background="#fff"/>
     <View
+        android:id="@+id/view1"
         android:layout_width="match_parent"
         android:layout_below="@+id/subject_chat"
         android:layout_height="0.5dp"
         android:background="#bfbfbf"></View>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_above="@+id/bottom"
-        android:background="#bfbfbf"></View>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/message_list"
+            android:layout_below="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
     <LinearLayout
         android:id="@+id/bottom"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:elevation="2dp"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="5dp"
-            android:layout_marginLeft="15dp"
-            android:src="@drawable/group_763_2x"
-            />
-
-        <com.eleganzit.brightlet.utils.CEditText
-            android:id="@+id/type_message"
-            android:hint="Type a message"
-            android:padding="16dp"
-            android:layout_weight="1"
-            android:maxLines="1"
-            android:textSize="12sp"
-            android:textColorHint="#c7c7c7"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#fff"/>
-
-
-        <RelativeLayout
-            android:id="@+id/send_bg"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_margin="15dp"
-            android:gravity="center"
-            android:background="@drawable/send_bg"
-            android:layout_gravity="center">
+            android:background="#bfbfbf"></View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="2dp"
+            android:background="#fff"
+            android:orientation="horizontal"
+            >
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:scaleType="centerInside"
-                android:src="@drawable/group_762_2x"/>
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/group_763_2x"
+                />
 
-        </RelativeLayout>
+            <com.eleganzit.brightlet.utils.CEditText
+                android:id="@+id/type_message"
+                android:hint="Type a message"
+                android:padding="16dp"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:textSize="12sp"
+                android:textColorHint="#c7c7c7"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#fff"/>
 
+
+            <RelativeLayout
+                android:id="@+id/send_bg"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="15dp"
+                android:gravity="center"
+                android:background="@drawable/send_bg"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/group_762_2x"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
     </LinearLayout>
+
 
 </RelativeLayout>

@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.fonts.TextViewMuseo500;
+import com.eleganzit.brightlet.model.GetAppointments;
 
 import java.util.ArrayList;
 
@@ -19,10 +20,10 @@ import java.util.ArrayList;
 public class AppointmentsAdapter extends RecyclerView.Adapter<AppointmentsAdapter.MyViewHolder>
 {
 
-    ArrayList<String> arrayList;
+    ArrayList<GetAppointments> arrayList;
     Context context;
 
-    public AppointmentsAdapter(ArrayList<String> arrayList, Context context) {
+    public AppointmentsAdapter(ArrayList<GetAppointments> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -30,7 +31,7 @@ public class AppointmentsAdapter extends RecyclerView.Adapter<AppointmentsAdapte
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.reminders_layout,parent,false);
+        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.appointments_layout,parent,false);
 
         MyViewHolder myViewHolder=new MyViewHolder(v);
 
