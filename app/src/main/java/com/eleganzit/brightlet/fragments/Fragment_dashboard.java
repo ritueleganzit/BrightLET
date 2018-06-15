@@ -25,6 +25,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.PopupMenu;
 import android.widget.PopupWindow;
@@ -46,7 +47,9 @@ public class Fragment_dashboard extends Fragment {
         setHasOptionsMenu(true);
     }
     private Boolean isFabOpen = false;
-    private Animation fab_open,fab_close,rotate_forward,rotate_backward;
+    private Animation rotate_forward,rotate_backward;
+    private Boolean isOut = false;
+    private Animation right_to_left,left_to_right;
     FloatingActionButton fab;
     TabLayout tabLayout;
     ViewPager viewPager;
@@ -59,11 +62,16 @@ public class Fragment_dashboard extends Fragment {
         View v=inflater.inflate(R.layout.fragment_dashboard, container, false);
         LandlordHomeActivity.layout_MainMenu.getForeground().setAlpha( 0);
         LandlordHomeActivity.topframe.getForeground().setAlpha( 0);
+        LandlordHomeActivity.bottomframe.getForeground().setAlpha( 0);
+        LandlordHomeActivity.title.setText("Mike");
+        LandlordHomeActivity.welcome.setVisibility(View.VISIBLE);
         tabLayout=v.findViewById(R.id.dashboard_tabs);
         viewPager=v.findViewById(R.id.dashboard_view_pager);
         fab=v.findViewById(R.id.fab);
         rotate_forward = AnimationUtils.loadAnimation(getContext(),R.anim.rotate_forward);
         rotate_backward = AnimationUtils.loadAnimation(getContext(),R.anim.rotate_backward);
+        right_to_left = AnimationUtils.loadAnimation(getContext(),R.anim.right_to_left);
+        left_to_right = AnimationUtils.loadAnimation(getContext(),R.anim.left_to_right);
 
         setHasOptionsMenu(true);
 
@@ -71,7 +79,7 @@ public class Fragment_dashboard extends Fragment {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP_MR1)
             @Override
             public void onClick(View v) {
-                animateFAB();
+                animate();
                 /*PopupMenu popupMenu=new PopupMenu(getContext(),fab,Gravity.END,0,R.style.MyPopupMenu);
                 //popupMenu.getMenuInflater().inflate(R.menu.custom_popup_menu, popupMenu.getMenu());
 
@@ -90,6 +98,8 @@ public class Fragment_dashboard extends Fragment {
 
                 LandlordHomeActivity.layout_MainMenu.getForeground().setAlpha( 90);
                 LandlordHomeActivity.topframe.getForeground().setAlpha( 90);
+                LandlordHomeActivity.bottomframe.getForeground().setAlpha( 90);
+
                 Window window = getActivity().getWindow();
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 window.setStatusBarColor(Color.parseColor("#FF3A1F58"));
@@ -113,6 +123,7 @@ public class Fragment_dashboard extends Fragment {
                         window.setStatusBarColor(Color.parseColor("#5a2e87"));
                         LandlordHomeActivity.layout_MainMenu.getForeground().setAlpha( 0);
                         LandlordHomeActivity.topframe.getForeground().setAlpha( 0);
+                        LandlordHomeActivity.bottomframe.getForeground().setAlpha( 0);
                         fab.setBackgroundTintList(new ColorStateList(new int[][]{new int[]{0}}, new int[]{Color.parseColor("#f39200")}));
                         fab.startAnimation(rotate_backward);
                         isFabOpen = false;
@@ -122,7 +133,7 @@ public class Fragment_dashboard extends Fragment {
         });
 
         MyTabAdapter myTabAdapter=new MyTabAdapter(getChildFragmentManager());
-        myTabAdapter.addFragment(new Fragment_reminders2(),"REMINDERS");
+        myTabAdapter.addFragment(new Fragment_reminders(),"REMINDERS");
         myTabAdapter.addFragment(new Fragment_appointment(),"APPOINTMENTS");
         myTabAdapter.addFragment(new Fragment_maintanence(),"MAINTANENCE");
         viewPager.setAdapter(myTabAdapter);
@@ -162,10 +173,7 @@ public class Fragment_dashboard extends Fragment {
 
             fab.startAnimation(rotate_backward);
             fab.setBackgroundTintList(new ColorStateList(new int[][]{new int[]{0}}, new int[]{Color.parseColor("#FFD03131")}));//fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#f39200")));
-            /*fab1.startAnimation(fab_close);
-            fab2.startAnimation(fab_close);
-            fab1.setClickable(false);
-            fab2.setClickable(false);*/
+
             isFabOpen = false;
             Log.d("Raj", "close");
 
@@ -173,12 +181,37 @@ public class Fragment_dashboard extends Fragment {
 
             fab.startAnimation(rotate_forward);
             fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFD03131")));
-            //fab.setBackgroundTintMode(PorterDuff.Mode.OVERLAY);
 
-            /*fab1.startAnimation(fab_open);
-            fab2.startAnimation(fab_open);
-            fab1.setClickable(true);
-            fab2.setClickable(true);*/
+            isFabOpen = true;
+            Log.d("Raj","open");
+
+        }
+    }
+    public void animate(){
+
+        if(isFabOpen){
+
+            //fab.startAnimation(right_to_left);
+            TranslateAnimation animation = new TranslateAnimation(0, 0, -100, 0);
+            animation.setDuration(700); // duartion in ms
+            animation.setFillAfter(true);
+            fab.startAnimation(animation);
+            fab.getLeft();
+            fab.setBackgroundTintList(new ColorStateList(new int[][]{new int[]{0}}, new int[]{Color.parseColor("#FFD03131")}));//fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#f39200")));
+
+            isFabOpen = false;
+            Log.d("Raj", "close");
+
+        } else {
+
+            //fab.startAnimation(left_to_right);
+            TranslateAnimation animation = new TranslateAnimation(0, 0, 100, 0);
+            animation.setDuration(700); // duartion in ms
+            animation.setFillAfter(true);
+            fab.startAnimation(animation);
+            fab.getRight();
+            fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFD03131")));
+
             isFabOpen = true;
             Log.d("Raj","open");
 

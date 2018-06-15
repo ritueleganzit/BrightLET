@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.eleganzit.brightlet.LandlordHomeActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.adapters.MyOrdersAdapter;
 import com.eleganzit.brightlet.model.GetMyOrders;
@@ -34,6 +35,9 @@ public class Fragment_my_orders extends Fragment {
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment_my_orders, container, false);
 
+        LandlordHomeActivity.welcome.setVisibility(View.GONE);
+
+        LandlordHomeActivity.title.setText("My Orders");
         my_orders=v.findViewById(R.id.rc_my_orders);
 
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);

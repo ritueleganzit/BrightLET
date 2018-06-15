@@ -27,10 +27,11 @@
     </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/mainmenu"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_marginTop="?attr/actionBarSize"
-        android:foreground="@drawable/dim_bg" ></FrameLayout>
+        android:foreground="@drawable/dim_bg"
+        android:orientation="vertical"></LinearLayout>
     </RelativeLayout>

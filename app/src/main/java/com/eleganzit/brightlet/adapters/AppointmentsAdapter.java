@@ -45,7 +45,7 @@ public class AppointmentsAdapter extends RecyclerView.Adapter<AppointmentsAdapte
 
     @Override
     public int getItemCount() {
-        return arrayList.size();
+        return 5;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder

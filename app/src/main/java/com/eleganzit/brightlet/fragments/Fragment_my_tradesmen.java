@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.eleganzit.brightlet.LandlordHomeActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.adapters.MyTradesmenAdapter;
 import com.eleganzit.brightlet.model.GetMyTradesmen;
@@ -38,7 +39,9 @@ public class Fragment_my_tradesmen extends Fragment {
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment_my_tradesmen, container, false);
         setHasOptionsMenu(true);
+        LandlordHomeActivity.welcome.setVisibility(View.GONE);
 
+        LandlordHomeActivity.title.setText("My Tradesmen");
         my_tradesmen=v.findViewById(R.id.rc_my_tradesmen);
 
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);

@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
+import com.eleganzit.brightlet.LandlordHomeActivity;
 import com.eleganzit.brightlet.ProfileActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.adapters.MyTabAdapter;
@@ -54,9 +55,12 @@ public class Fragment_profile extends Fragment {
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment_profile, container, false);
 
+        LandlordHomeActivity.welcome.setVisibility(View.VISIBLE);
+        LandlordHomeActivity.title.setText("Mike");
+
         tabLayout=v.findViewById(R.id.profile_tabs);
         viewPager=v.findViewById(R.id.profile_view_pager);
-        profile_pic=v.findViewById(R.id.profile_pic);
+        profile_pic=v.findViewById(R.id.customer_profile_image);
         MyTabAdapter myTabAdapter=new MyTabAdapter(getChildFragmentManager());
         myTabAdapter.addFragment(new Fragment_personal(),"PERSONAL");
         myTabAdapter.addFragment(new Fragment_address(),"ADDRESS");
@@ -141,7 +145,7 @@ public class Fragment_profile extends Fragment {
         }
 
     }
-    public static class CircleTransform extends BitmapTransformation {
+    /*public static class CircleTransform extends BitmapTransformation {
         public CircleTransform(Context context) {
             super(context);
         }
@@ -178,6 +182,6 @@ public class Fragment_profile extends Fragment {
             return getClass().getName();
         }
 
-    }
+    }*/
 
 }

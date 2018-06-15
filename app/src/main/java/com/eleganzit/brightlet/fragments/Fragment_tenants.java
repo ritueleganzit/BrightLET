@@ -12,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.eleganzit.brightlet.LandlordHomeActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.adapters.TenantsAdapter;
 import com.eleganzit.brightlet.model.GetTenants;
@@ -40,7 +41,9 @@ public class Fragment_tenants extends Fragment {
 
         View v=inflater.inflate(R.layout.fragment_tenants, container, false);
         setHasOptionsMenu(true);
+        LandlordHomeActivity.welcome.setVisibility(View.GONE);
 
+        LandlordHomeActivity.title.setText("Manage Tenants");
         tenants=v.findViewById(R.id.tenants);
 
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);

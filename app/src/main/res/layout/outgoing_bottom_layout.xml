@@ -11,8 +11,8 @@
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="2dp"
         android:background="#fff"
+        android:padding="15dp"
         android:orientation="horizontal">
 
         <com.eleganzit.brightlet.fonts.TextViewMuseo500
@@ -23,7 +23,6 @@
             android:textColor="#181818"
             android:textSize="15sp"
             android:layout_weight="1"
-            android:layout_margin="15dp"
             android:ellipsize="end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -31,18 +30,17 @@
             android:id="@+id/time_bg"
             android:layout_width="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="15dp"
             android:background="#d03131"
             android:layout_height="wrap_content">
             <com.eleganzit.brightlet.fonts.TextViewMuseo500
                 android:id="@+id/cost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="6dp"
+                android:paddingLeft="16dp"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp"
-                android:paddingRight="6dp"
-                android:text=" £1,500.00"
+                android:paddingRight="16dp"
+                android:text=" £50.00"
                 android:textColor="#fff"
                 android:textSize="12sp"/>
         </LinearLayout>

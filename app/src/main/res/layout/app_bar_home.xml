@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppBarOverlay">
-
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -42,6 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
+                android:visibility="gone"
                 android:maxLines="1"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:id="@+id/welcome"
@@ -49,8 +52,6 @@
                 android:gravity="center"
                 android:text="Welcome, "
                 />
-                <include layout="@layout/search_toolbar"
-                    android:visibility="gone"/>
 
             <com.eleganzit.brightlet.fonts.TextViewMuseo500
                 android:layout_width="wrap_content"
@@ -67,8 +68,9 @@
             </LinearLayout>
             </FrameLayout>
         </android.support.v7.widget.Toolbar>
-
-
+        <include layout="@layout/search_toolbar"
+            android:visibility="gone"/>
+        </RelativeLayout>
     </android.support.design.widget.AppBarLayout>
 
     <FrameLayout

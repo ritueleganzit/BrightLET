@@ -33,41 +33,42 @@
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#fff"
         android:layout_margin="5dp"
+        android:background="#fff"
         android:orientation="horizontal">
 
         <com.eleganzit.brightlet.fonts.TextViewMuseo500
-            android:id="@+id/fees"
             android:text="Accounting Fees"
+            android:id="@+id/fees"
             android:maxLines="1"
             android:layout_gravity="center"
             android:textColor="#5a5a5a"
             android:textSize="14sp"
+            android:layout_weight="1"
             android:layout_marginLeft="50dp"
             android:ellipsize="end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <LinearLayout
-            android:id="@+id/cost1_bg"
-            android:layout_width="match_parent"
+            android:id="@+id/cost_bg"
+            android:layout_width="wrap_content"
             android:layout_gravity="center"
-            android:gravity="end"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="10dp"
+            android:background="#f39200"
             android:layout_height="wrap_content">
             <com.eleganzit.brightlet.fonts.TextViewMuseo500
-                android:id="@+id/cost1"
+                android:id="@+id/cost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="16dp"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp"
                 android:paddingRight="16dp"
-                android:text=" £20.00"
+                android:text=" £50.00"
                 android:textColor="#fff"
-                android:background="#f39200"
                 android:textSize="12sp"/>
         </LinearLayout>
+
 
     </LinearLayout>
     <LinearLayout
@@ -75,27 +76,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-
         android:background="#fff"
         android:orientation="horizontal">
 
         <com.eleganzit.brightlet.fonts.TextViewMuseo500
-            android:id="@+id/advertising"
             android:text="Advertising"
+            android:id="@+id/advertising"
             android:maxLines="1"
             android:layout_gravity="center"
             android:textColor="#5a5a5a"
             android:textSize="14sp"
+            android:layout_weight="1"
             android:layout_marginLeft="50dp"
+
             android:ellipsize="end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <LinearLayout
             android:id="@+id/cost2_bg"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_gravity="center"
-            android:gravity="end"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="10dp"
+            android:background="#f39200"
             android:layout_height="wrap_content">
             <com.eleganzit.brightlet.fonts.TextViewMuseo500
                 android:id="@+id/cost2"
@@ -105,11 +107,11 @@
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp"
                 android:paddingRight="16dp"
-                android:text=" £20.00"
+                android:text=" £50.00"
                 android:textColor="#fff"
-                android:background="#f39200"
                 android:textSize="12sp"/>
         </LinearLayout>
+
 
     </LinearLayout>
 
@@ -122,3 +124,4 @@
         android:layout_marginBottom="2dp"></View>
 
 </LinearLayout>
+<!--f39200-->

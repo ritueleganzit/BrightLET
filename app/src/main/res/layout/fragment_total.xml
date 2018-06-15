@@ -40,35 +40,47 @@
         android:layout_height="1dp"
         android:background="#EAEDED"
         android:layout_marginBottom="2dp"></View>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/total"
-        android:layout_below="@+id/header"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="15dp"
-        android:layout_below="@+id/total">
+        android:layout_below="@+id/header"
+        android:orientation="vertical">
 
-        <com.eleganzit.brightlet.fonts.TextViewMuseo500
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#5a5a5a"
-            android:text="Disclaimer"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/total"
 
-        <com.eleganzit.brightlet.fonts.TextViewMuseo300
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:layout_marginTop="10dp"
-            android:textColor="#5a5a5a"
-            android:text="The tax figures shown above are based on the information you have provided to us, this may not be an accurate representation if you have other sources of income, however you can still use this as a guideline of your expected tax. We strongly advise you to consult an accountant and provide the financial statement, rent sheet and expense sheet for accurate tax figures."/>
+            android:orientation="vertical"
+            android:layout_margin="15dp"
+            android:layout_below="@+id/total">
+
+            <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#5a5a5a"
+                android:text="Disclaimer"/>
+
+            <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:textColor="#5a5a5a"
+                android:text="The tax figures shown above are based on the information you have provided to us, this may not be an accurate representation if you have other sources of income, however you can still use this as a guideline of your expected tax. We strongly advise you to consult an accountant and provide the financial statement, rent sheet and expense sheet for accurate tax figures."/>
+
+        </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
     <LinearLayout
         android:id="@+id/bottom"
         android:layout_width="match_parent"

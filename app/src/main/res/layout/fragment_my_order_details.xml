@@ -1,0 +1,217 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentInsetStart="0dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetEndWithActions="0dp"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways" >
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_below="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="14 Groggles Street, DB5 4JF"
+                        android:textColor="#5a5a5a"
+                        android:textSize="16sp"/>
+                    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="#1032"
+                        android:textColor="#95989a"
+                        android:textSize="11sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.eleganzit.brightlet.fonts.TextViewMuseo700
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#5a5a5a"
+
+                                android:layout_gravity="center"
+                                android:textSize="12sp"
+                                android:text="PURCHASED"/>
+
+                            <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                                android:layout_width="75dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:paddingLeft="10dp"
+                                android:textSize="12sp"
+                                android:maxLines="1"
+                                android:ellipsize="marquee"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="3dp"
+                                android:paddingTop="3dp"
+                                android:layout_gravity="center"
+                                android:textColor="#fff"
+                                android:background="#5a2e87"
+                                android:text="21/09/2018"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="20dp"
+                            android:background="#aaaaaa"
+                            android:layout_height="31dp"></View>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.eleganzit.brightlet.fonts.TextViewMuseo700
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#5a5a5a"
+
+                                android:layout_gravity="center"
+                                android:textSize="12sp"
+                                android:text="ORDER STATUS"/>
+
+                            <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                                android:layout_width="75dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:textSize="12sp"
+                                android:ellipsize="marquee"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:maxLines="1"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="3dp"
+                                android:paddingTop="3dp"
+                                android:layout_gravity="center"
+                                android:textColor="#fff"
+                                android:background="#5ebc00"
+                                android:text="COMPLETE"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="20dp"
+                            android:background="#aaaaaa"
+                            android:layout_height="31dp"></View>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.eleganzit.brightlet.fonts.TextViewMuseo700
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#5a5a5a"
+
+                                android:layout_gravity="center"
+                                android:textSize="12sp"
+                                android:text="TOTAL"/>
+
+                            <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                                android:layout_width="75dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:textSize="12sp"
+                                android:gravity="center"
+                                android:ellipsize="marquee"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="3dp"
+                                android:paddingTop="3dp"
+                                android:layout_gravity="center"
+                                android:textColor="#fff"
+                                android:background="#5ebc00"
+                                android:text="£84.99"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/orders_tabs"
+            android:layout_below="@+id/header"
+            android:background="#f7f7f7"
+            android:elevation="0dp"
+            app:tabIndicatorColor="#979797"
+            app:tabTextColor="#aaaaaa"
+            app:tabTextAppearance="@style/MineCustomTabText"
+            app:tabSelectedTextColor="#979797"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/orders"
+        android:layout_below="@+id/profile_tabs"
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+
+</android.support.design.widget.CoordinatorLayout>

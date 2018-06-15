@@ -32,6 +32,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,7 +55,7 @@ public class SelectTenantActivity extends AppCompatActivity {
     Toolbar toolbar, searchtollbar;
     Menu search_menu;
     MenuItem item_search;
-    public static FrameLayout layout_MainMenu;
+    public static LinearLayout layout_MainMenu;
     String mState = "HIDE_MENU"; // setting state
 
     //private SearchBox search;

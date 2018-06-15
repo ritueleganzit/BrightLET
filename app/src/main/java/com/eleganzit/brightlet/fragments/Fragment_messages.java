@@ -28,7 +28,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,15 +57,23 @@ public class Fragment_messages extends Fragment {
     ViewPager viewPager;
     Menu search_menu;
     MenuItem item_search;
-
+    FrameLayout layout_MainMenu;
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment_messages, container, false);
         setHasOptionsMenu(true);
+        LandlordHomeActivity.welcome.setVisibility(View.GONE);
+
+        LandlordHomeActivity.title.setText("Messages");
         tabLayout=v.findViewById(R.id.messages_tabs);
         viewPager=v.findViewById(R.id.messages_view_pager);
+        layout_MainMenu=v.findViewById(R.id.mainmenu);
+        layout_MainMenu.getForeground().setAlpha(0);
+        LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
+        LandlordHomeActivity.topframe.getForeground().setAlpha(0);
         MyTabAdapter myTabAdapter=new MyTabAdapter(getChildFragmentManager());
         myTabAdapter.addFragment(new Fragment_tenants_messages(),"TENANTS");
         myTabAdapter.addFragment(new Fragment_tradesmen_messages(),"TRADESMEN");
@@ -116,6 +126,7 @@ public class Fragment_messages extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
@@ -125,7 +136,9 @@ public class Fragment_messages extends Fragment {
             Toast.makeText(getContext(), "Search", Toast.LENGTH_SHORT).show();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 circleReveal(R.id.searchtoolbar, 1, true, true);
-                LandlordHomeActivity.layout_MainMenu.getForeground().setAlpha( 90);
+                layout_MainMenu.getForeground().setAlpha( 90);
+                LandlordHomeActivity.bottomframe.getForeground().setAlpha( 90);
+                LandlordHomeActivity.topframe.getForeground().setAlpha(0);
                 Window window = getActivity().getWindow();
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 window.setStatusBarColor(Color.parseColor("#FF3A1F58"));
@@ -133,7 +146,9 @@ public class Fragment_messages extends Fragment {
 
             else
                 LandlordHomeActivity.searchtollbar.setVisibility(View.VISIBLE);
-            LandlordHomeActivity.layout_MainMenu.getForeground().setAlpha( 90);
+            layout_MainMenu.getForeground().setAlpha( 90);
+            LandlordHomeActivity.bottomframe.getForeground().setAlpha( 90);
+            LandlordHomeActivity.topframe.getForeground().setAlpha(0);
 
 
             item_search.expandActionView();
@@ -177,6 +192,7 @@ public class Fragment_messages extends Fragment {
             item_search = search_menu.findItem(R.id.action_filter_search);
 
             MenuItemCompat.setOnActionExpandListener(item_search, new MenuItemCompat.OnActionExpandListener() {
+                @RequiresApi(api = Build.VERSION_CODES.M)
                 @Override
                 public boolean onMenuItemActionCollapse(MenuItem item) {
                     // Do something when collapsed
@@ -185,11 +201,15 @@ public class Fragment_messages extends Fragment {
                         Window window = getActivity().getWindow();
                         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                         window.setStatusBarColor(Color.parseColor("#5a2e87"));
-                        LandlordHomeActivity.layout_MainMenu.getForeground().setAlpha(0);
+                        layout_MainMenu.getForeground().setAlpha(0);
+                        LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
+                        LandlordHomeActivity.topframe.getForeground().setAlpha(0);
                     }
                     else
                         LandlordHomeActivity.searchtollbar.setVisibility(View.GONE);
-                    LandlordHomeActivity.layout_MainMenu.getForeground().setAlpha(0);
+                    layout_MainMenu.getForeground().setAlpha(0);
+                    LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
+                    LandlordHomeActivity.topframe.getForeground().setAlpha(0);
 
                     return true;
                 }
@@ -221,6 +241,7 @@ public class Fragment_messages extends Fragment {
         ImageView closeButton = (ImageView) searchView.findViewById(R.id.search_close_btn);
         closeButton.setImageResource(R.drawable.search_dark);
         closeButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(), "Search tenant!", Toast.LENGTH_SHORT).show();
@@ -229,11 +250,15 @@ public class Fragment_messages extends Fragment {
                     Window window = getActivity().getWindow();
                     window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                     window.setStatusBarColor(Color.parseColor("#5a2e87"));
-                    LandlordHomeActivity.layout_MainMenu.getForeground().setAlpha(0);
+                    layout_MainMenu.getForeground().setAlpha(0);
+                    LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
+                    LandlordHomeActivity.topframe.getForeground().setAlpha(0);
                 }
                 else
                     LandlordHomeActivity.searchtollbar.setVisibility(View.GONE);
-                LandlordHomeActivity.layout_MainMenu.getForeground().setAlpha(0);
+                layout_MainMenu.getForeground().setAlpha(0);
+                LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
+                LandlordHomeActivity.topframe.getForeground().setAlpha(0);
             }
         });
 

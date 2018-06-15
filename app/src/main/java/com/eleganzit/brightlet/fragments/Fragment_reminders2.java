@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.eleganzit.brightlet.LandlordHomeActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.adapters.RemindersAdapter;
 import com.eleganzit.brightlet.model.GetReminders;
@@ -38,7 +39,9 @@ public class Fragment_reminders2 extends Fragment {
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment_reminders2, container, false);
         setHasOptionsMenu(true);
+        LandlordHomeActivity.welcome.setVisibility(View.GONE);
 
+        LandlordHomeActivity.title.setText("Reminders");
         reminders=v.findViewById(R.id.rc_reminders);
 
         RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
