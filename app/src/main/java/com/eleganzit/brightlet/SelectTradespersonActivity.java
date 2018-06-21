@@ -74,7 +74,7 @@ public class SelectTradespersonActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SelectTradespersonActivity.this,TenantChatActivity.class));
+                startActivity(new Intent(SelectTradespersonActivity.this,TradesmenChatActivity.class));
             }
         });
         //next=findViewById(R.id.next);
@@ -125,7 +125,7 @@ public class SelectTradespersonActivity extends AppCompatActivity {
        /* next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SelectTenantActivity.this,ChatActivity.class));
+                startActivity(new Intent(SelectTenantActivity.this,TenantChatActivity.class));
             }
         });*/
 

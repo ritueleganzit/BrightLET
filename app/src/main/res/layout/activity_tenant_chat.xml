@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="#fff"
     android:layout_height="wrap_content"
-    tools:context="com.eleganzit.brightlet.ChatActivity">
+    tools:context="com.eleganzit.brightlet.TenantChatActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -41,7 +41,7 @@
                 android:textColor="#fff"
                 android:gravity="center"
                 android:layout_centerInParent="true"
-                android:text="Kush Salman"
+                android:text="Stacy Remington"
                 />
 
 
@@ -55,28 +55,26 @@
         android:layout_height="match_parent"
         android:focusableInTouchMode="true"
         android:layout_below="@+id/toolbar"
-        android:layout_marginBottom="18dp"
         android:layout_above="@+id/bottom"
         android:orientation="vertical">
-        <com.eleganzit.brightlet.utils.CEditText
-            android:id="@+id/subject_chat"
-            android:hint="Subject"
-            android:padding="15dp"
-            android:maxLines="1"
-            android:textSize="17sp"
-            android:drawableRight="@drawable/dropdown1x"
-            android:textColorHint="#c7c7c7"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#fff"/>
-        <View
-            android:id="@+id/view1"
-            android:layout_width="match_parent"
-            android:layout_below="@+id/subject_chat"
-            android:layout_height="0.5dp"
-            android:background="#bfbfbf"></View>
+    <com.eleganzit.brightlet.utils.CEditText
+        android:id="@+id/subject_chat"
+        android:hint="Subject"
+        android:padding="15dp"
+        android:maxLines="1"
+        android:textSize="17sp"
+        android:textColorHint="#c7c7c7"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"/>
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/subject_chat"
+        android:layout_height="0.5dp"
+        android:background="#bfbfbf"></View>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/message_list"
@@ -85,7 +83,6 @@
             android:layout_height="wrap_content">
 
         </android.support.v7.widget.RecyclerView>
-
 
     </RelativeLayout>
 

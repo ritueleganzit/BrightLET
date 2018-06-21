@@ -36,7 +36,7 @@
             android:textColor="#fff"
             android:gravity="center"
             android:layout_centerInParent="true"
-            android:text="Select a Tradesperson"
+            android:text="Select a Tenant"
             />
         <TextView
             android:id="@+id/next"

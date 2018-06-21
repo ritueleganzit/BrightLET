@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -61,13 +62,16 @@ public class RadioButtonAdapter extends RecyclerView.Adapter<RadioButtonAdapter.
 
         RadioButton radioButton;
 
+        LinearLayout linear_row;
+
         public RadioButtonHolder(View itemView) {
             super(itemView);
 
             name=itemView.findViewById(R.id.text_name);
             radioButton=itemView.findViewById(R.id.select_radioButton);
+            linear_row=itemView.findViewById(R.id.linear_row);
 
-            radioButton.setOnClickListener(new View.OnClickListener() {
+            linear_row.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     lastCheckedPosition = getAdapterPosition();

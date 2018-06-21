@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.eleganzit.brightlet.LandlordHomeActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.ViewPropertyActivity;
+import com.eleganzit.brightlet.fragments.Fragment_book_tradesperson;
+import com.eleganzit.brightlet.fragments.Fragment_expenses;
 import com.eleganzit.brightlet.fragments.Fragment_image_file_manager;
 
 import java.util.ArrayList;
@@ -125,6 +127,11 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.MyView
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "expenses", Toast.LENGTH_SHORT).show();
+                Fragment_expenses fragment_expenses=new Fragment_expenses();
+                FragmentTransaction fragmentTransaction=((LandlordHomeActivity)context).getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_container,fragment_expenses);
+                fragmentTransaction.commit();
+                dialog.dismiss();
             }
         });
         documents_center.setOnClickListener(new View.OnClickListener() {

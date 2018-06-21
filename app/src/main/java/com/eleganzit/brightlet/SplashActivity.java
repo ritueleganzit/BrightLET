@@ -56,6 +56,9 @@ public class SplashActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
+
+        // making notification bar transparent
+        changeStatusBarColor();
         setContentView(R.layout.activity_splash);
         CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
         handler = new Handler();
@@ -74,8 +77,6 @@ public class SplashActivity extends AppCompatActivity {
         // adding bottom dots
         //addBottomDots(0);
 
-        // making notification bar transparent
-        changeStatusBarColor();
 
         signin=(TextView) findViewById(R.id.signin) ;
         signup=(TextView) findViewById(R.id.signup) ;
@@ -176,7 +177,7 @@ public class SplashActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(Color.WHITE);
+            window.setStatusBarColor(Color.TRANSPARENT);
         }
     }
 

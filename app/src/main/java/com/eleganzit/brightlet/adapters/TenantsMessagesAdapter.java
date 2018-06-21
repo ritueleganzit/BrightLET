@@ -1,14 +1,19 @@
 package com.eleganzit.brightlet.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.eleganzit.brightlet.TenantChatActivity;
 import com.eleganzit.brightlet.R;
+import com.eleganzit.brightlet.SelectTenantActivity;
+import com.eleganzit.brightlet.TenantChatActivity;
 import com.eleganzit.brightlet.fonts.TextViewMuseo500;
 import com.eleganzit.brightlet.model.GetTenantsMessages;
 
@@ -46,6 +51,13 @@ public class TenantsMessagesAdapter extends RecyclerView.Adapter<TenantsMessages
         holder.name.setText(getTenantsMessages.getName());
         holder.subject.setText(getTenantsMessages.getSubject());
         holder.address.setText(getTenantsMessages.getAddress());
+        holder.message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, TenantChatActivity.class));
+
+            }
+        });
 
     }
 
@@ -58,6 +70,7 @@ public class TenantsMessagesAdapter extends RecyclerView.Adapter<TenantsMessages
 
         ImageView profile;
         TextView name,subject,address;
+        LinearLayout message;
         public MyViewHolder(View itemView) {
             super(itemView);
 
@@ -65,6 +78,7 @@ public class TenantsMessagesAdapter extends RecyclerView.Adapter<TenantsMessages
             name=itemView.findViewById(R.id.name);
             subject=itemView.findViewById(R.id.subject);
             address=itemView.findViewById(R.id.address);
+            message=itemView.findViewById(R.id.message);
 
         }
     }

@@ -2,6 +2,7 @@ package com.eleganzit.brightlet;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
@@ -23,6 +24,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.eleganzit.brightlet.utils.EqualSpacingItemDecoration;
@@ -34,6 +36,7 @@ public class CameraRollActivity extends AppCompatActivity {
 
     private boolean ascending = true;
     RecyclerView grid;
+    TextView done;
     ArrayList<String> images=new ArrayList<>();
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -44,7 +47,13 @@ public class CameraRollActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(Color.parseColor("#5a2e87"));
         setContentView(R.layout.activity_camera_roll);
-
+        done=findViewById(R.id.done);
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CameraRollActivity.this,PreviewActivity.class));
+            }
+        });
         grid=findViewById(R.id.grid);
 
         RecyclerView.LayoutManager layoutManager=new GridLayoutManager(CameraRollActivity.this,3,LinearLayoutManager.VERTICAL,false);

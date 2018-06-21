@@ -14,7 +14,7 @@
         tools:context="com.eleganzit.brightlet.SelectTenantActivity">
 
 
-        <include layout="@layout/toolbar"/>
+        <include layout="@layout/toolbartrades"/>
         <include layout="@layout/search_toolbar"
             android:visibility="gone"/>
 

@@ -1,0 +1,310 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context="com.eleganzit.brightlet.fragments.Fragment_details">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TRADESMEN REQUIRED"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:textSize="12sp"
+                    android:textColor="#f39200"/>
+
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Boiler Expert"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:layout_marginTop="25dp"
+                    android:textSize="15sp"
+                    android:textColor="#5a5a5a"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:background="#f7f7f7"></View>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ISSUE DETAILS"
+                        android:maxLines="1"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:textSize="12sp"
+                        android:textColor="#f39200"/>
+
+                    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No hot water"
+                        android:maxLines="1"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:layout_marginTop="25dp"
+                        android:textSize="15sp"
+                        android:textColor="#5a5a5a"/>
+
+                </LinearLayout>
+
+        </LinearLayout>
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TENANT PREFERRED DATE/TIME"
+            android:maxLines="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:textSize="12sp"
+            android:textColor="#f39200"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:textSize="12sp"
+                    android:textColor="#f39200"/>
+
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10 Oct"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:layout_marginTop="25dp"
+                    android:textSize="11sp"
+                    android:textColor="#5a5a5a"/>
+
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10:45-12:00"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:textSize="15sp"
+                    android:textColor="#5a5a5a"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="#f7f7f7"></View>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:textSize="12sp"
+                    android:textColor="#f39200"/>
+
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11 Oct"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:layout_marginTop="25dp"
+                    android:textSize="11sp"
+                    android:textColor="#5a5a5a"/>
+
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10:45-12:00"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:textSize="15sp"
+                    android:textColor="#5a5a5a"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="#f7f7f7"></View>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:textSize="12sp"
+                    android:textColor="#f39200"/>
+
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15 Oct"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:layout_marginTop="25dp"
+                    android:textSize="11sp"
+                    android:textColor="#5a5a5a"/>
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10:00-13:30"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:textSize="15sp"
+                    android:textColor="#5a5a5a"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TENANT AVAILABILITY"
+            android:maxLines="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:textSize="12sp"
+            android:textColor="#f39200"/>
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Available all day"
+            android:maxLines="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="2dp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:textSize="14sp"
+            android:textColor="#5a5a5a"/>
+
+</LinearLayout>
+    </ScrollView>
+</LinearLayout>

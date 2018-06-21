@@ -2,6 +2,7 @@ package com.eleganzit.brightlet;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -63,6 +64,7 @@ public class SelectTenantActivity extends AppCompatActivity {
     String radio;
     RecyclerView tenants;
     ArrayList<GetTenantsList> arrayList=new ArrayList<>();
+    @TargetApi(Build.VERSION_CODES.M)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -84,7 +86,7 @@ public class SelectTenantActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SelectTenantActivity.this,ChatActivity.class));
+                startActivity(new Intent(SelectTenantActivity.this,TenantChatActivity.class));
             }
         });
         //next=findViewById(R.id.next);
@@ -167,6 +169,7 @@ public class SelectTenantActivity extends AppCompatActivity {
         return true;
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -482,13 +485,16 @@ public class SelectTenantActivity extends AppCompatActivity {
 
             RadioButton radioButton;
 
+            LinearLayout linear_row;
+
             public RadioButtonHolder(View itemView) {
                 super(itemView);
 
                 name=itemView.findViewById(R.id.text_name);
                 radioButton=itemView.findViewById(R.id.select_radioButton);
+                linear_row=itemView.findViewById(R.id.linear_row);
 
-                radioButton.setOnClickListener(new View.OnClickListener() {
+                linear_row.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         lastCheckedPosition = getAdapterPosition();

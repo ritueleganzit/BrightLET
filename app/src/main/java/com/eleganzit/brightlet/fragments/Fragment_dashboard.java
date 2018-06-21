@@ -79,7 +79,8 @@ public class Fragment_dashboard extends Fragment {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP_MR1)
             @Override
             public void onClick(View v) {
-                animate();
+                //animate();
+                animateFAB();
                 /*PopupMenu popupMenu=new PopupMenu(getContext(),fab,Gravity.END,0,R.style.MyPopupMenu);
                 //popupMenu.getMenuInflater().inflate(R.menu.custom_popup_menu, popupMenu.getMenu());
 
@@ -89,7 +90,7 @@ public class Fragment_dashboard extends Fragment {
                 MenuPopupHelper optionsMenu = new MenuPopupHelper(getContext(), menuBuilder, fab);
                 optionsMenu.setForceShowIcon(true);
                 optionsMenu.show();*/
-                PopupMenu popupMenu=new PopupMenu(getActivity(),v, Gravity.END,0,R.style.MyPopupMenu);
+                PopupMenu popupMenu=new PopupMenu(getActivity(),v, Gravity.NO_GRAVITY,0,R.style.MyPopupMenu);
                 MenuBuilder menuBuilder =new MenuBuilder(getActivity());
                 popupMenu.getMenuInflater().inflate(R.menu.custom_popup_menu, menuBuilder);
                 MenuPopupHelper optionsMenu = new MenuPopupHelper(getActivity(), menuBuilder, fab);

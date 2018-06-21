@@ -1,14 +1,18 @@
 package com.eleganzit.brightlet.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.eleganzit.brightlet.TradesmenChatActivity;
 import com.eleganzit.brightlet.R;
+import com.eleganzit.brightlet.TradesmenChatActivity;
 import com.eleganzit.brightlet.model.GetTenantsMessages;
 import com.eleganzit.brightlet.model.GetTradesmenMessages;
 
@@ -45,7 +49,13 @@ public class TradesmenMessagesAdapter extends RecyclerView.Adapter<TradesmenMess
         holder.profile.setImageResource(getTenantsMessages.getProfile_pic());
         holder.name.setText(getTenantsMessages.getName());
         holder.address.setText(getTenantsMessages.getAddress());
+        holder.message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, TradesmenChatActivity.class));
 
+            }
+        });
     }
 
     @Override
@@ -57,12 +67,14 @@ public class TradesmenMessagesAdapter extends RecyclerView.Adapter<TradesmenMess
 
         ImageView profile;
         TextView name,address;
+        LinearLayout message;
         public MyViewHolder(View itemView) {
             super(itemView);
 
             profile=itemView.findViewById(R.id.profile_pic);
             name=itemView.findViewById(R.id.name);
             address=itemView.findViewById(R.id.address);
+            message=itemView.findViewById(R.id.message);
 
         }
     }

@@ -4,6 +4,7 @@ package com.eleganzit.brightlet.fragments;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Build;
@@ -37,9 +38,12 @@ import android.widget.Toast;
 import com.eleganzit.brightlet.LandlordHomeActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.SelectTenantActivity;
+import com.eleganzit.brightlet.SelectTradespersonActivity;
 import com.eleganzit.brightlet.adapters.MyTabAdapter;
 
 import java.lang.reflect.Field;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -53,6 +57,11 @@ public class Fragment_messages extends Fragment {
         setHasOptionsMenu(true);
 
     }
+    SharedPreferences sharedPref;
+    SharedPreferences.Editor editor;
+    int fragment=0;
+
+
     TabLayout tabLayout;
     ViewPager viewPager;
     Menu search_menu;
@@ -107,7 +116,9 @@ public class Fragment_messages extends Fragment {
             @Override
             public void onPageSelected(int position) {
 
-
+                editor.putInt("fragment",position);
+                editor.commit();
+                Toast.makeText(getActivity(), ""+position, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -156,11 +167,27 @@ public class Fragment_messages extends Fragment {
         }
 
         if (id == R.id.menu_add) {
-            getActivity().startActivity(new Intent(getActivity(),SelectTenantActivity.class));
+            Toast.makeText(getContext(), "!!! "+fragment, Toast.LENGTH_SHORT).show();
+
+            if (sharedPref.getInt("fragment",0)==0) {
+                getActivity().startActivity(new Intent(getActivity(), SelectTenantActivity.class));
+            }
+            if (sharedPref.getInt("fragment",0)==1) {
+                getActivity().startActivity(new Intent(getActivity(), SelectTradespersonActivity.class));
+            }
+
+
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        sharedPref=getContext().getSharedPreferences("Data",MODE_PRIVATE);
+        editor=sharedPref.edit();
     }
 
     @Override

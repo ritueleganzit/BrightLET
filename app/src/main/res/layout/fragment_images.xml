@@ -1,0 +1,105 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:layout_marginBottom="?attr/actionBarSize"
+    android:orientation="vertical"
+    tools:context="com.eleganzit.brightlet.fragments.Fragment_images">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BEFORE"
+        android:maxLines="1"
+        android:layout_margin="10dp"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:textSize="15sp"
+        android:textColor="#f39200"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:scaleType="centerInside"
+            android:background="@drawable/border_layout"
+            android:src="@drawable/camera_3x"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:scaleType="centerInside"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:background="@drawable/border_layout"
+            android:src="@drawable/camera_3x"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:scaleType="centerInside"
+            android:background="@drawable/border_layout"
+            android:src="@drawable/camera_3x"/>
+
+    </LinearLayout>
+    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AFTER"
+        android:maxLines="1"
+        android:layout_margin="10dp"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:textSize="15sp"
+        android:textColor="#f39200"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:scaleType="centerInside"
+            android:background="@drawable/border_layout"
+            android:src="@drawable/camera_3x"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:scaleType="centerInside"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:background="@drawable/border_layout"
+            android:src="@drawable/camera_3x"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:scaleType="centerInside"
+            android:background="@drawable/border_layout"
+            android:src="@drawable/camera_3x"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

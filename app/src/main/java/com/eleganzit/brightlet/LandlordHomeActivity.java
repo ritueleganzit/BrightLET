@@ -35,6 +35,7 @@ import android.widget.Toast;
 import com.eleganzit.brightlet.fonts.TextViewMuseo500;
 import com.eleganzit.brightlet.fragments.AllPropertyFragment;
 import com.eleganzit.brightlet.fragments.Fragment_FinancialStatement;
+import com.eleganzit.brightlet.fragments.Fragment_book_tradesperson;
 import com.eleganzit.brightlet.fragments.Fragment_dashboard;
 import com.eleganzit.brightlet.fragments.Fragment_messages;
 import com.eleganzit.brightlet.fragments.Fragment_my_orders;
@@ -67,7 +68,6 @@ public class LandlordHomeActivity extends AppCompatActivity
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         layout_MainMenu = findViewById( R.id.mainmenu);
         topframe = findViewById( R.id.topframe);
@@ -320,6 +320,10 @@ public class LandlordHomeActivity extends AppCompatActivity
            // title.setText("Financial Statement");
 
         } else if (id == R.id.user_management) {
+            Fragment_book_tradesperson fragment_book_tradesperson=new Fragment_book_tradesperson();
+            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container,fragment_book_tradesperson);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.my_orders) {
             Fragment_my_orders fragment_my_orders=new Fragment_my_orders();

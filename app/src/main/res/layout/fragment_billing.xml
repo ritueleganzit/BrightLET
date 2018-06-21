@@ -1,13 +1,119 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context="com.eleganzit.brightlet.fragments.Fragment_billing">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
 
-</FrameLayout>
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#f39200"
+            android:textSize="15sp"
+            android:text="BILLING INFORMATION"/>
+
+        <com.eleganzit.brightlet.fonts.TextViewMuseo700
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:maxLines="1"
+            android:text="Landlord Name"
+            android:textSize="12sp"
+            android:textColor="#5a5a5a"/>
+
+        <com.eleganzit.brightlet.fonts.TextViewMuseo300
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:textSize="12sp"
+            android:textColor="#979797"
+            android:layout_height="wrap_content"
+            android:text="Landlord@brightlet.com"/>
+
+        <com.eleganzit.brightlet.fonts.TextViewMuseo700
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:maxLines="1"
+            android:text="14 Holt Street, Birmingham, West Midlands, B6 8RH"
+            android:textSize="12sp"
+            android:textColor="#5a5a5a"/>
+
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="#f39200"
+            android:textSize="15sp"
+            android:text="BILLING INFORMATION"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+
+            android:orientation="horizontal">
+            <com.eleganzit.brightlet.fonts.TextViewMuseo700
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="Payment Method"
+                android:textSize="12sp"
+                android:textColor="#5a5a5a"/>
+            <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                android:id="@+id/payment_method"
+                android:layout_width="wrap_content"
+                android:maxLines="1"
+                android:textSize="12sp"
+                android:layout_gravity="center|right"
+                android:textColor="#979797"
+                android:layout_height="wrap_content"
+                android:text="World Pay"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+
+            android:orientation="horizontal">
+            <com.eleganzit.brightlet.fonts.TextViewMuseo700
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:maxLines="1"
+                android:text="Payment Ref."
+                android:textSize="12sp"
+                android:textColor="#5a5a5a"/>
+            <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                android:id="@+id/payment_ref"
+                android:layout_width="wrap_content"
+                android:maxLines="1"
+                android:textSize="12sp"
+                android:layout_gravity="center|right"
+                android:textColor="#979797"
+                android:layout_height="wrap_content"
+                android:text="136-115-7866"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

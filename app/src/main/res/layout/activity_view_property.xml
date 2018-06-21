@@ -128,7 +128,7 @@
                             <com.eleganzit.brightlet.fonts.TextViewMuseo500
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
+                                android:maxLines="1"
                                 android:text="14 Groggles Street, DB5 4JF"
                                 android:textColor="#5a2e87"
                                 android:textSize="16sp"/>
@@ -140,93 +140,122 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:orientation="horizontal">
-                            <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="12sp"
-                                android:layout_gravity="center"
-                                android:textColor="#aaaaaa"
-                                android:text="House"/>
+                                android:layout_weight="1">
+                                <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:ellipsize="marquee"
+                                    android:marqueeRepeatLimit="marquee_forever"
+                                    android:textSize="12sp"
+                                    android:layout_gravity="center"
+                                    android:textColor="#aaaaaa"
+                                    android:text="House"/>
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_marginLeft="15dp"
-                                android:layout_gravity="center"
-                                android:background="#aaaaaa"
-                                android:layout_height="18dp"></View>
-
-                            <ImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="15dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/group_288_3x"/>
-
-                            <TextView
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_gravity="center"
+                                    android:background="#aaaaaa"
+                                    android:layout_height="18dp"></View>
+                            </LinearLayout>
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="10dp"
-                                android:text="x"/>
+                                android:layout_weight="1">
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/group_288_3x"/>
 
-                            <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="x"/>
+
+                                <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:ellipsize="marquee"
+                                    android:marqueeRepeatLimit="marquee_forever"
+                                    android:layout_gravity="center"
+                                    android:textSize="14sp"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="2"
+                                    android:textColor="#181818"
+                                    android:padding="5dp"/>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_gravity="center"
+                                    android:background="#aaaaaa"
+                                    android:layout_height="18dp"></View>
+                            </LinearLayout>
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:textSize="14sp"
-                                android:layout_marginLeft="10dp"
-                                android:text="2"
-                                android:textColor="#181818"
-                                android:padding="5dp"/>
+                                android:layout_weight="1">
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/image_14_3x"/>
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_marginLeft="15dp"
-                                android:layout_marginRight="5dp"
-                                android:background="#aaaaaa"
-                                android:layout_height="18dp"></View>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="10dp"
+                                    android:textSize="12sp"
+                                    android:text="x"/>
 
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:layout_marginLeft="15dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/image_14_3x"/>
+                                <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:ellipsize="marquee"
+                                    android:marqueeRepeatLimit="marquee_forever"
+                                    android:layout_gravity="center"
+                                    android:textSize="14sp"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="1"
+                                    android:textColor="#181818"
+                                    android:padding="5dp"/>
 
-                            <TextView
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_gravity="center"
+                                    android:background="#aaaaaa"
+                                    android:layout_height="18dp"></View>
+                            </LinearLayout>
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="10dp"
-                                android:textSize="12sp"
-                                android:text="x"/>
-
-                            <com.eleganzit.brightlet.fonts.TextViewMuseo300
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:textSize="14sp"
-                                android:layout_marginLeft="10dp"
-                                android:text="1"
-                                android:textColor="#181818"
-                                android:padding="5dp"/>
-
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_marginLeft="15dp"
-                                android:layout_gravity="center"
-                                android:background="#aaaaaa"
-                                android:layout_height="18dp"></View>
-
-                            <com.eleganzit.brightlet.fonts.TextViewMuseo300
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="15dp"
-                                android:textSize="12sp"
-                                android:layout_gravity="center"
-                                android:textColor="#aaaaaa"
-                                android:text="Furnished"/>
-
+                                android:layout_weight="1">
+                                <com.eleganzit.brightlet.fonts.TextViewMuseo300
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:ellipsize="marquee"
+                                    android:marqueeRepeatLimit="marquee_forever"
+                                    android:layout_marginLeft="15dp"
+                                    android:textSize="12sp"
+                                    android:layout_gravity="center"
+                                    android:textColor="#aaaaaa"
+                                    android:text="Furnished"/>
+                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -360,6 +389,7 @@
                     android:background="#EAEDED"
                     android:layout_marginBottom="2dp"></View>
                 <TableRow
+                    android:id="@+id/expenses"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"

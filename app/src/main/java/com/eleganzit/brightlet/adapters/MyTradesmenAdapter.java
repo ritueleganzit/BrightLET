@@ -1,7 +1,6 @@
 package com.eleganzit.brightlet.adapters;
 
 import android.content.Context;
-import android.graphics.Paint;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,10 +10,7 @@ import android.widget.ImageView;
 import android.widget.TableRow;
 import android.widget.Toast;
 
-import com.eleganzit.brightlet.ChatActivity;
 import com.eleganzit.brightlet.R;
-import com.eleganzit.brightlet.fonts.TextViewMuseo500;
-import com.eleganzit.brightlet.model.GetMyOrders;
 import com.eleganzit.brightlet.model.GetMyTradesmen;
 
 import java.util.ArrayList;

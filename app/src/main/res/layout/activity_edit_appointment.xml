@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:contentInsetRight="0dp"
+        android:contentInsetStart="0dp"
+        android:contentInsetLeft="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp"
+        android:background="#5a2e87"
+        android:layout_height="?attr/actionBarSize">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/path_633"
+                android:layout_centerVertical="true"/>
+            <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:id="@+id/txt"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:text="Edit Appointment"
+                />
+            <TextView
+                android:id="@+id/next"
+                android:layout_marginRight="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="14sp"
+                android:textColor="#d4ffffff"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Submit"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        >
+
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:textColor="#181818"
+            android:textSize="15sp"
+            android:background="#f7f7f7"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="14 Groggles Street, DB5 4JF"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#878787">
+            <com.eleganzit.brightlet.utils.CEditText
+                android:id="@+id/date_time"
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:maxLines="1"
+                android:drawableRight="@drawable/group_657"
+                android:layout_height="wrap_content"
+                android:hint="Appointment date/time"
+                android:textSize="16sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/edittext_bg"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColorHint="#878787">
+            <com.eleganzit.brightlet.utils.CEditText
+                android:id="@+id/with"
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:maxLines="1"
+                android:drawableRight="@drawable/dropdown1x"
+                android:layout_height="wrap_content"
+                android:hint="Appointment with"
+                android:textSize="16sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/edittext_bg"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColorHint="#878787">
+            <com.eleganzit.brightlet.utils.CEditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:maxLines="1"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:textSize="16sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/edittext_bg"/>
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

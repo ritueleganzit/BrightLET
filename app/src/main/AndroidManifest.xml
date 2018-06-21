@@ -77,15 +77,28 @@
             android:name=".SelectTenantActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ChatActivity"
+            android:name=".TradesmenChatActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".CameraRollActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ArrangeAppointmentActivity" />
-        <activity android:name=".TenantChatActivity" />
-        <activity android:name=".SecondProfileActivity" />
-        <activity android:name=".SelectTradespersonActivity"></activity>
+        <activity
+            android:name=".ArrangeAppointmentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TenantChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SecondProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SelectTradespersonActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityEditAppointment"
+            android:screenOrientation="portrait" />
+        <activity android:name=".AddRentActivity" />
+        <activity android:name=".AddExpenseActivity"></activity>
     </application>
 
 </manifest>
