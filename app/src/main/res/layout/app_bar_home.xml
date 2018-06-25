@@ -76,7 +76,6 @@
     <FrameLayout
         android:layout_marginTop="?attr/actionBarSize"
         android:layout_width="match_parent"
-        android:layout_marginBottom="?attr/actionBarSize"
         android:layout_height="match_parent"
         android:id="@+id/main_container"></FrameLayout>
 
@@ -99,14 +98,146 @@
             android:layout_gravity="bottom">
 
         </android.support.design.widget.BottomNavigationView>-->
-        <com.roughike.bottombar.BottomBar
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:layout_alignParentStart="true"
+            android:background="#deffffff"
+            android:elevation="4dp"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true">
+
+            <LinearLayout
+                android:id="@+id/dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/dashboard_img"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/group_866_2x"/>
+
+                <TextView
+                    android:id="@+id/dashboard_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="Dashboard"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/properties"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/properties_img"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/group_242_2x"/>
+
+                <TextView
+                    android:id="@+id/properties_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="Properties"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tenants"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/tenants_img"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/group_828_2x"/>
+
+                <TextView
+                    android:id="@+id/tenants_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="Tenants"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/messages"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/messages_img"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/group_240_2x"/>
+
+                <TextView
+                    android:id="@+id/messages_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="Messages"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/profile_img"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/group_241_2x"/>
+
+                <TextView
+                    android:id="@+id/profile_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="Profile"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--<com.roughike.bottombar.BottomBar
             android:id="@+id/bottomsheet"
             android:elevation="4dp"
             android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_alignParentBottom="true"
-            app:bb_tabXmlResource="@xml/bottombar_tabs" />
+            app:bb_tabXmlResource="@xml/bottombar_tabs" />-->
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -67,7 +67,7 @@
             android:padding="5dp"
             android:background="@drawable/edittext_bg"
             android:layout_margin="20dp"
-            android:drawableRight="@drawable/group_109"
+            android:drawableRight="@drawable/group_39_2x"
             android:hint="Mobile Number"
             android:textColorHint="#878787"
             />

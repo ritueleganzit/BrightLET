@@ -1,6 +1,8 @@
 package com.eleganzit.brightlet.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,8 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
 
+import com.eleganzit.brightlet.EditImageFileActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.model.GetImageFiles;
+import com.github.gfranks.minimal.notification.GFMinimalNotification;
 
 import java.util.ArrayList;
 
@@ -24,11 +28,14 @@ public class ImageFileManagerAdapter extends RecyclerView.Adapter<ImageFileManag
 {
     ArrayList<GetImageFiles> arrayList;
     Context context;
+    LinearLayout main;
     TableRow download,edit,delete;
     LinearLayout cancel,delete_b;
-    public ImageFileManagerAdapter(ArrayList<GetImageFiles> arrayList, Context context) {
+
+    public ImageFileManagerAdapter(ArrayList<GetImageFiles> arrayList, Context context, LinearLayout main) {
         this.arrayList = arrayList;
         this.context = context;
+        this.main = main;
     }
 
     @Override
@@ -76,6 +83,12 @@ public class ImageFileManagerAdapter extends RecyclerView.Adapter<ImageFileManag
         dialog.setCancelable(true);
         download=dialog.findViewById(R.id.manage_tenants_bt);
         edit=dialog.findViewById(R.id.maintenance_b);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context,EditImageFileActivity.class));
+            }
+        });
         delete=dialog.findViewById(R.id.image_file_b);
         dialog.show();
 
@@ -106,7 +119,13 @@ public class ImageFileManagerAdapter extends RecyclerView.Adapter<ImageFileManag
         delete_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "delete", Toast.LENGTH_SHORT).show();
+                GFMinimalNotification mCurrentNotification = GFMinimalNotification.make(main, "SUCCESSFUL", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_DEFAULT);
+                mCurrentNotification.setCustomBackgroundColor(Color.parseColor("#FF5EBC00"));
+                mCurrentNotification.setDirection(GFMinimalNotification.DIRECTION_TOP);
+                mCurrentNotification.setHelperImage(R.drawable.group_45);
+                mCurrentNotification.show();
+                dialog.dismiss();
+
             }
         });
 

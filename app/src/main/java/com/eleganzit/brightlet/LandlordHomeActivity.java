@@ -30,6 +30,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eleganzit.brightlet.fonts.TextViewMuseo500;
@@ -56,7 +57,10 @@ public class LandlordHomeActivity extends AppCompatActivity
     public static FrameLayout bottomframe;
     public static Toolbar toolbar,searchtollbar;
     public static TextViewMuseo500 welcome,title;
-    public static BottomBar bottomBar;
+    //public static BottomBar bottomBar;
+    public static LinearLayout dashboard,properties,tenants,messages,profile;
+    public static ImageView dashboard_img,properties_img,tenants_img,messages_img,profile_img;
+    public static TextView dashboard_txt,properties_txt,tenants_txt,messages_txt,profile_txt;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,10 +83,28 @@ public class LandlordHomeActivity extends AppCompatActivity
         fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
         fragmentTransaction.commit();
 
-        bottomBar=findViewById(R.id.bottomsheet);
 
 
-        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+        //bottomBar=findViewById(R.id.bottomsheet);
+        dashboard=findViewById(R.id.dashboard);
+        dashboard_img=findViewById(R.id.dashboard_img);
+        dashboard_txt=findViewById(R.id.dashboard_txt);
+        properties=findViewById(R.id.properties);
+        properties_img=findViewById(R.id.properties_img);
+        properties_txt=findViewById(R.id.properties_txt);
+        tenants=findViewById(R.id.tenants);
+        tenants_img=findViewById(R.id.tenants_img);
+        tenants_txt=findViewById(R.id.tenants_txt);
+        messages=findViewById(R.id.messages);
+        messages_img=findViewById(R.id.messages_img);
+        messages_txt=findViewById(R.id.messages_txt);
+        profile=findViewById(R.id.profile);
+        profile_img=findViewById(R.id.profile_img);
+        profile_txt=findViewById(R.id.profile_txt);
+
+        dashboard_img.setImageResource(R.drawable.s_group_866_2x);
+        dashboard_txt.setTextColor(Color.parseColor("#5a2e87"));
+        /*bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
                 if (tabId == R.id.dashboard_b) {
@@ -127,9 +149,124 @@ public class LandlordHomeActivity extends AppCompatActivity
                    // title.setText("Profile");
                 }
             }
+        });*/
+        dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment_dashboard fragment_dashboard=new Fragment_dashboard();
+                FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
+                fragmentTransaction.commit();
+                dashboard_img.setImageResource(R.drawable.s_group_866_2x);
+                dashboard_txt.setTextColor(Color.parseColor("#5a2e87"));
+
+                properties_img.setImageResource(R.drawable.group_242_2x);
+                properties_txt.setTextColor(Color.parseColor("#979797"));
+
+                tenants_img.setImageResource(R.drawable.group_828_2x);
+                tenants_txt.setTextColor(Color.parseColor("#979797"));
+
+                messages_img.setImageResource(R.drawable.group_240_2x);
+                messages_txt.setTextColor(Color.parseColor("#979797"));
+
+                profile_img.setImageResource(R.drawable.group_241_2x);
+                profile_txt.setTextColor(Color.parseColor("#979797"));
+
+            }
         });
+        properties.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AllPropertyFragment allPropertyFragment=new AllPropertyFragment();
+                FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_container,allPropertyFragment);
+                fragmentTransaction.commit();
+                dashboard_img.setImageResource(R.drawable.group_866_2x);
+                dashboard_txt.setTextColor(Color.parseColor("#979797"));
 
+                properties_img.setImageResource(R.drawable.s_group_242_2x);
+                properties_txt.setTextColor(Color.parseColor("#5a2e87"));
 
+                tenants_img.setImageResource(R.drawable.group_828_2x);
+                tenants_txt.setTextColor(Color.parseColor("#979797"));
+
+                messages_img.setImageResource(R.drawable.group_240_2x);
+                messages_txt.setTextColor(Color.parseColor("#979797"));
+
+                profile_img.setImageResource(R.drawable.group_241_2x);
+                profile_txt.setTextColor(Color.parseColor("#979797"));
+            }
+        });
+        tenants.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment_tenants fragment_tenants=new Fragment_tenants();
+                FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_container,fragment_tenants);
+                fragmentTransaction.commit();
+                dashboard_img.setImageResource(R.drawable.group_866_2x);
+                dashboard_txt.setTextColor(Color.parseColor("#979797"));
+
+                properties_img.setImageResource(R.drawable.group_242_2x);
+                properties_txt.setTextColor(Color.parseColor("#979797"));
+
+                tenants_img.setImageResource(R.drawable.s_group_828_2x);
+                tenants_txt.setTextColor(Color.parseColor("#5a2e87"));
+
+                messages_img.setImageResource(R.drawable.group_240_2x);
+                messages_txt.setTextColor(Color.parseColor("#979797"));
+
+                profile_img.setImageResource(R.drawable.group_241_2x);
+                profile_txt.setTextColor(Color.parseColor("#979797"));
+            }
+        });
+        messages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment_messages fragment_messages=new Fragment_messages();
+                FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_container,fragment_messages);
+                fragmentTransaction.commit();
+                dashboard_img.setImageResource(R.drawable.group_866_2x);
+                dashboard_txt.setTextColor(Color.parseColor("#979797"));
+
+                properties_img.setImageResource(R.drawable.group_242_2x);
+                properties_txt.setTextColor(Color.parseColor("#979797"));
+
+                tenants_img.setImageResource(R.drawable.group_828_2x);
+                tenants_txt.setTextColor(Color.parseColor("#979797"));
+
+                messages_img.setImageResource(R.drawable.s_group_240_2x);
+                messages_txt.setTextColor(Color.parseColor("#5a2e87"));
+
+                profile_img.setImageResource(R.drawable.group_241_2x);
+                profile_txt.setTextColor(Color.parseColor("#979797"));
+            }
+        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment_profile fragment_profile=new Fragment_profile();
+                FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_container,fragment_profile);
+                fragmentTransaction.commit();
+                dashboard_img.setImageResource(R.drawable.group_866_2x);
+                dashboard_txt.setTextColor(Color.parseColor("#979797"));
+
+                properties_img.setImageResource(R.drawable.group_242_2x);
+                properties_txt.setTextColor(Color.parseColor("#979797"));
+
+                tenants_img.setImageResource(R.drawable.group_828_2x);
+                tenants_txt.setTextColor(Color.parseColor("#979797"));
+
+                messages_img.setImageResource(R.drawable.group_240_2x);
+                messages_txt.setTextColor(Color.parseColor("#979797"));
+
+                profile_img.setImageResource(R.drawable.s_group_241_2x);
+                profile_txt.setTextColor(Color.parseColor("#5a2e87"));
+
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addDrawerListener(new DrawerLayout.DrawerListener() {

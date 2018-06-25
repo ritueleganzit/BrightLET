@@ -20,7 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:background="@drawable/white_gradient"
-            android:layout_alignParentBottom="true"></LinearLayout>
+            android:layout_alignParentBottom="true">
+
+        </LinearLayout>
     </RelativeLayout>
 
     <LinearLayout

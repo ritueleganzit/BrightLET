@@ -153,6 +153,9 @@
                 android:layout_height="wrap_content"
                 android:padding="18dp"
                 android:layout_weight="1"
+                android:maxLines="1"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
                 android:text="Attach a receipt (optional)"
                 android:textColor="#979797"
                 android:textSize="14sp"/>

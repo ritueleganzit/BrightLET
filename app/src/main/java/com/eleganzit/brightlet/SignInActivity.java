@@ -311,51 +311,27 @@ ImageView back;
         pattern = Pattern.compile(EMAIL_PATTERN);
         matcher = pattern.matcher(in_email.getText().toString());
         if (in_who.getText().toString().equals("")) {
-            new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogCustom)).setMessage("Please Select Type").setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
+            GFMinimalNotification mCurrentNotification = GFMinimalNotification.make(relativeLayout, "Please Select Type", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_ERROR);
+            mCurrentNotification.setDirection(GFMinimalNotification.DIRECTION_TOP);
+            mCurrentNotification.setHelperImage(R.drawable.group_40);
+            mCurrentNotification.show();
 
-                }
-            }).show();
+            in_email.requestFocus();
             return false;
         }
 
         if (in_email.getText().toString().equals("")) {
             //in_email.setError("Please enter valid id");
-            GFMinimalNotification mCurrentNotification = GFMinimalNotification.make(relativeLayout, "Please enter valid id", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_ERROR);
+            GFMinimalNotification mCurrentNotification = GFMinimalNotification.make(relativeLayout, "Please Enter Valid Id", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_ERROR);
             mCurrentNotification.setDirection(GFMinimalNotification.DIRECTION_TOP);
             mCurrentNotification.setHelperImage(R.drawable.group_40);
             mCurrentNotification.show();
-
-            new Thread() {
-                public void run() {
-                        try {
-                            runOnUiThread(new Runnable() {
-
-                                @Override
-                                public void run() {
-                                    Window window = getWindow();
-                                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                                    window.setStatusBarColor(Color.parseColor("#FFE84D3B"));
-                                }
-                            });
-                            Thread.sleep(3510);
-                            Window window = getWindow();
-                            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                            window.setStatusBarColor(Color.TRANSPARENT);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-
-                    }
-                }
-            }.start();
-
 
             in_email.requestFocus();
             return false;
         } else if (!matcher.matches()) {
             //in_email.setError("Please type valid email");
-            GFMinimalNotification mCurrentNotification = GFMinimalNotification.make(relativeLayout, "Please type valid email", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_ERROR);
+            GFMinimalNotification mCurrentNotification = GFMinimalNotification.make(relativeLayout, "Please Enter Valid Email", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_ERROR);
             mCurrentNotification.setDirection(GFMinimalNotification.DIRECTION_TOP);
             mCurrentNotification.setHelperImage(R.drawable.group_40);
             mCurrentNotification.show();
@@ -364,7 +340,7 @@ ImageView back;
             return false;
         }  else if (in_password.getText().toString().equals("")) {
            // in_password.setError("Please enter password");
-            GFMinimalNotification mCurrentNotification = GFMinimalNotification.make(relativeLayout, "Please enter password", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_ERROR);
+            GFMinimalNotification mCurrentNotification = GFMinimalNotification.make(relativeLayout, "Please Enter Password", GFMinimalNotification.LENGTH_LONG, GFMinimalNotification.TYPE_ERROR);
             mCurrentNotification.setDirection(GFMinimalNotification.DIRECTION_TOP);
             mCurrentNotification.setHelperImage(R.drawable.group_40);
             mCurrentNotification.show();
