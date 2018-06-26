@@ -38,6 +38,7 @@ import com.eleganzit.brightlet.fragments.AllPropertyFragment;
 import com.eleganzit.brightlet.fragments.Fragment_FinancialStatement;
 import com.eleganzit.brightlet.fragments.Fragment_book_tradesperson;
 import com.eleganzit.brightlet.fragments.Fragment_dashboard;
+import com.eleganzit.brightlet.fragments.Fragment_landlord_services;
 import com.eleganzit.brightlet.fragments.Fragment_messages;
 import com.eleganzit.brightlet.fragments.Fragment_my_orders;
 import com.eleganzit.brightlet.fragments.Fragment_my_tradesmen;
@@ -246,9 +247,9 @@ public class LandlordHomeActivity extends AppCompatActivity
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment_profile fragment_profile=new Fragment_profile();
+                Fragment_landlord_services fragment_landlord_services=new Fragment_landlord_services();
                 FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.main_container,fragment_profile);
+                fragmentTransaction.replace(R.id.main_container,fragment_landlord_services);
                 fragmentTransaction.commit();
                 dashboard_img.setImageResource(R.drawable.group_866_2x);
                 dashboard_txt.setTextColor(Color.parseColor("#979797"));

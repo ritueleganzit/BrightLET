@@ -77,6 +77,8 @@ public class Fragment_tenants extends Fragment {
         tenants.setLayoutManager(layoutManager);
 
         tenants.setAdapter(new TenantsAdapter(getTenantses,getContext()));
+        setSearchtollbar();
+
         return v;
     }
     @Override

@@ -24,4 +24,5 @@
 
     <string name="action_settings">Settings</string>
     <string name="menu_title">Submit</string>
+    <string name="popuptext">The tax figures shown above are based on the information you have provided to us, this may not be an accurate representation if you have other sources of income, however you can still use this as a guideline of your expected tax.</string>
 </resources>

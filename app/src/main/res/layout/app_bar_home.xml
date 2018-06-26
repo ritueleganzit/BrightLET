@@ -100,11 +100,12 @@
         </android.support.design.widget.BottomNavigationView>-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/actionBarSize"
             android:padding="4dp"
             android:layout_alignParentStart="true"
             android:background="#deffffff"
             android:elevation="4dp"
+            android:gravity="center"
             android:orientation="horizontal"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true">
@@ -115,7 +116,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"
-                android:gravity="center|bottom"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
@@ -139,7 +140,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:gravity="center|bottom"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
@@ -163,7 +164,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:gravity="center|bottom"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
@@ -187,7 +188,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:gravity="center|bottom"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
@@ -211,7 +212,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:gravity="center|bottom"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
