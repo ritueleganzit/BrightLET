@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/message"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:background="#fff"
@@ -31,6 +30,7 @@
 
             <com.eleganzit.brightlet.fonts.TextViewMuseo500
                 android:id="@+id/profile_text"
+                android:visibility="gone"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:gravity="center"
@@ -41,18 +41,16 @@
                 android:text="JC"/>
         </RelativeLayout>
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:orientation="vertical">
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
             <com.eleganzit.brightlet.fonts.TextViewMuseo500
                 android:text="John Cloone"
                 android:id="@+id/name"
@@ -64,7 +62,16 @@
                 android:layout_weight="0.4"
                 android:textSize="15sp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/options"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:padding="5dp"
+                    android:layout_marginRight="2dp"
+                    android:src="@drawable/group_687_2x"/>
+                </LinearLayout>
+
 
 
             <com.eleganzit.brightlet.fonts.TextViewMuseo500
@@ -77,22 +84,45 @@
                 android:ellipsize="end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-
-
-        </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/red_dot"
-                    android:layout_gravity="center"/>
+                <LinearLayout
+                    android:id="@+id/status_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="5dp"
+                        android:text="OCCUPYING"
+                        android:textColor="#fff"
+                        android:background="#f39200"
+                        android:textSize="10sp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/time_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_height="wrap_content">
+                    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="5dp"
+                        android:text="27/10/2018"
+                        android:textColor="#fff"
+                        android:background="#5ebc00"
+                        android:textSize="10sp"/>
+                </LinearLayout>
+
             </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>

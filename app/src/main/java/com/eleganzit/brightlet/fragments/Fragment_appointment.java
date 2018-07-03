@@ -47,10 +47,10 @@ public class Fragment_appointment extends Fragment {
 
         return v;
     }
-    @Override
+    /*@Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.add, menu);
         super.onCreateOptionsMenu(menu, inflater);
-    }
+    }*/
 
 }

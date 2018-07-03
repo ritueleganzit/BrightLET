@@ -49,6 +49,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eleganzit.brightlet.LandlordHomeActivity;
+import com.eleganzit.brightlet.LandlordServicesActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.SelectTenantActivity;
 import com.eleganzit.brightlet.SelectTradespersonActivity;
@@ -78,7 +79,7 @@ public class AllPropertyFragment extends Fragment {
     Bitmap mBitmap2 = null;
     Menu search_menu;
     MenuItem item_search;
-    FrameLayout layout_MainMenu;
+    public static FrameLayout layout_MainMenu;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -103,7 +104,7 @@ public class AllPropertyFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         PropertyAdapter propertyAdapter=new PropertyAdapter(new ArrayList<String>(),getActivity());
 
-        recyclerView= (RecyclerView) view.findViewById(R.id.rc1);
+        recyclerView= view.findViewById(R.id.rc1);
 
        /* recyclerView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -151,6 +152,10 @@ public class AllPropertyFragment extends Fragment {
                 layout_MainMenu.getForeground().setAlpha( 90);
                 LandlordHomeActivity.bottomframe.getForeground().setAlpha( 90);
                 LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+
+
+
+
                 Window window = getActivity().getWindow();
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 window.setStatusBarColor(Color.parseColor("#FF3A1F58"));
@@ -161,6 +166,9 @@ public class AllPropertyFragment extends Fragment {
             layout_MainMenu.getForeground().setAlpha( 90);
             LandlordHomeActivity.bottomframe.getForeground().setAlpha( 90);
             LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+
+
+
 
 
             item_search.expandActionView();
@@ -316,7 +324,8 @@ public class AllPropertyFragment extends Fragment {
                 @Override
                 public boolean onMenuItemActionCollapse(MenuItem item) {
                     // Do something when collapsed
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+                    {
                         circleReveal(R.id.searchtoolbar,1,true,false);
                         Window window = getActivity().getWindow();
                         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -324,12 +333,14 @@ public class AllPropertyFragment extends Fragment {
                         layout_MainMenu.getForeground().setAlpha(0);
                         LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
                         LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+
                     }
                     else
                         LandlordHomeActivity.searchtollbar.setVisibility(View.GONE);
-                    layout_MainMenu.getForeground().setAlpha(0);
-                    LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
-                    LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+                        layout_MainMenu.getForeground().setAlpha(0);
+                        LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
+                        LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+
 
                     return true;
                 }
@@ -358,7 +369,7 @@ public class AllPropertyFragment extends Fragment {
 
         // Change search close button image
 
-        ImageView closeButton = (ImageView) searchView.findViewById(R.id.search_close_btn);
+        ImageView closeButton = searchView.findViewById(R.id.search_close_btn);
         closeButton.setImageResource(R.drawable.search_dark);
         closeButton.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
@@ -373,12 +384,17 @@ public class AllPropertyFragment extends Fragment {
                     layout_MainMenu.getForeground().setAlpha(0);
                     LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
                     LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+
+
                 }
                 else
                     LandlordHomeActivity.searchtollbar.setVisibility(View.GONE);
                 layout_MainMenu.getForeground().setAlpha(0);
                 LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
                 LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+
+
+
             }
         });
 
@@ -387,11 +403,10 @@ public class AllPropertyFragment extends Fragment {
         EditText txtSearch = ((EditText) searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text));
         txtSearch.setHint("Search...");
         txtSearch.setHintTextColor(Color.parseColor("#A0A0A0"));
-        txtSearch.setTextColor(Color.parseColor("#000000"));
+        /*txtSearch.setTextColor(Color.parseColor("#000000"));
         txtSearch.setTextSize(15);
         txtSearch.setBackgroundColor(Color.parseColor("#ffffff"));
-        txtSearch.setBackground(null);
-
+        txtSearch.setBackground(null);*/
 
         // set the cursor
 

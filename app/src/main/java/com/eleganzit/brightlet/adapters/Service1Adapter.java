@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.eleganzit.brightlet.R;
@@ -52,17 +53,19 @@ public class Service1Adapter extends RecyclerView.Adapter<Service1Adapter.MyView
     public int getItemCount() {
         return 2;
     }
-
     public class MyViewHolder extends RecyclerView.ViewHolder
     {
         TextView service,cost,name;
+        ImageView delete;
         public MyViewHolder(View itemView) {
             super(itemView);
             service=itemView.findViewById(R.id.service);
             cost=itemView.findViewById(R.id.cost);
             name=itemView.findViewById(R.id.name);
+            delete=itemView.findViewById(R.id.delete_service);
 
         }
     }
+
 
 }

@@ -69,12 +69,14 @@ public class TenantsMessagesAdapter extends RecyclerView.Adapter<TenantsMessages
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView profile;
+        TextView profile_txt;
         TextView name,subject,address;
         LinearLayout message;
         public MyViewHolder(View itemView) {
             super(itemView);
 
             profile=itemView.findViewById(R.id.profile_pic);
+            profile_txt=itemView.findViewById(R.id.profile_text);
             name=itemView.findViewById(R.id.name);
             subject=itemView.findViewById(R.id.subject);
             address=itemView.findViewById(R.id.address);

@@ -1,5 +1,7 @@
 package com.eleganzit.brightlet;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.ActionBar;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -13,6 +15,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -23,6 +26,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewAnimationUtils;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -59,7 +63,7 @@ public class LandlordHomeActivity extends AppCompatActivity
     public static Toolbar toolbar,searchtollbar;
     public static TextViewMuseo500 welcome,title;
     //public static BottomBar bottomBar;
-    public static LinearLayout dashboard,properties,tenants,messages,profile;
+    public static LinearLayout bottom_nav,dashboard,properties,tenants,messages,profile;
     public static ImageView dashboard_img,properties_img,tenants_img,messages_img,profile_img;
     public static TextView dashboard_txt,properties_txt,tenants_txt,messages_txt,profile_txt;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -87,6 +91,7 @@ public class LandlordHomeActivity extends AppCompatActivity
 
 
         //bottomBar=findViewById(R.id.bottomsheet);
+        bottom_nav=findViewById(R.id.bottom_nav);
         dashboard=findViewById(R.id.dashboard);
         dashboard_img=findViewById(R.id.dashboard_img);
         dashboard_txt=findViewById(R.id.dashboard_txt);
@@ -158,6 +163,15 @@ public class LandlordHomeActivity extends AppCompatActivity
                 FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.main_container,fragment_dashboard);
                 fragmentTransaction.commit();
+
+                circleReveal(R.id.searchtoolbar,1,true,false);
+                Window window = getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(Color.parseColor("#5a2e87"));
+                AllPropertyFragment.layout_MainMenu.getForeground().setAlpha(0);
+                LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
+                LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+
                 dashboard_img.setImageResource(R.drawable.s_group_866_2x);
                 dashboard_txt.setTextColor(Color.parseColor("#5a2e87"));
 
@@ -182,6 +196,15 @@ public class LandlordHomeActivity extends AppCompatActivity
                 FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.main_container,allPropertyFragment);
                 fragmentTransaction.commit();
+
+                circleReveal(R.id.searchtoolbar,1,true,false);
+                Window window = getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(Color.parseColor("#5a2e87"));
+                AllPropertyFragment.layout_MainMenu.getForeground().setAlpha(0);
+                LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
+                LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+
                 dashboard_img.setImageResource(R.drawable.group_866_2x);
                 dashboard_txt.setTextColor(Color.parseColor("#979797"));
 
@@ -205,6 +228,15 @@ public class LandlordHomeActivity extends AppCompatActivity
                 FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.main_container,fragment_tenants);
                 fragmentTransaction.commit();
+
+                circleReveal(R.id.searchtoolbar,1,true,false);
+                Window window = getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(Color.parseColor("#5a2e87"));
+                AllPropertyFragment.layout_MainMenu.getForeground().setAlpha(0);
+                LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
+                LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+
                 dashboard_img.setImageResource(R.drawable.group_866_2x);
                 dashboard_txt.setTextColor(Color.parseColor("#979797"));
 
@@ -228,6 +260,15 @@ public class LandlordHomeActivity extends AppCompatActivity
                 FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.main_container,fragment_messages);
                 fragmentTransaction.commit();
+
+                circleReveal(R.id.searchtoolbar,1,true,false);
+                Window window = getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(Color.parseColor("#5a2e87"));
+                AllPropertyFragment.layout_MainMenu.getForeground().setAlpha(0);
+                LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
+                LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+
                 dashboard_img.setImageResource(R.drawable.group_866_2x);
                 dashboard_txt.setTextColor(Color.parseColor("#979797"));
 
@@ -247,10 +288,19 @@ public class LandlordHomeActivity extends AppCompatActivity
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment_landlord_services fragment_landlord_services=new Fragment_landlord_services();
+                Fragment_profile fragment_profile=new Fragment_profile();
                 FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.main_container,fragment_landlord_services);
+                fragmentTransaction.replace(R.id.main_container,fragment_profile);
                 fragmentTransaction.commit();
+
+                circleReveal(R.id.searchtoolbar,1,true,false);
+                Window window = getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(Color.parseColor("#5a2e87"));
+                AllPropertyFragment.layout_MainMenu.getForeground().setAlpha(0);
+                LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
+                LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+
                 dashboard_img.setImageResource(R.drawable.group_866_2x);
                 dashboard_txt.setTextColor(Color.parseColor("#979797"));
 
@@ -483,6 +533,54 @@ public class LandlordHomeActivity extends AppCompatActivity
         view.layout(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
         view.draw(c);
         return bitmap;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void circleReveal(int viewID, int posFromRight, boolean containsOverflow, final boolean isShow)
+    {
+        final View myView = findViewById(viewID);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+        //int width=myView.getWidth();
+
+        if(posFromRight>0)
+            width-=(posFromRight*getResources().getDimensionPixelSize(R.dimen.abc_action_button_min_width_material))-(getResources().getDimensionPixelSize(R.dimen.abc_action_button_min_width_material)/ 2);
+        if(containsOverflow)
+            width-=getResources().getDimensionPixelSize(R.dimen.abc_action_button_min_width_overflow_material);
+
+        int cx=width;
+        int cy=myView.getHeight()/2;
+
+        Animator anim;
+        if(isShow)
+            anim = ViewAnimationUtils.createCircularReveal(myView, cx, cy, 0,(float)width);
+        else
+            anim = ViewAnimationUtils.createCircularReveal(myView, cx, cy, (float)width, 0);
+
+        anim.setDuration((long)220);
+
+        // make the view invisible when the animation is done
+        anim.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                if(!isShow)
+                {
+                    super.onAnimationEnd(animation);
+                    myView.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+        // make the view visible and start the animation
+        if(isShow)
+            myView.setVisibility(View.VISIBLE);
+
+        // start the animation
+        anim.start();
+
+
     }
 
 }

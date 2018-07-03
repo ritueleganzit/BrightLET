@@ -33,6 +33,7 @@
         android:id="@+id/rc_reminders"
         android:layout_below="@+id/top"
         android:layout_width="match_parent"
+        android:paddingBottom="?attr/actionBarSize"
         android:layout_height="wrap_content">
 
     </android.support.v7.widget.RecyclerView>

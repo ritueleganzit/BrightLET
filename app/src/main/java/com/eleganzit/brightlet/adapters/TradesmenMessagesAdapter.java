@@ -66,12 +66,14 @@ public class TradesmenMessagesAdapter extends RecyclerView.Adapter<TradesmenMess
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView profile;
+        TextView profile_txt;
         TextView name,address;
         LinearLayout message;
         public MyViewHolder(View itemView) {
             super(itemView);
 
             profile=itemView.findViewById(R.id.profile_pic);
+            profile_txt=itemView.findViewById(R.id.profile_text);
             name=itemView.findViewById(R.id.name);
             address=itemView.findViewById(R.id.address);
             message=itemView.findViewById(R.id.message);

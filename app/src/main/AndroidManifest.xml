@@ -101,7 +101,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".EditImageFileActivity" />
-        <activity android:name=".LandlordServicesActivity"></activity>
+        <activity android:name=".LandlordServicesActivity" />
+        <activity android:name=".DocumentEditActivity" />
+        <activity android:name=".UploadDocumentActivity"></activity>
     </application>
 
 </manifest>

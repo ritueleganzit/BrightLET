@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.v7.widget.CardView android:layout_width="match_parent"
+<LinearLayout android:id="@+id/content"
+    android:layout_below="@+id/toolbar"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginBottom="8dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:orientation="horizontal"
+    android:layout_margin="10dp"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="3dp"
+        android:elevation="3dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -12,7 +21,7 @@
             android:orientation="vertical">
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 android:src="@drawable/one"/>
 
@@ -38,9 +47,8 @@
                             android:textColor="#5a2e87"
                             android:textSize="16sp"/>
                         <ImageView
-                            android:id="@+id/option"
-                            android:layout_width="27dp"
-                            android:layout_height="27dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:padding="5dp"
                             android:src="@drawable/group_687_2x"/>
                     </LinearLayout>
@@ -95,8 +103,8 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="23dp"
-                            android:layout_height="23dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_gravity="center"
                             android:src="@drawable/group_288_3x"/>
 
@@ -104,8 +112,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginLeft="7dp"
-                            android:layout_marginRight="7dp"                            android:textSize="12sp"
+                            android:padding="5dp"
+                            android:textSize="12sp"
                             android:text="x"/>
 
                         <com.eleganzit.brightlet.fonts.TextViewMuseo300
@@ -117,8 +125,8 @@
                             android:padding="5dp"/>
 
                         <ImageView
-                            android:layout_width="19dp"
-                            android:layout_height="19dp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:layout_marginLeft="30dp"
                             android:layout_gravity="center"
                             android:src="@drawable/image_14_3x"/>
@@ -127,8 +135,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginLeft="7dp"
-                            android:layout_marginRight="7dp"
+                            android:padding="5dp"
+
                             android:textSize="12sp"
                             android:text="x"/>
 
@@ -141,14 +149,7 @@
                             android:padding="5dp"/>
 
                     </LinearLayout>
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:visibility="gone"
-                        android:id="@+id/last_position"
-                        android:layout_width="match_parent"
-                        android:layout_height="?attr/actionBarSize"></LinearLayout>
                 </LinearLayout>
-
 
 
 
@@ -156,3 +157,4 @@
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
+</LinearLayout>

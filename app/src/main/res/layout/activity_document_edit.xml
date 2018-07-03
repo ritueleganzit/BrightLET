@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_below="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:focusableInTouchMode="true"
+        android:background="#f2f2f2"
+        android:layout_height="match_parent"
+        tools:context="com.eleganzit.brightlet.SignInActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:contentInsetRight="0dp"
+            android:contentInsetStart="0dp"
+            android:contentInsetLeft="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            android:background="#5a2e87"
+            android:layout_height="?attr/actionBarSize">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/path_633_2x"
+                    android:layout_centerVertical="true"/>
+                <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:id="@+id/txt"
+                    android:textColor="#fff"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    android:text="Document Edit"
+                    />
+                <TextView
+                    android:id="@+id/next"
+                    android:layout_marginRight="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="14sp"
+                    android:textColor="#ffffff"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:text="Save"/>
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <include
+            layout="@layout/edit_file_layout"
+            android:visibility="gone"></include>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:background="#fff"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/first"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/toolbar"
+                android:background="#fff"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="#f0f0f0"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/group_908_2x"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.eleganzit.brightlet.fonts.TextViewMuseo700
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#5a5a5a"
+                            android:layout_gravity="center"
+                            android:textSize="12sp"
+                            android:text="DOWNLOAD"/>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="4dp"
+                            android:scaleType="centerInside"
+                            android:layout_gravity="center"
+                            android:src="@drawable/group_993_3x"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="#878787"
+                        android:layout_height="35dp"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.eleganzit.brightlet.fonts.TextViewMuseo700
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#d03131"
+                            android:layout_gravity="center"
+                            android:textSize="12sp"
+                            android:text="DELETE"/>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="4dp"
+                            android:scaleType="centerInside"
+                            android:layout_gravity="center"
+                            android:src="@drawable/group_992_3x"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#f39200"
+                        android:layout_marginBottom="10dp"
+                        android:text="DOCUMENT NAME"/>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#878787">
+                        <com.eleganzit.brightlet.utils.CEditText
+                            android:id="@+id/doc_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:entries="@array/userlist"
+                            android:padding="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/edittext_bg"
+                            android:hint="Invoice #134"
+                            android:textColorHint="#aaaaaa"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <com.eleganzit.brightlet.fonts.TextViewMuseo500
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="#f39200"
+                        android:layout_marginBottom="10dp"
+                        android:text="SHARE WITH YOUR TENANT?"/>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#878787">
+                        <com.eleganzit.brightlet.utils.CEditText
+                            android:id="@+id/share_with"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:entries="@array/userlist"
+                            android:padding="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/edittext_bg"
+                            android:drawableRight="@drawable/dropdown1x"
+                            android:hint="Select (optional)"
+                            android:textColorHint="#aaaaaa"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

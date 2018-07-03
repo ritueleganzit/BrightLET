@@ -3,6 +3,7 @@ package com.eleganzit.brightlet.fragments;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -34,10 +35,20 @@ import android.widget.Toast;
 import com.eleganzit.brightlet.LandlordHomeActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.adapters.TenantsAdapter;
+import com.eleganzit.brightlet.apiparser.CallAPiActivity;
+import com.eleganzit.brightlet.apiparser.GetResponse;
 import com.eleganzit.brightlet.model.GetTenants;
+import com.eleganzit.brightlet.utils.AppDialogs;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -52,10 +63,13 @@ public class Fragment_tenants extends Fragment {
 
     }
     RecyclerView tenants;
-    ArrayList<GetTenants> getTenantses=new ArrayList<>();
+    ArrayList<GetTenants> arrayList=new ArrayList<>();
     Menu search_menu;
     MenuItem item_search;
     FrameLayout layout_MainMenu;
+    SharedPreferences sharedPreferences;
+    public AppDialogs appDialogs;
+    public CallAPiActivity callAPiActivity;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -67,7 +81,10 @@ public class Fragment_tenants extends Fragment {
         layout_MainMenu.getForeground().setAlpha(0);
         LandlordHomeActivity.bottomframe.getForeground().setAlpha(0);
         LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+        appDialogs = new AppDialogs(getActivity());
+        callAPiActivity=new CallAPiActivity(getActivity());
 
+        sharedPreferences=getActivity().getSharedPreferences("mypref",MODE_PRIVATE);
         LandlordHomeActivity.welcome.setVisibility(View.GONE);
 
         LandlordHomeActivity.title.setText("Manage Tenants");
@@ -76,8 +93,8 @@ public class Fragment_tenants extends Fragment {
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
         tenants.setLayoutManager(layoutManager);
 
-        tenants.setAdapter(new TenantsAdapter(getTenantses,getContext()));
         setSearchtollbar();
+        setTenants();
 
         return v;
     }
@@ -105,9 +122,9 @@ public class Fragment_tenants extends Fragment {
 
             else
                 LandlordHomeActivity.searchtollbar.setVisibility(View.VISIBLE);
-            layout_MainMenu.getForeground().setAlpha( 90);
-            LandlordHomeActivity.bottomframe.getForeground().setAlpha( 90);
-            LandlordHomeActivity.topframe.getForeground().setAlpha(0);
+                layout_MainMenu.getForeground().setAlpha( 90);
+                LandlordHomeActivity.bottomframe.getForeground().setAlpha( 90);
+                LandlordHomeActivity.topframe.getForeground().setAlpha(0);
 
 
             item_search.expandActionView();
@@ -126,6 +143,37 @@ public class Fragment_tenants extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+    }
+
+    public void setTenants()
+    {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("request", "manage-tenants");
+        map.put("customer_id", sharedPreferences.getString("customer_id",""));
+        map.put("customer_type", sharedPreferences.getString("customer_type",""));
+        map.put("customer_api_key", sharedPreferences.getString("customer_api_key",""));
+
+        callAPiActivity.doRequestCall(getActivity(), map, new GetResponse() {
+            @Override
+            public void onSuccessResult(JSONObject result) throws JSONException {
+
+                JSONArray jsonArray=result.getJSONArray("tenants");
+                for(int i=0;i<=jsonArray.length();i++)
+                {
+                    JSONObject jsonObject=jsonArray.getJSONObject(i);
+                    GetTenants getTenants=new GetTenants(jsonObject.getString("tenant_id"),jsonObject.getString("tenant_name"),jsonObject.getString("tenant_profile_image"),jsonObject.getString("tenant_initials"),jsonObject.getString("contract_id"),jsonObject.getString("property_id"),jsonObject.getString("decoded_property_id"),jsonObject.getString("property_rent"),jsonObject.getString("property_payment"),jsonObject.getString("renewal_date"),jsonObject.getString("renew_tenancy"),jsonObject.getString("agent_confirmed"),jsonObject.getString("tenant_confirmed"),jsonObject.getString("filename"),jsonObject.getString("has_rent_collect"),jsonObject.getString("rent_setup"),jsonObject.getString("has_deposit"),jsonObject.getString("paid_deposit"),jsonObject.getString("tenancy_finished"),jsonObject.getString("tenancy_type"),jsonObject.getString("tenancy_type_label"),jsonObject.getString("property_details"));
+                    arrayList.add(getTenants);
+                    tenants.setAdapter(new TenantsAdapter(arrayList,getContext()));
+
+                }
+
+            }
+
+            @Override
+            public void onFailureResult(String message) throws JSONException {
+
+            }
+        });
     }
 
     public void setSearchtollbar()

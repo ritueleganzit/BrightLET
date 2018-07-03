@@ -10,47 +10,55 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.eleganzit.brightlet.LandlordHomeActivity;
 import com.eleganzit.brightlet.R;
-import com.eleganzit.brightlet.adapters.RemindersAdapter;
-import com.eleganzit.brightlet.adapters.RemindersAdapter2;
-import com.eleganzit.brightlet.model.GetReminders;
+import com.eleganzit.brightlet.adapters.DocumentsAdapter;
+import com.eleganzit.brightlet.adapters.ImageFileManagerAdapter;
+import com.eleganzit.brightlet.model.GetImageFiles;
 
 import java.util.ArrayList;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_reminders2 extends Fragment {
+public class Fragment_documents_centre extends Fragment {
 
 
-    public Fragment_reminders2() {
+    public Fragment_documents_centre() {
         // Required empty public constructor
         setHasOptionsMenu(true);
 
     }
-    RecyclerView reminders;
-    ArrayList<GetReminders> arrayList=new ArrayList<>();
+    RecyclerView recyclerView;
+    LinearLayout linearLayout;
+    ArrayList<GetImageFiles> arrayList=new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v=inflater.inflate(R.layout.fragment_reminders2, container, false);
         setHasOptionsMenu(true);
+
         LandlordHomeActivity.welcome.setVisibility(View.GONE);
 
-        LandlordHomeActivity.title.setText("Reminders");
-        reminders=v.findViewById(R.id.rc_reminders);
+        LandlordHomeActivity.title.setText("Documents Centre");
+        View v=inflater.inflate(R.layout.fragment_documents_centre, container, false);
 
-        RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
-        reminders.setLayoutManager(layoutManager);
-        reminders.setAdapter(new RemindersAdapter2(arrayList,getContext()));
+        recyclerView=v.findViewById(R.id.rc_documents);
+
+        linearLayout=v.findViewById(R.id.main);
+
+        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+
+        recyclerView.setLayoutManager(layoutManager);
+
+        recyclerView.setAdapter(new DocumentsAdapter(arrayList,getContext(),linearLayout));
 
         return v;
     }
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.add, menu);

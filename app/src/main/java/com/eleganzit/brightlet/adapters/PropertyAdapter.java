@@ -5,19 +5,25 @@ import android.content.Intent;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eleganzit.brightlet.LandlordHomeActivity;
+import com.eleganzit.brightlet.LandlordServicesActivity;
 import com.eleganzit.brightlet.R;
 import com.eleganzit.brightlet.ViewPropertyActivity;
 import com.eleganzit.brightlet.fragments.Fragment_book_tradesperson;
+import com.eleganzit.brightlet.fragments.Fragment_documents_centre;
 import com.eleganzit.brightlet.fragments.Fragment_expenses;
 import com.eleganzit.brightlet.fragments.Fragment_image_file_manager;
+import com.eleganzit.brightlet.model.GetMessages;
 
 import java.util.ArrayList;
 
@@ -25,11 +31,13 @@ import java.util.ArrayList;
  * Created by Uv on 5/19/2018.
  */
 
+
 public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.MyViewHolder>
 {
 
     ArrayList<String> arrayList;
     Context context;
+    LinearLayout last;
     TableRow manage_tenants,maintenance,image_file,expenses,documents_center,landlord_services;
 
     public PropertyAdapter(ArrayList<String> arrayList, Context context) {
@@ -56,6 +64,20 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.MyView
     }
 
     @Override
+    public int getItemViewType(int position) {
+
+        if(position==arrayList.size()-1)
+        {
+            Toast.makeText(context, "last", Toast.LENGTH_SHORT).show();
+            last.setVisibility(View.VISIBLE);
+
+
+        }
+
+        return super.getItemViewType(position);
+    }
+
+    @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
         holder.option.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +86,11 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.MyView
                 initbottomsheet();
             }
         });
-
+        if(position==arrayList.size()-4)
+        {
+            Toast.makeText(context, "last", Toast.LENGTH_SHORT).show();
+            last.setVisibility(View.VISIBLE);
+        }
 
     }
 
@@ -81,6 +107,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.MyView
         public MyViewHolder(View itemView) {
             super(itemView);
             option=itemView.findViewById(R.id.option);
+            last=itemView.findViewById(R.id.last_position);
 
         }
     }
@@ -119,8 +146,9 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.MyView
                 fragmentTransaction.replace(R.id.main_container,fragment_image_file_manager);
                 fragmentTransaction.commit();
                 dialog.dismiss();
-                /*welcome.setVisibility(View.GONE);
+/*welcome.setVisibility(View.GONE);
                 title.setText("Properties");*/
+
             }
         });
         expenses.setOnClickListener(new View.OnClickListener() {
@@ -138,12 +166,18 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.MyView
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "documents_center", Toast.LENGTH_SHORT).show();
+                Fragment_documents_centre fragment_documents_centre=new Fragment_documents_centre();
+                FragmentTransaction fragmentTransaction=((LandlordHomeActivity)context).getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_container,fragment_documents_centre);
+                fragmentTransaction.commit();
+                dialog.dismiss();
             }
         });
         landlord_services.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "landlord_services", Toast.LENGTH_SHORT).show();
+                context.startActivity(new Intent(context, LandlordServicesActivity.class));
             }
         });
 

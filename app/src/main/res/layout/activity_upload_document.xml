@@ -41,7 +41,7 @@
                 android:textColor="#fff"
                 android:gravity="center"
                 android:layout_centerInParent="true"
-                android:text="Upload Image or File"
+                android:text="Upload Document"
                 />
             <TextView
                 android:id="@+id/next"
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:padding="18dp"
                 android:layout_weight="1"
-                android:text="Attach"
+                android:text="Attach a Document"
                 android:textColor="#979797"
                 android:textSize="14sp"/>
 
@@ -106,7 +106,35 @@
             android:layout_marginTop="30dp"
             android:textColor="#f39200"
             android:layout_marginBottom="10dp"
-            android:text="IS DEFUALT"/>
+            android:text="DOCUMENT NAME"/>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#878787">
+            <com.eleganzit.brightlet.utils.CEditText
+                android:id="@+id/house_report"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:entries="@array/userlist"
+                android:padding="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/edittext_bg"
+                android:hint="House Report"
+                android:textColorHint="#aaaaaa"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <com.eleganzit.brightlet.fonts.TextViewMuseo500
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            android:textColor="#f39200"
+            android:layout_marginBottom="10dp"
+            android:text="SHARE WITH TENANT"/>
 
 
         <android.support.design.widget.TextInputLayout
@@ -123,11 +151,10 @@
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/edittext_bg"
                 android:drawableRight="@drawable/dropdown1x"
-                android:hint="Yes"
+                android:hint="Tenant"
                 android:textColorHint="#aaaaaa"
                 />
         </android.support.design.widget.TextInputLayout>
-
 
 
     </LinearLayout>
